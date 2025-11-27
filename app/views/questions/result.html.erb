@@ -1,0 +1,17 @@
+<% if @is_correct %>
+    <h2 style="color: green;">正解</h2>
+<% else %>
+    <h2 style="color: red;">不正解</h2>
+<% end %>
+
+<h3>答え</h3>
+<ul>
+    <% @question.choices.where(is_correct: true).each do |choice| %>
+        <li><%= choice.content %></li>
+    <% end %>
+</ul>
+<h3>解説</h3>
+<p><%= simple_format(@question.explanation) %></p>
+
+<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>
+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>

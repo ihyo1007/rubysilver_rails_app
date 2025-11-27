@@ -1,0 +1,43 @@
+<%= form_with model: @question, local: true do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field" style="display: flex;">
+    <%= f.label :content, "問題文" %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div id="choices">
+    <%= f.fields_for :choices do |choice_fields| %>
+      <div class="choice-field">
+        <%= choice_fields.label :content, "選択肢内容" %>
+        <%= choice_fields.text_field :content %>
+        <%= choice_fields.label :is_correct, "正解" %>
+        <%= choice_fields.check_box :is_correct %>
+        <%= link_to "削除", "#", class: "remove-choice" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "選択肢を追加", "#", id: "add-choice" %>
+  <br><br>
+
+  <div class="field" style="display: flex;">
+    <%= f.label :explanation, "解説" %>
+    <%= f.text_area :explanation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

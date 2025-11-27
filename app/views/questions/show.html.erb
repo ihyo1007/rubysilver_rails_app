@@ -1,0 +1,21 @@
+<h1>問題 <%= @question.id %></h1>
+
+<div class="question-area">
+  <p><%= simple_format(@question.content) %></p>
+</div>
+
+<div class="choices-area">
+  <%= form_with url: answer_question_path(@question), data: { turbo: false} do %>
+    <% @question.choices.each do |choice| %>
+      <div class="choice-box">
+        <label>
+          <%= check_box_tag "choice_ids[]", choice.id %>
+          <%= choice.content %>
+        </label>
+      </div>
+    <% end %>
+    <div class="button-area">
+      <%= submit_tag "回答する", class: "button" %>
+    </div>
+  <% end %>
+</div>

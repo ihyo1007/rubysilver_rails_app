@@ -1,0 +1,22 @@
+<h2>結果</h2>
+<%= hidden_field_tag :question_id, @question.id %>
+
+<% if @is_correct %>
+  <p style="color: green;">正解！</p>
+<% else %>
+  <p style="color: red;">不正解…</p>
+<% end %>
+
+
+<h3>答え</h3>
+<ul>
+  <% @question.choices.where(is_correct: true).each do |c| %>
+    <li><%= c.content %></li>
+  <% end %>
+</ul>
+
+<h3>解説</h3>
+<p><%= @question.explanation.presence || "解説はありません" %></p>
+
+<%= link_to "次の問題", quiz_random_path %>
+<%= link_to "ホーム", home_index_path, class: "btn btn-primary" %>
