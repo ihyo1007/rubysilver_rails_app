@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/views/admin/dashboard/index.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764299229473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764299229473,
+            "name": "Commit-0",
+            "content": "<h1>管理者専用トップページ</h1>\r\n\r\n<ul>\r\n  <li><%= link_to \"新規問題の作成\", new_question_path %></li>\r\n</ul>\r\n"
+        }
+    ]
+}

@@ -17,11 +17,6 @@
     <%= f.text_area :content %>
   </div>
 
-  <div class="field" style="display: flex;">
-    <%= f.label :category_id, "カテゴリー" %>
-    <%= f.text_field :category_id %>
-  </div>
-
   <div id="choices">
     <%= f.fields_for :choices do |choice_fields| %>
       <div class="choice-field">

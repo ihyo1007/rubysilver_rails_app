@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/views/questions/_form.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1764300381989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764300388077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \r\n   <div class=\"field\" style=\"display: flex;\">\r\n     <%= f.label :category_id, \"カテゴリー\" %>\r\n     <%= f.collection_select :category_id, Category.all, :id, :name, prompt: \"カテゴリーを選択\" %>\r\n+  </div>\r\n \r\n   <div id=\"choices\">\r\n     <%= f.fields_for :choices do |choice_fields| %>\r\n       <div class=\"choice-field\">\r\n"
+                },
+                {
+                    "date": 1764300461645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   </div>\r\n \r\n   <div class=\"field\" style=\"display: flex;\">\r\n     <%= f.label :category_id, \"カテゴリー\" %>\r\n-    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: \"カテゴリーを選択\" %>\r\n+    <%= f.text_field :category_id %>\r\n   </div>\r\n \r\n   <div id=\"choices\">\r\n     <%= f.fields_for :choices do |choice_fields| %>\r\n"
+                }
+            ],
+            "date": 1764300381989,
+            "name": "Commit-0",
+            "content": "<%= form_with model: @question, local: true do |f| %>\r\n  <% if @question.errors.any? %>\r\n    <div id=\"error_explanation\">\r\n      <h2><%= pluralize(@question.errors.count, \"error\") %> prohibited this question from being saved:</h2>\r\n\r\n      <ul>\r\n        <% @question.errors.full_messages.each do |message| %>\r\n          <li><%= message %></li>\r\n        <% end %>\r\n      </ul>\r\n    </div>\r\n  <% end %>\r\n\r\n\r\n  <div class=\"field\" style=\"display: flex;\">\r\n    <%= f.label :content, \"問題文\" %>\r\n    <%= f.text_area :content %>\r\n  </div>\r\n\r\n  <div class=\"field\" style=\"display: flex;\">\r\n    <%= f.label :category_id, \"カテゴリー\" %>\r\n    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: \"カテゴリーを選択\" %>\r\n\r\n  <div id=\"choices\">\r\n    <%= f.fields_for :choices do |choice_fields| %>\r\n      <div class=\"choice-field\">\r\n        <%= choice_fields.label :content, \"選択肢内容\" %>\r\n        <%= choice_fields.text_field :content %>\r\n        <%= choice_fields.label :is_correct, \"正解\" %>\r\n        <%= choice_fields.check_box :is_correct %>\r\n        <%= link_to \"削除\", \"#\", class: \"remove-choice\" %>\r\n      </div>\r\n    <% end %>\r\n  </div>\r\n\r\n  <%= link_to \"選択肢を追加\", \"#\", id: \"add-choice\" %>\r\n  <br><br>\r\n\r\n  <div class=\"field\" style=\"display: flex;\">\r\n    <%= f.label :explanation, \"解説\" %>\r\n    <%= f.text_area :explanation %>\r\n  </div>\r\n\r\n  <div class=\"actions\">\r\n    <%= f.submit %>\r\n  </div>\r\n<% end %>"
+        }
+    ]
+}

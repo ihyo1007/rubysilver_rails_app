@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/controllers/admin/dashboard_controller.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764299112221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764299112221,
+            "name": "Commit-0",
+            "content": "class Admin::DashboardController < ApplicationController\r\n  before_action :authenticate_admin!   # 管理者以外アクセス禁止\r\n\r\n  def index\r\n  end\r\nend\r\n"
+        }
+    ]
+}

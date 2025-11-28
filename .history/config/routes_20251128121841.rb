@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins
   get "quiz/random"
   get "quiz/result"
   get "users/mypage"
@@ -15,10 +14,6 @@ Rails.application.routes.draw do
   post 'quiz/answer', to: 'quiz#answer' 
   get 'quiz/result', to: 'quiz#result'
   get 'mypage', to: 'users#mypage'
-  namespace :admin do
-    root "dashboard#index"   # /admin にアクセス→管理者用Question一覧
-    resources :questions
-  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/models/admin.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764300218424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764300218424,
+            "name": "Commit-0",
+            "content": "class Admin < ApplicationRecord\r\n  # Include default devise modules. Others available are:\r\n  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable\r\n  devise :database_authenticatable, :registerable,\r\n         :recoverable, :rememberable, :validatable\r\nend\r\n"
+        }
+    ]
+}

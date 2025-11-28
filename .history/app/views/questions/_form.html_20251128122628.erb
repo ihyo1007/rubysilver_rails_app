@@ -19,7 +19,7 @@
 
   <div class="field" style="display: flex;">
     <%= f.label :category_id, "カテゴリー" %>
-    <%= f.text_field :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "カテゴリーを選択" %>
   </div>
 
   <div id="choices">
