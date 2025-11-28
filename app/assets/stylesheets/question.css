@@ -46,6 +46,7 @@ th, td {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    margin-bottom: 20px;
 }
 .button:hover {
     background-color: #45a049;
@@ -59,4 +60,10 @@ th, td {
 }
 #choices .choice-field:last-child {
     margin-bottom: 0;
+}
+
+.banner_yoko {
+    display: block;
+    width: 20%;
+    margin-bottom: 20px;
 }

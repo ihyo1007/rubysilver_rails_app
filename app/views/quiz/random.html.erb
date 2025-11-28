@@ -20,4 +20,6 @@
     </div>
   <% end %>
 </div>
-<%= link_to "ホーム", home_index_path, class: "btn btn-primary" %>
+<%= link_to home_index_path do %>
+  <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+<% end %>

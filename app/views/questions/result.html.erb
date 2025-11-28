@@ -13,5 +13,13 @@
 <h3>解説</h3>
 <p><%= simple_format(@question.explanation) %></p>
 
-<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>
-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>
+<li>
+<%= link_to questions_path, class: 'btn btn-primary' do %>
+    問題一覧 <i class="fi fi-ss-left"></i>
+<% end %>
+</li>
+<li>
+<%= link_to question_path(@next_question), class: 'btn btn-success' do %>
+    次の問題 <i class="fi fi-ss-right"></i>
+<% end %>
+</li>
