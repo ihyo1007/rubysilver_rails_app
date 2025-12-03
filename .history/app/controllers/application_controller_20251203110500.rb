@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end 
 
   def after_sign_out_path_for(resource_or_scope)
-    home_index_path   # ← 遷移させたいパスを指定
+    new_user_session_path
   end
 
 end

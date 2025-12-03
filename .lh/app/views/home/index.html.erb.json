@@ -1,0 +1,46 @@
+{
+    "sourceFile": "app/views/home/index.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1764726491155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764726804397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,40 +1,45 @@\n <div class=\"header-container\">\r\n   <%= image_tag \"rubysilver_banner.png\", alt: \"RubySilver Banner\", class: \"banner\" %>\r\n </div>\r\n \r\n-<nav class=\"main-nav\">\r\n+<nav class=\"icon-nav\">\r\n   <ul>\r\n     <li>\r\n       <%= link_to quiz_random_path do %>\r\n-        <i class=\"fi fi-rr-edit\"></i> ランダム出題\r\n+        <i class=\"fi fi-rr-edit\"></i>\r\n+        <span>ランダム出題</span>\r\n       <% end %>\r\n     </li>\r\n \r\n     <li>\r\n       <%= link_to questions_path do %>\r\n-        <i class=\"fi fi-rr-edit\"></i> 問題一覧\r\n+        <i class=\"fi fi-rr-edit\"></i>\r\n+        <span>問題一覧</span>\r\n       <% end %>\r\n     </li>\r\n \r\n     <li>\r\n       <%= link_to mypage_path do %>\r\n-        <i class=\"fi fi-rs-book-alt\"></i> マイページ\r\n+        <i class=\"fi fi-rs-book-alt\"></i>\r\n+        <span>マイページ</span>\r\n       <% end %>\r\n     </li>\r\n \r\n     <% if user_signed_in? %>\r\n-      <li class=\"auth-link\">\r\n+      <li>\r\n         <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>\r\n-          <i class=\"fi fi-ss-user-logout\"></i> ログアウト\r\n+          <i class=\"fi fi-ss-user-logout\"></i>\r\n+          <span>ログアウト</span>\r\n         <% end %>\r\n       </li>\r\n     <% else %>\r\n-      <li class=\"auth-link\"><%= link_to \"サインアップ\", new_user_registration_path %></li>\r\n-      <li class=\"auth-link\"><%= link_to \"ログイン\", new_user_session_path %></li>\r\n+      <li><%= link_to new_user_registration_path do %><i class=\"fi fi-ss-user-add\"></i><span>サインアップ</span><% end %></li>\r\n+      <li><%= link_to new_user_session_path do %><i class=\"fi fi-ss-user\"></i><span>ログイン</span><% end %></li>\r\n     <% end %>\r\n   </ul>\r\n </nav>\r\n \r\n+\r\n <main class=\"content\">\r\n   <%= yield %>\r\n </main>\r\n"
+                },
+                {
+                    "date": 1764727047704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,22 @@\n <div class=\"header-container\">\r\n   <%= image_tag \"rubysilver_banner.png\", alt: \"RubySilver Banner\", class: \"banner\" %>\r\n </div>\r\n \r\n+<header class=\"top-header\">\r\n+  <div class=\"logout-btn\">\r\n+    <% if user_signed_in? %>\r\n+      <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>\r\n+        <i class=\"fi fi-ss-user-logout\"></i> ログアウト\r\n+      <% end %>\r\n+    <% else %>\r\n+      <%= link_to new_user_session_path do %>\r\n+        <i class=\"fi fi-ss-user\"></i> ログイン\r\n+      <% end %>\r\n+    <% end %>\r\n+  </div>\r\n+</header>\r\n+\r\n <nav class=\"icon-nav\">\r\n   <ul>\r\n     <li>\r\n       <%= link_to quiz_random_path do %>\r\n@@ -23,23 +37,12 @@\n         <i class=\"fi fi-rs-book-alt\"></i>\r\n         <span>マイページ</span>\r\n       <% end %>\r\n     </li>\r\n-\r\n-    <% if user_signed_in? %>\r\n-      <li>\r\n-        <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>\r\n-          <i class=\"fi fi-ss-user-logout\"></i>\r\n-          <span>ログアウト</span>\r\n-        <% end %>\r\n-      </li>\r\n-    <% else %>\r\n-      <li><%= link_to new_user_registration_path do %><i class=\"fi fi-ss-user-add\"></i><span>サインアップ</span><% end %></li>\r\n-      <li><%= link_to new_user_session_path do %><i class=\"fi fi-ss-user\"></i><span>ログイン</span><% end %></li>\r\n-    <% end %>\r\n   </ul>\r\n </nav>\r\n \r\n \r\n+\r\n <main class=\"content\">\r\n   <%= yield %>\r\n </main>\r\n"
+                },
+                {
+                    "date": 1764727151455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,14 @@\n \r\n <header class=\"top-header\">\r\n   <div class=\"logout-btn\">\r\n     <% if user_signed_in? %>\r\n-      <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>\r\n+      <%= link_to destroy_user_session_path, class: \"logout-button\", data: { turbo_method: :delete } do %>\r\n         <i class=\"fi fi-ss-user-logout\"></i> ログアウト\r\n       <% end %>\r\n     <% else %>\r\n-      <%= link_to new_user_session_path do %>\r\n-        <i class=\"fi fi-ss-user\"></i> ログイン\r\n+      <%= link_to new_user_session_path, class: \"logout-button\" do %>\r\n+        <i class=\"fi fi-ss-user\"></i> ロログイン\r\n       <% end %>\r\n     <% end %>\r\n   </div>\r\n </header>\r\n"
+                },
+                {
+                    "date": 1764727284388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         <i class=\"fi fi-ss-user-logout\"></i> ログアウト\r\n       <% end %>\r\n     <% else %>\r\n       <%= link_to new_user_session_path, class: \"logout-button\" do %>\r\n-        <i class=\"fi fi-ss-user\"></i> ロログイン\r\n+        <i class=\"fi fi-ss-user\"></i> ログイン\r\n       <% end %>\r\n     <% end %>\r\n   </div>\r\n </header>\r\n"
+                },
+                {
+                    "date": 1764727779871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,19 +4,23 @@\n \r\n <header class=\"top-header\">\r\n   <div class=\"logout-btn\">\r\n     <% if user_signed_in? %>\r\n-      <%= link_to destroy_user_session_path, class: \"logout-button\", data: { turbo_method: :delete } do %>\r\n+      <%= link_to destroy_user_session_path, \r\n+          class: \"nav-button logout-button\", \r\n+          data: { turbo_method: :delete } do %>\r\n         <i class=\"fi fi-ss-user-logout\"></i> ログアウト\r\n       <% end %>\r\n     <% else %>\r\n-      <%= link_to new_user_session_path, class: \"logout-button\" do %>\r\n+      <%= link_to new_user_session_path, \r\n+          class: \"nav-button login-button\" do %>\r\n         <i class=\"fi fi-ss-user\"></i> ログイン\r\n       <% end %>\r\n     <% end %>\r\n   </div>\r\n </header>\r\n \r\n+\r\n <nav class=\"icon-nav\">\r\n   <ul>\r\n     <li>\r\n       <%= link_to quiz_random_path do %>\r\n"
+                },
+                {
+                    "date": 1764728307248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,4 @@\n-<div class=\"header-container\">\r\n-  <%= image_tag \"rubysilver_banner.png\", alt: \"RubySilver Banner\", class: \"banner\" %>\r\n-</div>\r\n-\r\n <header class=\"top-header\">\r\n   <div class=\"logout-btn\">\r\n     <% if user_signed_in? %>\r\n       <%= link_to destroy_user_session_path, \r\n@@ -17,10 +13,12 @@\n       <% end %>\r\n     <% end %>\r\n   </div>\r\n </header>\r\n+<div class=\"header-container\">\r\n+  <%= image_tag \"rubysilver_banner.png\", alt: \"RubySilver Banner\", class: \"banner\" %>\r\n+</div>\r\n \r\n-\r\n <nav class=\"icon-nav\">\r\n   <ul>\r\n     <li>\r\n       <%= link_to quiz_random_path do %>\r\n"
+                },
+                {
+                    "date": 1764728338050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n       <% end %>\r\n     <% end %>\r\n   </div>\r\n </header>\r\n+\r\n <div class=\"header-container\">\r\n   <%= image_tag \"rubysilver_banner.png\", alt: \"RubySilver Banner\", class: \"banner\" %>\r\n </div>\r\n \r\n"
+                }
+            ],
+            "date": 1764726491155,
+            "name": "Commit-0",
+            "content": "<div class=\"header-container\">\r\n  <%= image_tag \"rubysilver_banner.png\", alt: \"RubySilver Banner\", class: \"banner\" %>\r\n</div>\r\n\r\n<nav class=\"main-nav\">\r\n  <ul>\r\n    <li>\r\n      <%= link_to quiz_random_path do %>\r\n        <i class=\"fi fi-rr-edit\"></i> ランダム出題\r\n      <% end %>\r\n    </li>\r\n\r\n    <li>\r\n      <%= link_to questions_path do %>\r\n        <i class=\"fi fi-rr-edit\"></i> 問題一覧\r\n      <% end %>\r\n    </li>\r\n\r\n    <li>\r\n      <%= link_to mypage_path do %>\r\n        <i class=\"fi fi-rs-book-alt\"></i> マイページ\r\n      <% end %>\r\n    </li>\r\n\r\n    <% if user_signed_in? %>\r\n      <li class=\"auth-link\">\r\n        <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>\r\n          <i class=\"fi fi-ss-user-logout\"></i> ログアウト\r\n        <% end %>\r\n      </li>\r\n    <% else %>\r\n      <li class=\"auth-link\"><%= link_to \"サインアップ\", new_user_registration_path %></li>\r\n      <li class=\"auth-link\"><%= link_to \"ログイン\", new_user_session_path %></li>\r\n    <% end %>\r\n  </ul>\r\n</nav>\r\n\r\n<main class=\"content\">\r\n  <%= yield %>\r\n</main>\r\n"
+        }
+    ]
+}

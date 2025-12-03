@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1764299058095,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764727500163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,5 @@\n   def after_sign_out_path_for(resource_or_scope)\r\n     new_user_session_path\r\n   end\r\n \r\n-  before_action :authenticate_user!\r\n end\r\n"
+                },
+                {
+                    "date": 1764728082512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n     end\r\n   end \r\n \r\n   def after_sign_out_path_for(resource_or_scope)\r\n-    new_user_session_path\r\n+    home_index_path   # ← 遷移させたいパスを指定\r\n   end\r\n \r\n end\r\n"
                 }
             ],
             "date": 1764299058095,

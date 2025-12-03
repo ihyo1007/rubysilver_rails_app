@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/controllers/users_controller.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764727616849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764727616849,
+            "name": "Commit-0",
+            "content": "class UsersController < ApplicationController\r\n  before_action :authenticate_user!\r\n  def mypage\r\n    @total_answers = UserAnswer.where(user_id: current_user.id).count\r\n    @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n  \r\n    @accuracy =\r\n      if @total_answers > 0\r\n        ((@correct_answers.to_f / @total_answers) * 100).round(1)\r\n      else\r\n        0\r\n      end\r\n  end\r\n  \r\nend\r\n"
+        }
+    ]
+}

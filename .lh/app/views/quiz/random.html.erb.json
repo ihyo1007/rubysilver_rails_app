@@ -3,11 +3,39 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1764551100017,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764725996292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,12 @@\n       <div class=\"button-area\">\r\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n-  </div>\r\n-  <%= link_to \"ホーム\", home_index_path, class: \"btn btn-primary\" %>\r\n-</div>\n\\ No newline at end of file\n+    <div class=\"button-area\">\r\n+      <%= submit_tag \"回答する\", class: \"button\" %>\r\n+    </div>\r\n+  <% end %>\r\n+</div>\r\n+<%= link_to home_index_path do %>\r\n+  <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+<% end %>\r\n"
+                },
+                {
+                    "date": 1764726116496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <div class=\"question-show-container\">\r\n   <h1>問題</h1>\r\n-  \r\n+\r\n   <div class=\"question-area\">\r\n     <p><%= simple_format(@question.content) %></p>\r\n   </div>\r\n-  \r\n+\r\n   <div class=\"choices-area\">\r\n     <%= form_with url: quiz_answer_path, data: { turbo: false } do %>\r\n       <% @question.choices.each do |choice| %>\r\n         <%= hidden_field_tag :question_id, @question.id %>\r\n@@ -15,16 +15,15 @@\n             <%= choice.content %>\r\n           </label>\r\n         </div>\r\n       <% end %>\r\n+\r\n       <div class=\"button-area\">\r\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n-    <div class=\"button-area\">\r\n-      <%= submit_tag \"回答する\", class: \"button\" %>\r\n-    </div>\r\n+  </div>\r\n+\r\n+  <%= link_to home_index_path do %>\r\n+    <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n   <% end %>\r\n </div>\r\n-<%= link_to home_index_path do %>\r\n-  <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-<% end %>\r\n"
+                },
+                {
+                    "date": 1764726163143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <div class=\"question-show-container\">\r\n   <h1>問題</h1>\r\n-\r\n+  \r\n   <div class=\"question-area\">\r\n     <p><%= simple_format(@question.content) %></p>\r\n   </div>\r\n-\r\n+  \r\n   <div class=\"choices-area\">\r\n     <%= form_with url: quiz_answer_path, data: { turbo: false } do %>\r\n       <% @question.choices.each do |choice| %>\r\n         <%= hidden_field_tag :question_id, @question.id %>\r\n@@ -15,15 +15,17 @@\n             <%= choice.content %>\r\n           </label>\r\n         </div>\r\n       <% end %>\r\n-\r\n       <div class=\"button-area\">\r\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n-  </div>\r\n-\r\n-  <%= link_to home_index_path do %>\r\n-    <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+    <div class=\"button-area\">\r\n+      <%= submit_tag \"回答する\", class: \"button\" %>\r\n+    </div>\r\n   <% end %>\r\n </div>\r\n+<%= link_to home_index_path do %>\r\n+  <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+<% end %>\r\n+</div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764726205425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n     <div class=\"button-area\">\r\n       <%= submit_tag \"回答する\", class: \"button\" %>\r\n     </div>\r\n   <% end %>\r\n-</div>\r\n-<%= link_to home_index_path do %>\r\n+  <%= link_to home_index_path do %>\r\n   <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n <% end %>\r\n\\ No newline at end of file\n-</div>\n+</div>\r\n"
+                },
+                {
+                    "date": 1764726212338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n       <%= submit_tag \"回答する\", class: \"button\" %>\r\n     </div>\r\n   <% end %>\r\n   <%= link_to home_index_path do %>\r\n-  <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-<% end %>\r\n-</div>\n\\ No newline at end of file\n+    <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+  <% end %>\r\n+</div>\r\n"
+                },
+                {
+                    "date": 1764726236202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n     <% end %>\r\n     <div class=\"button-area\">\r\n       <%= submit_tag \"回答する\", class: \"button\" %>\r\n     </div>\r\n-  <% end %>\r\n   <%= link_to home_index_path do %>\r\n     <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n   <% end %>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764726313262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,8 @@\n       <div class=\"button-area\">\r\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n-    <div class=\"button-area\">\r\n-      <%= submit_tag \"回答する\", class: \"button\" %>\r\n-    </div>\r\n-  <%= link_to home_index_path do %>\r\n-    <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-  <% end %>\r\n+    <%= link_to home_index_path do %>\r\n+      <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+    <% end %>\r\n </div>\r\n"
                 }
             ],
             "date": 1764551100017,

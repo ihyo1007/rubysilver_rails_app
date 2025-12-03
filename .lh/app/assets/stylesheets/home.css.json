@@ -1,0 +1,162 @@
+{
+    "sourceFile": "app/assets/stylesheets/home.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 36,
+            "patches": [
+                {
+                    "date": 1764726519064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764726547346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n   list-style: none;\r\n   margin-bottom: 10px;\r\n }\r\n .banner {\r\n-  width: 100%;\r\n   max-width: 900px;\r\n   display: block;\r\n   margin: 20px auto;\r\n }\r\n"
+                },
+                {
+                    "date": 1764726578739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,10 @@\n li {\r\n   list-style: none;\r\n   margin-bottom: 10px;\r\n }\r\n-.banner {\r\n-  max-width: 900px;\r\n-  display: block;\r\n-  margin: 20px auto;\r\n-}\r\n \r\n+\r\n .main-nav {\r\n   background: #f8f8f8;\r\n   border-bottom: 1px solid #ddd;\r\n   padding: 10px 0;\r\n"
+                },
+                {
+                    "date": 1764726604619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n .banner {\r\n   display: block;\r\n   width: 40%;\r\n   margin-bottom: 20px;\r\n+  max-width: 900px;\r\n }\r\n \r\n li {\r\n   list-style: none;\r\n"
+                },
+                {
+                    "date": 1764726634250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n   display: block;\r\n   width: 40%;\r\n   margin-bottom: 20px;\r\n   max-width: 900px;\r\n+  margin: 20px auto;\r\n }\r\n \r\n li {\r\n   list-style: none;\r\n"
+                },
+                {
+                    "date": 1764726761982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n   list-style: none;\r\n   margin-bottom: 10px;\r\n }\r\n \r\n-\r\n .main-nav {\r\n   background: #f8f8f8;\r\n   border-bottom: 1px solid #ddd;\r\n   padding: 10px 0;\r\n@@ -50,4 +49,35 @@\n   max-width: 900px;\r\n   margin: 30px auto;\r\n   padding: 20px;\r\n }\r\n+.icon-nav ul {\r\n+  list-style: none;\r\n+  padding: 0;\r\n+  margin: 20px 0;\r\n+  display: flex;\r\n+  justify-content: center;\r\n+  gap: 30px;\r\n+}\r\n+\r\n+.icon-nav li a {\r\n+  display: flex;\r\n+  flex-direction: column; /* ← これでアイコンが上、文字が下 */\r\n+  align-items: center;\r\n+  text-decoration: none;\r\n+  color: #333;\r\n+  font-size: 14px;\r\n+}\r\n+\r\n+.icon-nav li a i {\r\n+  font-size: 28px; /* アイコンを大きく */\r\n+  margin-bottom: 5px;\r\n+  color: #444;\r\n+}\r\n+\r\n+.icon-nav li a:hover i {\r\n+  color: #d9534f; /* ホバー時のアイコン色 */\r\n+}\r\n+\r\n+.icon-nav li a:hover span {\r\n+  color: #d9534f; /* ホバー時の文字色 */\r\n+}\r\n"
+                },
+                {
+                    "date": 1764727075576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,32 @@\n   max-width: 900px;\r\n   margin: 30px auto;\r\n   padding: 20px;\r\n }\r\n+/* 🔹 右上ログアウトボタン */\r\n+.top-header {\r\n+  width: 100%;\r\n+  position: relative;\r\n+  height: 50px;\r\n+}\r\n+\r\n+.logout-btn {\r\n+  position: absolute;\r\n+  right: 20px;\r\n+  top: 10px;\r\n+}\r\n+\r\n+.logout-btn a {\r\n+  text-decoration: none;\r\n+  color: #333;\r\n+  font-weight: bold;\r\n+}\r\n+\r\n+.logout-btn a:hover {\r\n+  color: #d9534f;\r\n+}\r\n+\r\n+/* 🔹 中央のアイコンメニュー */\r\n .icon-nav ul {\r\n   list-style: none;\r\n   padding: 0;\r\n   margin: 20px 0;\r\n@@ -60,24 +84,21 @@\n }\r\n \r\n .icon-nav li a {\r\n   display: flex;\r\n-  flex-direction: column; /* ← これでアイコンが上、文字が下 */\r\n+  flex-direction: column; /* アイコン → 文字 */\r\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n   font-size: 14px;\r\n }\r\n \r\n .icon-nav li a i {\r\n-  font-size: 28px; /* アイコンを大きく */\r\n+  font-size: 28px;\r\n   margin-bottom: 5px;\r\n   color: #444;\r\n }\r\n \r\n-.icon-nav li a:hover i {\r\n-  color: #d9534f; /* ホバー時のアイコン色 */\r\n-}\r\n-\r\n+.icon-nav li a:hover i,\r\n .icon-nav li a:hover span {\r\n-  color: #d9534f; /* ホバー時の文字色 */\r\n+  color: #d9534f;\r\n }\r\n"
+                },
+                {
+                    "date": 1764727169090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,4 +101,51 @@\n .icon-nav li a:hover i,\r\n .icon-nav li a:hover span {\r\n   color: #d9534f;\r\n }\r\n+/* 右上配置 */\r\n+.top-header {\r\n+  width: 100%;\r\n+  position: relative;\r\n+  height: 60px;\r\n+}\r\n+\r\n+/* ボタンデザイン */\r\n+.logout-button {\r\n+  display: flex;\r\n+  align-items: center;\r\n+  gap: 6px;\r\n+  \r\n+  background: #ff4d4d; /* 赤系 */\r\n+  color: white;\r\n+  padding: 8px 14px;\r\n+  border-radius: 6px;\r\n+\r\n+  text-decoration: none;\r\n+  font-weight: bold;\r\n+  font-size: 14px;\r\n+\r\n+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n+  transition: background 0.2s, transform 0.1s;\r\n+}\r\n+\r\n+/* アイコンのサイズ調整 */\r\n+.logout-button i {\r\n+  font-size: 18px;\r\n+  line-height: 1;\r\n+}\r\n+\r\n+/* ホバー時 / 押した時 */\r\n+.logout-button:hover {\r\n+  background: #e64545;\r\n+}\r\n+\r\n+.logout-button:active {\r\n+  transform: scale(0.95);\r\n+}\r\n+\r\n+/* 右上固定 */\r\n+.logout-btn {\r\n+  position: absolute;\r\n+  right: 20px;\r\n+  top: 12px;\r\n+}\r\n"
+                },
+                {
+                    "date": 1764727737860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,4 +148,54 @@\n   position: absolute;\r\n   right: 20px;\r\n   top: 12px;\r\n }\r\n+/* 共通ボタン */\r\n+.nav-button {\r\n+  display: flex;\r\n+  align-items: center;\r\n+  gap: 6px;\r\n+\r\n+  padding: 8px 14px;\r\n+  border-radius: 6px;\r\n+\r\n+  text-decoration: none;\r\n+  font-weight: bold;\r\n+  font-size: 14px;\r\n+\r\n+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n+  transition: background 0.2s, transform 0.1s;\r\n+  color: white;\r\n+}\r\n+\r\n+/* ログイン時（緑） */\r\n+.login-button {\r\n+  background: #28a745;\r\n+}\r\n+.login-button:hover {\r\n+  background: #218838;\r\n+}\r\n+\r\n+/* ログアウト時（赤） */\r\n+.logout-button {\r\n+  background: #ff4d4d;\r\n+}\r\n+.logout-button:hover {\r\n+  background: #e64545;\r\n+}\r\n+\r\n+.nav-button:active {\r\n+  transform: scale(0.95);\r\n+}\r\n+\r\n+/* 右上位置 */\r\n+.logout-btn {\r\n+  position: absolute;\r\n+  right: 20px;\r\n+  top: 12px;\r\n+}\r\n+\r\n+.top-header {\r\n+  width: 100%;\r\n+  position: relative;\r\n+  height: 60px;\r\n+}\r\n"
+                },
+                {
+                    "date": 1764727847239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,12 +134,10 @@\n   line-height: 1;\r\n }\r\n \r\n /* ホバー時 / 押した時 */\r\n-.logout-button:hover {\r\n-  background: #e64545;\r\n-}\r\n \r\n+\r\n .logout-button:active {\r\n   transform: scale(0.95);\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764727867863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,10 +134,12 @@\n   line-height: 1;\r\n }\r\n \r\n /* ホバー時 / 押した時 */\r\n+.logout-button:hover {\r\n+  background: #e64545;\r\n+}\r\n \r\n-\r\n .logout-button:active {\r\n   transform: scale(0.95);\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764727984697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,31 +49,8 @@\n   max-width: 900px;\r\n   margin: 30px auto;\r\n   padding: 20px;\r\n }\r\n-/* 🔹 右上ログアウトボタン */\r\n-.top-header {\r\n-  width: 100%;\r\n-  position: relative;\r\n-  height: 50px;\r\n-}\r\n-\r\n-.logout-btn {\r\n-  position: absolute;\r\n-  right: 20px;\r\n-  top: 10px;\r\n-}\r\n-\r\n-.logout-btn a {\r\n-  text-decoration: none;\r\n-  color: #333;\r\n-  font-weight: bold;\r\n-}\r\n-\r\n-.logout-btn a:hover {\r\n-  color: #d9534f;\r\n-}\r\n-\r\n /* 🔹 中央のアイコンメニュー */\r\n .icon-nav ul {\r\n   list-style: none;\r\n   padding: 0;\r\n"
+                },
+                {
+                    "date": 1764728207354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,31 @@\n   max-width: 900px;\r\n   margin: 30px auto;\r\n   padding: 20px;\r\n }\r\n+/* 🔹 右上ログアウトボタン */\r\n+.top-header {\r\n+  width: 100%;\r\n+  position: relative;\r\n+  height: 50px;\r\n+}\r\n+\r\n+.logout-btn {\r\n+  position: absolute;\r\n+  right: 20px;\r\n+  top: 10px;\r\n+}\r\n+\r\n+.logout-btn a {\r\n+  text-decoration: none;\r\n+  color: #333;\r\n+  font-weight: bold;\r\n+}\r\n+\r\n+.logout-btn a:hover {\r\n+  color: #d9534f;\r\n+}\r\n+\r\n /* 🔹 中央のアイコンメニュー */\r\n .icon-nav ul {\r\n   list-style: none;\r\n   padding: 0;\r\n"
+                },
+                {
+                    "date": 1764728224412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,31 +49,9 @@\n   max-width: 900px;\r\n   margin: 30px auto;\r\n   padding: 20px;\r\n }\r\n-/* 🔹 右上ログアウトボタン */\r\n-.top-header {\r\n-  width: 100%;\r\n-  position: relative;\r\n-  height: 50px;\r\n-}\r\n \r\n-.logout-btn {\r\n-  position: absolute;\r\n-  right: 20px;\r\n-  top: 10px;\r\n-}\r\n-\r\n-.logout-btn a {\r\n-  text-decoration: none;\r\n-  color: #333;\r\n-  font-weight: bold;\r\n-}\r\n-\r\n-.logout-btn a:hover {\r\n-  color: #d9534f;\r\n-}\r\n-\r\n /* 🔹 中央のアイコンメニュー */\r\n .icon-nav ul {\r\n   list-style: none;\r\n   padding: 0;\r\n"
+                },
+                {
+                    "date": 1764728528661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n   width: 40%;\r\n   margin-bottom: 20px;\r\n   max-width: 900px;\r\n   margin: 20px auto;\r\n+  margin-bottom: auto;\r\n }\r\n \r\n li {\r\n   list-style: none;\r\n@@ -120,14 +121,8 @@\n .logout-button:active {\r\n   transform: scale(0.95);\r\n }\r\n \r\n-/* 右上固定 */\r\n-.logout-btn {\r\n-  position: absolute;\r\n-  right: 20px;\r\n-  top: 12px;\r\n-}\r\n /* 共通ボタン */\r\n .nav-button {\r\n   display: flex;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764728543388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   width: 40%;\r\n   margin-bottom: 20px;\r\n   max-width: 900px;\r\n   margin: 20px auto;\r\n-  margin-bottom: auto;\r\n+  margin-bottom: 50px;\r\n }\r\n \r\n li {\r\n   list-style: none;\r\n"
+                },
+                {
+                    "date": 1764728589868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n .banner {\r\n   display: block;\r\n   width: 40%;\r\n-  margin-bottom: 20px;\r\n   max-width: 900px;\r\n   margin: 20px auto;\r\n   margin-bottom: 50px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764728596693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .banner {\r\n   display: block;\r\n-  width: 40%;\r\n+  width: 80%;\r\n   max-width: 900px;\r\n   margin: 20px auto;\r\n   margin-bottom: 50px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764728616772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .banner {\r\n   display: block;\r\n-  width: 80%;\r\n+  width: 60%;\r\n   max-width: 900px;\r\n   margin: 20px auto;\r\n   margin-bottom: 50px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764728645183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n }\r\n \r\n /* アイコンのサイズ調整 */\r\n .logout-button i {\r\n-  font-size: 18px;\r\n+  font-size: 80px;\r\n   line-height: 1;\r\n }\r\n \r\n /* ホバー時 / 押した時 */\r\n"
+                },
+                {
+                    "date": 1764728656414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n }\r\n \r\n /* アイコンのサイズ調整 */\r\n .logout-button i {\r\n-  font-size: 80px;\r\n+  font-size: 18px;\r\n   line-height: 1;\r\n }\r\n \r\n /* ホバー時 / 押した時 */\r\n"
+                },
+                {
+                    "date": 1764728663014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,9 +108,9 @@\n \r\n /* アイコンのサイズ調整 */\r\n .logout-button i {\r\n   font-size: 18px;\r\n-  line-height: 1;\r\n+  line-height: 23;\r\n }\r\n \r\n /* ホバー時 / 押した時 */\r\n .logout-button:hover {\r\n"
+                },
+                {
+                    "date": 1764728678311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,13 +106,10 @@\n   transition: background 0.2s, transform 0.1s;\r\n }\r\n \r\n /* アイコンのサイズ調整 */\r\n-.logout-button i {\r\n-  font-size: 18px;\r\n-  line-height: 23;\r\n-}\r\n \r\n+\r\n /* ホバー時 / 押した時 */\r\n .logout-button:hover {\r\n   background: #e64545;\r\n }\r\n"
+                },
+                {
+                    "date": 1764728690246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,10 +106,13 @@\n   transition: background 0.2s, transform 0.1s;\r\n }\r\n \r\n /* アイコンのサイズ調整 */\r\n+.logout-button i {\r\n+  font-size: 18px;\r\n+  line-height: 1;\r\n+}\r\n \r\n-\r\n /* ホバー時 / 押した時 */\r\n .logout-button:hover {\r\n   background: #e64545;\r\n }\r\n"
+                },
+                {
+                    "date": 1764728729564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,23 +105,8 @@\n   box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n   transition: background 0.2s, transform 0.1s;\r\n }\r\n \r\n-/* アイコンのサイズ調整 */\r\n-.logout-button i {\r\n-  font-size: 18px;\r\n-  line-height: 1;\r\n-}\r\n-\r\n-/* ホバー時 / 押した時 */\r\n-.logout-button:hover {\r\n-  background: #e64545;\r\n-}\r\n-\r\n-.logout-button:active {\r\n-  transform: scale(0.95);\r\n-}\r\n-\r\n /* 共通ボタン */\r\n .nav-button {\r\n   display: flex;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764728799984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,12 +75,9 @@\n   margin-bottom: 5px;\r\n   color: #444;\r\n }\r\n \r\n-.icon-nav li a:hover i,\r\n-.icon-nav li a:hover span {\r\n-  color: #d9534f;\r\n-}\r\n+\r\n /* 右上配置 */\r\n .top-header {\r\n   width: 100%;\r\n   position: relative;\r\n"
+                },
+                {
+                    "date": 1764728810216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,12 @@\n   margin-bottom: 5px;\r\n   color: #444;\r\n }\r\n \r\n-\r\n+.icon-nav li a:hover i,\r\n+.icon-nav li a:hover span {\r\n+  color: #d9534f;\r\n+}\r\n /* 右上配置 */\r\n .top-header {\r\n   width: 100%;\r\n   position: relative;\r\n"
+                },
+                {
+                    "date": 1764728861633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n   font-size: 14px;\r\n }\r\n \r\n .icon-nav li a i {\r\n-  font-size: 28px;\r\n+  font-size: 280px;\r\n   margin-bottom: 5px;\r\n   color: #444;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764728867980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n   font-size: 14px;\r\n }\r\n \r\n .icon-nav li a i {\r\n-  font-size: 280px;\r\n+  font-size: 28px;\r\n   margin-bottom: 5px;\r\n   color: #444;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764728877435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n   font-size: 14px;\r\n }\r\n \r\n .icon-nav li a i {\r\n-  font-size: 28px;\r\n+  font-size: 40px;\r\n   margin-bottom: 5px;\r\n   color: #444;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764728927242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n   flex-direction: column; /* アイコン → 文字 */\r\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n-  font-size: 14px;\r\n+  font-size: 28px;\r\n }\r\n \r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n"
+                },
+                {
+                    "date": 1764728942104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n   flex-direction: column; /* アイコン → 文字 */\r\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n-  font-size: 28px;\r\n+  font-size: 20px;\r\n }\r\n \r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n"
+                },
+                {
+                    "date": 1764728998460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n /* 🔹 中央のアイコンメニュー */\r\n .icon-nav ul {\r\n   list-style: none;\r\n   padding: 0;\r\n-  margin: 20px 0;\r\n+  margin: 20px 20px;\r\n   display: flex;\r\n   justify-content: center;\r\n   gap: 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764729011825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n /* 🔹 中央のアイコンメニュー */\r\n .icon-nav ul {\r\n   list-style: none;\r\n   padding: 0;\r\n-  margin: 20px 20px;\r\n+  margin: 20px auto;\r\n   display: flex;\r\n   justify-content: center;\r\n   gap: 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764729049132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n /* 🔹 中央のアイコンメニュー */\r\n .icon-nav ul {\r\n   list-style: none;\r\n   padding: 0;\r\n-  margin: 20px auto;\r\n+  margin: 20px;\r\n   display: flex;\r\n   justify-content: center;\r\n   gap: 30px;\r\n }\r\n@@ -67,8 +67,9 @@\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n   font-size: 20px;\r\n+  margin: auto;\r\n }\r\n \r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n"
+                },
+                {
+                    "date": 1764729059891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n   font-size: 20px;\r\n-  margin: auto;\r\n+  margin: 10px;\r\n }\r\n \r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n"
+                },
+                {
+                    "date": 1764729087061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n   font-size: 20px;\r\n-  margin: 10px;\r\n+  margin-right: 20px;\r\n }\r\n \r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n"
+                }
+            ],
+            "date": 1764726519064,
+            "name": "Commit-0",
+            "content": ".banner {\r\n  display: block;\r\n  width: 40%;\r\n  margin-bottom: 20px;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n  margin-bottom: 10px;\r\n}\r\n.banner {\r\n  width: 100%;\r\n  max-width: 900px;\r\n  display: block;\r\n  margin: 20px auto;\r\n}\r\n\r\n.main-nav {\r\n  background: #f8f8f8;\r\n  border-bottom: 1px solid #ddd;\r\n  padding: 10px 0;\r\n}\r\n\r\n.main-nav ul {\r\n  list-style: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  display: flex;\r\n  justify-content: center;\r\n  gap: 25px;\r\n}\r\n\r\n.main-nav li a {\r\n  text-decoration: none;\r\n  font-size: 18px;\r\n  color: #333;\r\n}\r\n\r\n.main-nav li a:hover {\r\n  color: #d9534f;\r\n}\r\n\r\n.auth-link a {\r\n  font-weight: bold;\r\n  color: #007bff;\r\n}\r\n\r\n.auth-link a:hover {\r\n  color: #0056b3;\r\n}\r\n\r\n.content {\r\n  max-width: 900px;\r\n  margin: 30px auto;\r\n  padding: 20px;\r\n}\r\n"
+        }
+    ]
+}

@@ -1,8 +1,7 @@
+<h1>問題一覧</h1>
 <%= link_to home_index_path do %>
   <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
 <% end %>
-
-<h1>問題一覧</h1>
 
 <%= form_with url: questions_path, method: :get, local: true do |f| %>
   <%= f.label :category, "カテゴリ検索" %>

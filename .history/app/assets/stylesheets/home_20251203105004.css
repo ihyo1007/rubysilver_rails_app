@@ -1,0 +1,52 @@
+.banner {
+  display: block;
+  width: 40%;
+  margin-bottom: 20px;
+  max-width: 900px;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+
+.main-nav {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.main-nav li a:hover {
+  color: #d9534f;
+}
+
+.auth-link a {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.auth-link a:hover {
+  color: #0056b3;
+}
+
+.content {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}

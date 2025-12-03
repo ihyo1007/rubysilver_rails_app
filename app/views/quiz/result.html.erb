@@ -18,5 +18,14 @@
 <h3>解説</h3>
 <p><%= @question.explanation.presence || "解説はありません" %></p>
 
-<%= link_to "次の問題", quiz_random_path %>
-<%= link_to "ホーム", home_index_path, class: "btn btn-primary" %>
+<li>
+<%= link_to quiz_random_path do %>
+  次の問題 <i class="fi fi-ss-right"></i>
+<% end %>
+</li>
+
+<li>
+<%= link_to home_index_path do %>
+  <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+<% end %>
+<li>

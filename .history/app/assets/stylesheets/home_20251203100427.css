@@ -1,0 +1,10 @@
+.banner {
+  display: block;
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}

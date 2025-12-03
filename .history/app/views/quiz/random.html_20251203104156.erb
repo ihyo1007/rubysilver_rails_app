@@ -1,10 +1,10 @@
 <div class="question-show-container">
   <h1>問題</h1>
-  
+
   <div class="question-area">
     <p><%= simple_format(@question.content) %></p>
   </div>
-  
+
   <div class="choices-area">
     <%= form_with url: quiz_answer_path, data: { turbo: false } do %>
       <% @question.choices.each do |choice| %>
@@ -16,11 +16,14 @@
           </label>
         </div>
       <% end %>
+
       <div class="button-area">
         <%= submit_tag "回答する", class: "button" %>
       </div>
     <% end %>
-    <%= link_to home_index_path do %>
-      <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
-    <% end %>
+  </div>
+
+  <%= link_to home_index_path do %>
+    <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+  <% end %>
 </div>

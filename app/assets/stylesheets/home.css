@@ -1,0 +1,159 @@
+.banner {
+  display: block;
+  width: 60%;
+  max-width: 900px;
+  margin: 20px auto;
+  margin-bottom: 50px;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.main-nav {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.main-nav li a:hover {
+  color: #d9534f;
+}
+
+.auth-link a {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.auth-link a:hover {
+  color: #0056b3;
+}
+
+.content {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* 🔹 中央のアイコンメニュー */
+.icon-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon-nav li a {
+  display: flex;
+  flex-direction: column; /* アイコン → 文字 */
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.icon-nav li a i {
+  font-size: 40px;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.icon-nav li a:hover i,
+.icon-nav li a:hover span {
+  color: #d9534f;
+}
+/* 右上配置 */
+.top-header {
+  width: 100%;
+  position: relative;
+  height: 60px;
+}
+
+/* ボタンデザイン */
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
+  background: #ff4d4d; /* 赤系 */
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s, transform 0.1s;
+}
+
+/* 共通ボタン */
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s, transform 0.1s;
+  color: white;
+}
+
+/* ログイン時（緑） */
+.login-button {
+  background: #28a745;
+}
+.login-button:hover {
+  background: #218838;
+}
+
+/* ログアウト時（赤） */
+.logout-button {
+  background: #ff4d4d;
+}
+.logout-button:hover {
+  background: #e64545;
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+/* 右上位置 */
+.logout-btn {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+
+.top-header {
+  width: 100%;
+  position: relative;
+  height: 60px;
+}

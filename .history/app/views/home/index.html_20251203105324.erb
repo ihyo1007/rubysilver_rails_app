@@ -1,20 +1,3 @@
-<header class="top-header">
-  <div class="logout-btn">
-    <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, 
-          class: "nav-button logout-button", 
-          data: { turbo_method: :delete } do %>
-        <i class="fi fi-ss-user-logout"></i> ログアウト
-      <% end %>
-    <% else %>
-      <%= link_to new_user_session_path, 
-          class: "nav-button login-button" do %>
-        <i class="fi fi-ss-user"></i> ログイン
-      <% end %>
-    <% end %>
-  </div>
-</header>
-
 <div class="header-container">
   <%= image_tag "rubysilver_banner.png", alt: "RubySilver Banner", class: "banner" %>
 </div>
@@ -41,9 +24,20 @@
         <span>マイページ</span>
       <% end %>
     </li>
+
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+          <i class="fi fi-ss-user-logout"></i>
+          <span>ログアウト</span>
+        <% end %>
+      </li>
+    <% else %>
+      <li><%= link_to new_user_registration_path do %><i class="fi fi-ss-user-add"></i><span>サインアップ</span><% end %></li>
+      <li><%= link_to new_user_session_path do %><i class="fi fi-ss-user"></i><span>ログイン</span><% end %></li>
+    <% end %>
   </ul>
 </nav>
-
 
 
 <main class="content">

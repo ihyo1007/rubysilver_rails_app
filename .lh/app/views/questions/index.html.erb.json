@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/views/questions/index.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1764729339740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764729419930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n+<h1>問題一覧</h1>\r\n <%= link_to home_index_path do %>\r\n   <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n <% end %>\r\n \r\n-<h1>問題一覧</h1>\r\n-\r\n <%= form_with url: questions_path, method: :get, local: true do |f| %>\r\n   <%= f.label :category, \"カテゴリ検索\" %>\r\n \r\n   <%= f.select :category,\r\n"
+                },
+                {
+                    "date": 1764729430714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n-<h1>問題一覧</h1>\r\n <%= link_to home_index_path do %>\r\n   <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n <% end %>\r\n \r\n+<h1>問題一覧</h1>\r\n+\r\n <%= form_with url: questions_path, method: :get, local: true do |f| %>\r\n   <%= f.label :category, \"カテゴリ検索\" %>\r\n \r\n   <%= f.select :category,\r\n"
+                }
+            ],
+            "date": 1764729339740,
+            "name": "Commit-0",
+            "content": "<%= link_to home_index_path do %>\r\n  <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n<% end %>\r\n\r\n<h1>問題一覧</h1>\r\n\r\n<%= form_with url: questions_path, method: :get, local: true do |f| %>\r\n  <%= f.label :category, \"カテゴリ検索\" %>\r\n\r\n  <%= f.select :category,\r\n               options_for_select(@categories, selected: params[:category]),\r\n               include_blank: \"すべて\" %>\r\n\r\n  <%= f.submit \"検索\" %>\r\n<% end %>\r\n\r\n<table>\r\n  <thead>\r\n    <tr>\r\n      <th><i class=\"fi fi-rr-edit\"></i></th>\r\n      <th>問題文</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <% @questions.each do |q| %>\r\n      <div class=\"question-item\">\r\n        <%= link_to question_path(q), class: \"question-link\" do %>\r\n          <tr>\r\n            <td><%= q.id %></td>\r\n            <td><%= link_to truncate(q.content, length: 50, omission: \"…\"), question_path(q) %></td>\r\n          </tr>\r\n        <% end %>\r\n      </div>\r\n    <% end %>\r\n  </tbody>\r\n</table>\r\n"
+        }
+    ]
+}

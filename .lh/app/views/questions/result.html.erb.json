@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1764653229119,
@@ -48,6 +48,18 @@
                 {
                     "date": 1764655284203,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n </ul>\r\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n-<%= link_to '問題一覧へ戻る', questions_path, class: 'next-question-link' %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n+<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'next-question-link' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764725320592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'next-question-link' if @next_question %>\n\\ No newline at end of file\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764725837506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,15 @@\n </ul>\r\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n-<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n+<li>\r\n+<%= link_to questions_path, class: 'btn btn-primary' do %>\r\n+    問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n+<% end %>\r\n+</li>\r\n+<li>\r\n+<%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n+    次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+<% end %>\r\n+</li>\r\n+>>>>>>> 7cba4157820867a655b3841cf3e16284f8e539b7\r\n"
+                },
+                {
+                    "date": 1764725861567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,5 @@\n <li>\r\n <%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n     次の問題 <i class=\"fi fi-ss-right\"></i>\r\n <% end %>\r\n-</li>\r\n->>>>>>> 7cba4157820867a655b3841cf3e16284f8e539b7\r\n+</li>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1764653229119,

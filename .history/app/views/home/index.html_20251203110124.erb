@@ -1,23 +1,20 @@
+<div class="header-container">
+  <%= image_tag "rubysilver_banner.png", alt: "RubySilver Banner", class: "banner" %>
+</div>
+
 <header class="top-header">
   <div class="logout-btn">
     <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, 
-          class: "nav-button logout-button", 
-          data: { turbo_method: :delete } do %>
+      <%= link_to destroy_user_session_path, class: "logout-button", data: { turbo_method: :delete } do %>
         <i class="fi fi-ss-user-logout"></i> ログアウト
       <% end %>
     <% else %>
-      <%= link_to new_user_session_path, 
-          class: "nav-button login-button" do %>
+      <%= link_to new_user_session_path, class: "logout-button" do %>
         <i class="fi fi-ss-user"></i> ログイン
       <% end %>
     <% end %>
   </div>
 </header>
-
-<div class="header-container">
-  <%= image_tag "rubysilver_banner.png", alt: "RubySilver Banner", class: "banner" %>
-</div>
 
 <nav class="icon-nav">
   <ul>

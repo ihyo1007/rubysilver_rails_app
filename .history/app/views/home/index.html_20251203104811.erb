@@ -1,0 +1,40 @@
+<div class="header-container">
+  <%= image_tag "rubysilver_banner.png", alt: "RubySilver Banner", class: "banner" %>
+</div>
+
+<nav class="main-nav">
+  <ul>
+    <li>
+      <%= link_to quiz_random_path do %>
+        <i class="fi fi-rr-edit"></i> ランダム出題
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to questions_path do %>
+        <i class="fi fi-rr-edit"></i> 問題一覧
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to mypage_path do %>
+        <i class="fi fi-rs-book-alt"></i> マイページ
+      <% end %>
+    </li>
+
+    <% if user_signed_in? %>
+      <li class="auth-link">
+        <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+          <i class="fi fi-ss-user-logout"></i> ログアウト
+        <% end %>
+      </li>
+    <% else %>
+      <li class="auth-link"><%= link_to "サインアップ", new_user_registration_path %></li>
+      <li class="auth-link"><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+  </ul>
+</nav>
+
+<main class="content">
+  <%= yield %>
+</main>

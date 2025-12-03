@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   def mypage
     @total_answers = UserAnswer.where(user_id: current_user.id).count
     @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count

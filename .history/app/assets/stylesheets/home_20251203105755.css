@@ -1,0 +1,104 @@
+.banner {
+  display: block;
+  width: 40%;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.main-nav {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.main-nav li a:hover {
+  color: #d9534f;
+}
+
+.auth-link a {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.auth-link a:hover {
+  color: #0056b3;
+}
+
+.content {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+/* 🔹 右上ログアウトボタン */
+.top-header {
+  width: 100%;
+  position: relative;
+  height: 50px;
+}
+
+.logout-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.logout-btn a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.logout-btn a:hover {
+  color: #d9534f;
+}
+
+/* 🔹 中央のアイコンメニュー */
+.icon-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon-nav li a {
+  display: flex;
+  flex-direction: column; /* アイコン → 文字 */
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.icon-nav li a i {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.icon-nav li a:hover i,
+.icon-nav li a:hover span {
+  color: #d9534f;
+}
