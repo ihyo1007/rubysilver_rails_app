@@ -9,15 +9,20 @@
 <td><i class="fi fi-rs-circle"></i> 正解した問題数</td>
 <td class="number"><%= @correct_answers %></td>
 </tr>
-
-<div class="accuracy-wrap">
-<div class="accuracy-label">
 <tr>
 <td><i class="fi fi-rs-medal"></i> 正答率</td>
 <td class="number"><%= @accuracy %>%</td>
 </tr>
-</div>
 </table>
+
+<!-- 判定メッセージ -->
+<div class="accuracy-message">
+  <% if @accuracy >= 75 %>
+    <i class="fi fi-rs-smile-beam"></i> その調子！
+  <% else %>
+    <i class="fi fi-rs-sad-tear"></i> もうひといき!
+  <% end %>
+</div>
 
 <!-- 正答率グラフ -->
 <div class="accuracy-graph" style="--pct: <%= @accuracy %>;">
