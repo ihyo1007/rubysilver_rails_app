@@ -13,5 +13,5 @@
 <h3>解説</h3>
 <p><%= simple_format(@question.explanation) %></p>
 
-<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>
-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'next-question-link' if @next_question %>
+<%= link_to '問題一覧へ戻る', questions_path, class: 'next-question-link' %>
+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>

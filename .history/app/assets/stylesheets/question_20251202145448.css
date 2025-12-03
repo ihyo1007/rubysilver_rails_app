@@ -60,7 +60,7 @@ th, td {
 .previous-question-link, .next-question-link {
     display: inline-block;
     margin: 10px 15px 0 0;
-    padding: 8px 12px;
+   
 }
 /* フォームのスタイル調整 */
 #choices {

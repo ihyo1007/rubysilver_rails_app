@@ -14,8 +14,6 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み
     @user_answer = UserAnswer.new  # form_with 用
-    @next_question = Question.where("id > ?", @question.id).order(:id).first
-    @previous_question = Question.where("id < ?", @question.id).order(id: :desc).first
   end
 
   def answer
@@ -25,7 +23,6 @@ class QuestionsController < ApplicationController
     correct_ids = @question.choices.where(is_correct: true).pluck(:id)
     @is_correct = (selected_ids.sort == correct_ids.sort)
     @next_question = Question.where("id > ?", @question.id).order(:id).first
-    @previous_question = Question.where("id < ?", @question.id).order(id: :desc).first
 
     render :result
   end

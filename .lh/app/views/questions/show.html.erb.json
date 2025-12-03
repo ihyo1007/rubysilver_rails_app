@@ -1,0 +1,34 @@
+{
+    "sourceFile": "app/views/questions/show.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1764550817838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764654372194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n   </div>\r\n+  <%= link_to \"次の問題へ進む\", question_path(@next_question), class: \"next-question-link\" if @next_question %>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764654506231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,7 @@\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n   </div>\r\n+  <%= link_to \"前の問題へ戻る\", question_path(@previous_question),\r\n   <%= link_to \"次の問題へ進む\", question_path(@next_question), class: \"next-question-link\" if @next_question %>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764654560958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,8 @@\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n   </div>\r\n-  <%= link_to \"前の問題へ戻る\", question_path(@previous_question),\r\n+  <%= link_to \"問題一覧へ戻る\", questions_path, class: \"questions-index-link\" %>\r\n+  <%= link_to \"前の問題へ戻る\", question_path(@previous_question), class: \"previous-question-link\" if @previous_question %>\r\n   <%= link_to \"次の問題へ進む\", question_path(@next_question), class: \"next-question-link\" if @next_question %>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764654582112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,7 @@\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n   </div>\r\n-  <%= link_to \"問題一覧へ戻る\", questions_path, class: \"questions-index-link\" %>\r\n   <%= link_to \"前の問題へ戻る\", question_path(@previous_question), class: \"previous-question-link\" if @previous_question %>\r\n   <%= link_to \"次の問題へ進む\", question_path(@next_question), class: \"next-question-link\" if @next_question %>\r\n </div>\r\n"
+                }
+            ],
+            "date": 1764550817838,
+            "name": "Commit-0",
+            "content": "<div class=\"question-show-container\">\r\n  <h1>問題 <%= @question.id %></h1>\r\n  \r\n  <div class=\"question-area\">\r\n    <p><%= simple_format(@question.content) %></p>\r\n  </div>\r\n  \r\n  <div class=\"choices-area\">\r\n    <%= form_with url: answer_question_path(@question), data: { turbo: false} do %>\r\n      <% @question.choices.each do |choice| %>\r\n        <div class=\"choice-box\">\r\n          <label>\r\n            <%= check_box_tag \"choice_ids[]\", choice.id %>\r\n            <%= choice.content %>\r\n          </label>\r\n        </div>\r\n      <% end %>\r\n      <div class=\"button-area\">\r\n        <%= submit_tag \"回答する\", class: \"button\" %>\r\n      </div>\r\n    <% end %>\r\n  </div>\r\n</div>\r\n"
+        }
+    ]
+}

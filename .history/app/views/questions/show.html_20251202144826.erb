@@ -20,6 +20,6 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "前の問題へ戻る", question_path(@previous_question), class: "previous-question-link" if @previous_question %>
+  <%= link_to "前の問題へ戻る", question_path(@previous_question),
   <%= link_to "次の問題へ進む", question_path(@next_question), class: "next-question-link" if @next_question %>
 </div>

@@ -35,7 +35,7 @@ th, td {
 }
 .choice-box input[type="checkbox"] {
     margin-right: 10px;
-    transform: scale(1.2);
+
 }
 .choice-box label {
     cursor: pointer;
@@ -56,11 +56,6 @@ th, td {
 }
 .button:hover {
     background-color: #45a049;
-}
-.previous-question-link, .next-question-link {
-    display: inline-block;
-    margin: 10px 15px 0 0;
-    padding: 8px 12px;
 }
 /* フォームのスタイル調整 */
 #choices {

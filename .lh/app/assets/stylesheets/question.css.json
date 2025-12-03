@@ -1,0 +1,138 @@
+{
+    "sourceFile": "app/assets/stylesheets/question.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 30,
+            "patches": [
+                {
+                    "date": 1764550841470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764551770551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     background: #eef;\r\n }\r\n .choice-box input[type=\"checkbox\"] {\r\n     margin-right: 10px;\r\n-    transform: scale(1.2);\r\n+\r\n }\r\n .choice-box label {\r\n     cursor: pointer;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1764551782171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     background: #eef;\r\n }\r\n .choice-box input[type=\"checkbox\"] {\r\n     margin-right: 10px;\r\n-\r\n+    transform: scale(1.2);\r\n }\r\n .choice-box label {\r\n     cursor: pointer;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1764551795926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,69 +0,0 @@\n-/* 問題一覧画面のスタイル */\r\n-table {\r\n-    width: 100%;\r\n-    border-collapse: collapse;\r\n-    margin-top: 20px;\r\n-}\r\n-th, td {\r\n-    border: 1px solid #ddd;\r\n-    padding: 8px;\r\n-    text-align: left;\r\n-}\r\n-\r\n-/* 問題回答画面のスタイル */\r\n-.question-show-container {\r\n-    max-width: 800px;\r\n-    margin: 0 auto;\r\n-    padding: 20px;\r\n-    background-color: #f5f5f5;\r\n-    border-radius: 8px;\r\n-}\r\n-.question-area, .choices-area {\r\n-    max-width: 900px;\r\n-    margin: 0 auto;\r\n-    font-size: 1.1rem;\r\n-}\r\n-.choice-box {\r\n-    padding: 12px 16px;\r\n-    margin-bottom: 10px;\r\n-    border: 1px solid #ccc;\r\n-    border-radius: 6px;\r\n-    background: #f9f9f9;\r\n-}\r\n-.choice-box:hover {\r\n-    background: #eef;\r\n-}\r\n-.choice-box input[type=\"checkbox\"] {\r\n-    margin-right: 10px;\r\n-    transform: scale(1.2);\r\n-}\r\n-.choice-box label {\r\n-    cursor: pointer;\r\n-    display: flex;\r\n-    align-items: center;\r\n-}\r\n-.button-area {\r\n-    margin-top: 20px;\r\n-}\r\n-.button {\r\n-    background-color: #4CAF50;\r\n-    color: white;\r\n-    padding: 10px 20px;\r\n-    border: none;\r\n-    border-radius: 4px;\r\n-    cursor: pointer;\r\n-    font-size: 1rem;\r\n-}\r\n-.button:hover {\r\n-    background-color: #45a049;\r\n-}\r\n-/* フォームのスタイル調整 */\r\n-#choices {\r\n-    margin-top: 20px;\r\n-}\r\n-#choices .choice-field {\r\n-    margin-bottom: 15px;\r\n-}\r\n-#choices .choice-field:last-child {\r\n-    margin-bottom: 0;\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764551801383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,69 @@\n-\n+/* 問題一覧画面のスタイル */\r\n+table {\r\n+    width: 100%;\r\n+    border-collapse: collapse;\r\n+    margin-top: 20px;\r\n+}\r\n+th, td {\r\n+    border: 1px solid #ddd;\r\n+    padding: 8px;\r\n+    text-align: left;\r\n+}\r\n+\r\n+/* 問題回答画面のスタイル */\r\n+.question-show-container {\r\n+    max-width: 800px;\r\n+    margin: 0 auto;\r\n+    padding: 20px;\r\n+    background-color: #f5f5f5;\r\n+    border-radius: 8px;\r\n+}\r\n+.question-area, .choices-area {\r\n+    max-width: 900px;\r\n+    margin: 0 auto;\r\n+    font-size: 1.1rem;\r\n+}\r\n+.choice-box {\r\n+    padding: 12px 16px;\r\n+    margin-bottom: 10px;\r\n+    border: 1px solid #ccc;\r\n+    border-radius: 6px;\r\n+    background: #f9f9f9;\r\n+}\r\n+.choice-box:hover {\r\n+    background: #eef;\r\n+}\r\n+.choice-box input[type=\"checkbox\"] {\r\n+    margin-right: 10px;\r\n+    transform: scale(1.2);\r\n+}\r\n+.choice-box label {\r\n+    cursor: pointer;\r\n+    display: flex;\r\n+    align-items: center;\r\n+}\r\n+.button-area {\r\n+    margin-top: 20px;\r\n+}\r\n+.button {\r\n+    background-color: #4CAF50;\r\n+    color: white;\r\n+    padding: 10px 20px;\r\n+    border: none;\r\n+    border-radius: 4px;\r\n+    cursor: pointer;\r\n+    font-size: 1rem;\r\n+}\r\n+.button:hover {\r\n+    background-color: #45a049;\r\n+}\r\n+/* フォームのスタイル調整 */\r\n+#choices {\r\n+    margin-top: 20px;\r\n+}\r\n+#choices .choice-field {\r\n+    margin-bottom: 15px;\r\n+}\r\n+#choices .choice-field:last-child {\r\n+    margin-bottom: 0;\r\n+}\r\n"
+                },
+                {
+                    "date": 1764551862281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,20 +29,8 @@\n     border: 1px solid #ccc;\r\n     border-radius: 6px;\r\n     background: #f9f9f9;\r\n }\r\n-.choice-box:hover {\r\n-    background: #eef;\r\n-}\r\n-.choice-box input[type=\"checkbox\"] {\r\n-    margin-right: 10px;\r\n-    transform: scale(1.2);\r\n-}\r\n-.choice-box label {\r\n-    cursor: pointer;\r\n-    display: flex;\r\n-    align-items: center;\r\n-}\r\n .button-area {\r\n     margin-top: 20px;\r\n }\r\n .button {\r\n"
+                },
+                {
+                    "date": 1764551876601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,20 @@\n     border: 1px solid #ccc;\r\n     border-radius: 6px;\r\n     background: #f9f9f9;\r\n }\r\n+.choice-box:hover {\r\n+    background: #eef;\r\n+}\r\n+.choice-box input[type=\"checkbox\"] {\r\n+    margin-right: 10px;\r\n+    transform: scale(1.2);\r\n+}\r\n+.choice-box label {\r\n+    cursor: pointer;\r\n+    display: flex;\r\n+    align-items: center;\r\n+}\r\n .button-area {\r\n     margin-top: 20px;\r\n }\r\n .button {\r\n"
+                },
+                {
+                    "date": 1764551969577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     margin: 0 auto;\r\n     padding: 20px;\r\n     background-color: #f5f5f5;\r\n     border-radius: 8px;\r\n+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\r\n }\r\n .question-area, .choices-area {\r\n     max-width: 900px;\r\n     margin: 0 auto;\r\n"
+                },
+                {
+                    "date": 1764551996368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n     margin: 0 auto;\r\n     padding: 20px;\r\n     background-color: #f5f5f5;\r\n     border-radius: 8px;\r\n-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\r\n }\r\n .question-area, .choices-area {\r\n     max-width: 900px;\r\n     margin: 0 auto;\r\n"
+                },
+                {
+                    "date": 1764552005259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n .question-show-container {\r\n     max-width: 800px;\r\n     margin: 0 auto;\r\n     padding: 20px;\r\n-    background-color: #f5f5f5;\r\n+    background-color: #815656;\r\n     border-radius: 8px;\r\n }\r\n .question-area, .choices-area {\r\n     max-width: 900px;\r\n"
+                },
+                {
+                    "date": 1764552166297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n .question-show-container {\r\n     max-width: 800px;\r\n     margin: 0 auto;\r\n     padding: 20px;\r\n-    background-color: #815656;\r\n+    background-color: #f5f5f5;\r\n     border-radius: 8px;\r\n }\r\n .question-area, .choices-area {\r\n     max-width: 900px;\r\n"
+                },
+                {
+                    "date": 1764567361221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n .question-show-container {\r\n     max-width: 800px;\r\n     margin: 0 auto;\r\n     padding: 20px;\r\n-    background-color: #f5f5f5;\r\n+    background-color: #3d1515;\r\n     border-radius: 8px;\r\n }\r\n .question-area, .choices-area {\r\n     max-width: 900px;\r\n"
+                },
+                {
+                    "date": 1764567389910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n .question-show-container {\r\n     max-width: 800px;\r\n     margin: 0 auto;\r\n     padding: 20px;\r\n-    background-color: #3d1515;\r\n+    background-color: #f5f5f5;\r\n     border-radius: 8px;\r\n }\r\n .question-area, .choices-area {\r\n     max-width: 900px;\r\n"
+                },
+                {
+                    "date": 1764654624017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,17 @@\n }\r\n .button:hover {\r\n     background-color: #45a049;\r\n }\r\n+.previous-question-link, .next-question-link {\r\n+    display: inline-block;\r\n+    margin: 10px 15px 0 0;\r\n+    padding: 8px 12px;\r\n+    background-color: #007BFF;\r\n+    color: white;\r\n+    text-decoration: none;\r\n+    border-radius: 4px;\r\n+}\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764654645995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n .button:hover {\r\n     background-color: #45a049;\r\n }\r\n .previous-question-link, .next-question-link {\r\n-    display: inline-block;\r\n+\r\n     margin: 10px 15px 0 0;\r\n     padding: 8px 12px;\r\n     background-color: #007BFF;\r\n     color: white;\r\n"
+                },
+                {
+                    "date": 1764654662874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n .button:hover {\r\n     background-color: #45a049;\r\n }\r\n .previous-question-link, .next-question-link {\r\n-\r\n+    display: inline-block;\r\n     margin: 10px 15px 0 0;\r\n     padding: 8px 12px;\r\n     background-color: #007BFF;\r\n     color: white;\r\n"
+                },
+                {
+                    "date": 1764654752029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,11 @@\n     color: white;\r\n     text-decoration: none;\r\n     border-radius: 4px;\r\n }\r\n+.previous-question-link:hover, .next-question-link:hover {\r\n+    background-color: #0056b3;\r\n+}\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764654836351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,18 +58,11 @@\n     background-color: #45a049;\r\n }\r\n .previous-question-link, .next-question-link {\r\n     display: inline-block;\r\n-    margin: 10px 15px 0 0;\r\n-    padding: 8px 12px;\r\n-    background-color: #007BFF;\r\n-    color: white;\r\n-    text-decoration: none;\r\n-    border-radius: 4px;\r\n+    \r\n+\r\n }\r\n-.previous-question-link:hover, .next-question-link:hover {\r\n-    background-color: #0056b3;\r\n-}\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764654857045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n     background-color: #45a049;\r\n }\r\n .previous-question-link, .next-question-link {\r\n     display: inline-block;\r\n-    \r\n+    margin: 10px 15px 0 0;\r\n \r\n }\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n"
+                },
+                {
+                    "date": 1764654872494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n }\r\n .previous-question-link, .next-question-link {\r\n     display: inline-block;\r\n     margin: 10px 15px 0 0;\r\n-\r\n+    padding: 8px 12px;\r\n }\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n"
+                },
+                {
+                    "date": 1764654888575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n }\r\n .previous-question-link, .next-question-link {\r\n     display: inline-block;\r\n     margin: 10px 15px 0 0;\r\n-    padding: 8px 12px;\r\n+   \r\n }\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n"
+                },
+                {
+                    "date": 1764654903822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n }\r\n .previous-question-link, .next-question-link {\r\n     display: inline-block;\r\n     margin: 10px 15px 0 0;\r\n-   \r\n+    padding: 8px 12px;\r\n }\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n"
+                },
+                {
+                    "date": 1764654915847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,8 +60,9 @@\n .previous-question-link, .next-question-link {\r\n     display: inline-block;\r\n     margin: 10px 15px 0 0;\r\n     padding: 8px 12px;\r\n+    background-color: #007BFF;\r\n }\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n"
+                },
+                {
+                    "date": 1764654956215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,8 @@\n .previous-question-link, .next-question-link {\r\n     display: inline-block;\r\n     margin: 10px 15px 0 0;\r\n     padding: 8px 12px;\r\n-    background-color: #007BFF;\r\n }\r\n /* フォームのスタイル調整 */\r\n #choices {\r\n     margin-top: 20px;\r\n"
+                },
+                {
+                    "date": 1764655973363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n /* 問題一覧画面のスタイル */\r\n table {\r\n     width: 100%;\r\n-    border-collapse: collapse;\r\n+\r\n     margin-top: 20px;\r\n }\r\n th, td {\r\n     border: 1px solid #ddd;\r\n"
+                },
+                {
+                    "date": 1764656010513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n /* 問題一覧画面のスタイル */\r\n table {\r\n     width: 100%;\r\n-\r\n+    border-collapse: collapse;\r\n     margin-top: 20px;\r\n }\r\n th, td {\r\n     border: 1px solid #ddd;\r\n"
+                },
+                {
+                    "date": 1764656088558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     border-collapse: collapse;\r\n     margin-top: 20px;\r\n }\r\n th, td {\r\n-    border: 1px solid #ddd;\r\n+    border: 1px solid #cc2424;\r\n     padding: 8px;\r\n     text-align: left;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764656100889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     border-collapse: collapse;\r\n     margin-top: 20px;\r\n }\r\n th, td {\r\n-    border: 1px solid #cc2424;\r\n+    border: 1px solid #ddd;\r\n     padding: 8px;\r\n     text-align: left;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764656123175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     margin-top: 20px;\r\n }\r\n th, td {\r\n     border: 1px solid #ddd;\r\n-    padding: 8px;\r\n+    padding: 80px;\r\n     text-align: left;\r\n }\r\n \r\n /* 問題回答画面のスタイル */\r\n"
+                },
+                {
+                    "date": 1764656166677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     margin-top: 20px;\r\n }\r\n th, td {\r\n     border: 1px solid #ddd;\r\n-    padding: 80px;\r\n+    margin: 80px;\r\n     text-align: left;\r\n }\r\n \r\n /* 問題回答画面のスタイル */\r\n"
+                },
+                {
+                    "date": 1764656190676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     margin-top: 20px;\r\n }\r\n th, td {\r\n     border: 1px solid #ddd;\r\n-    margin: 80px;\r\n+    padding: 80px;\r\n     text-align: left;\r\n }\r\n \r\n /* 問題回答画面のスタイル */\r\n"
+                }
+            ],
+            "date": 1764550841470,
+            "name": "Commit-0",
+            "content": "/* 問題一覧画面のスタイル */\r\ntable {\r\n    width: 100%;\r\n    border-collapse: collapse;\r\n    margin-top: 20px;\r\n}\r\nth, td {\r\n    border: 1px solid #ddd;\r\n    padding: 8px;\r\n    text-align: left;\r\n}\r\n\r\n/* 問題回答画面のスタイル */\r\n.question-show-container {\r\n    max-width: 800px;\r\n    margin: 0 auto;\r\n    padding: 20px;\r\n    background-color: #f5f5f5;\r\n    border-radius: 8px;\r\n}\r\n.question-area, .choices-area {\r\n    max-width: 900px;\r\n    margin: 0 auto;\r\n    font-size: 1.1rem;\r\n}\r\n.choice-box {\r\n    padding: 12px 16px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 6px;\r\n    background: #f9f9f9;\r\n}\r\n.choice-box:hover {\r\n    background: #eef;\r\n}\r\n.choice-box input[type=\"checkbox\"] {\r\n    margin-right: 10px;\r\n    transform: scale(1.2);\r\n}\r\n.choice-box label {\r\n    cursor: pointer;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n.button-area {\r\n    margin-top: 20px;\r\n}\r\n.button {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 10px 20px;\r\n    border: none;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    font-size: 1rem;\r\n}\r\n.button:hover {\r\n    background-color: #45a049;\r\n}\r\n/* フォームのスタイル調整 */\r\n#choices {\r\n    margin-top: 20px;\r\n}\r\n#choices .choice-field {\r\n    margin-bottom: 15px;\r\n}\r\n#choices .choice-field:last-child {\r\n    margin-bottom: 0;\r\n}\r\n"
+        }
+    ]
+}

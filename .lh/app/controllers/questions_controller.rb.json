@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/controllers/questions_controller.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1764653703195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764654417322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,11 @@\n \r\n   def show\r\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n     @user_answer = UserAnswer.new  # form_with 用\r\n+    @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n+    @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n+\r\n   end\r\n \r\n   def answer\r\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n"
+                },
+                {
+                    "date": 1764654466736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n     @user_answer = UserAnswer.new  # form_with 用\r\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n-\r\n   end\r\n \r\n   def answer\r\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n"
+                }
+            ],
+            "date": 1764653703195,
+            "name": "Commit-0",
+            "content": "class QuestionsController < ApplicationController\r\n  before_action :set_question, only: %i[ show edit update destroy ]\r\n\r\n  # GET /questions or /questions.json\r\n  def index\r\n    @questions = Question.order(:id).page(params[:page]).per(20) rescue Question.all\r\n    if params[:q].present?\r\n      @questions = @questions.where(\"title ILIKE ? OR description ILIKE ?\", \"%#{params[:q]}%\", \"%#{params[:q]}%\")\r\n    end\r\n    @questions = @questions.by_category(params[:category]) if params[:category].present?\r\n    @categories = Question.all_categories  # 重複なしのカテゴリ一覧を取得\r\n  end\r\n\r\n  def show\r\n    @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n    @user_answer = UserAnswer.new  # form_with 用\r\n  end\r\n\r\n  def answer\r\n    @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n    selected_ids = params[:choice_ids]&.map(&:to_i) || []\r\n\r\n    correct_ids = @question.choices.where(is_correct: true).pluck(:id)\r\n    @is_correct = (selected_ids.sort == correct_ids.sort)\r\n    @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n    @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n\r\n    render :result\r\n  end\r\n  # GET /questions/new\r\n  def new\r\n    @question = Question.new\r\n    5.times { @question.choices.build }  # 選択肢を4つ作成\r\n  end\r\n\r\n  # GET /questions/1/edit\r\n  def edit\r\n    @question = Question.find(params[:id])\r\n    (4 - @question.choices.size).times { @question.choices.build }  # 選択肢が4つになるように追加\r\n  end\r\n\r\n  # POST /questions or /questions.json\r\n  def create\r\n    @question = Question.new(question_params)\r\n\r\n    respond_to do |format|\r\n      if @question.save\r\n        format.html { redirect_to questions_path, notice: \"Question was successfully created.\" }\r\n        format.json { render :show, status: :created, location: @question }\r\n      else\r\n        format.html { render :new, status: :unprocessable_entity }\r\n        format.json { render json: @question.errors, status: :unprocessable_entity }\r\n      end\r\n    end\r\n  end\r\n\r\n  # PATCH/PUT /questions/1 or /questions/1.json\r\n  def update\r\n    respond_to do |format|\r\n      if @question.update(question_params)\r\n        format.html { redirect_to question_path, notice: \"Question was successfully updated.\", status: :see_other }\r\n        format.json { render :show, status: :ok, location: @question }\r\n      else\r\n        format.html { render :edit, status: :unprocessable_entity }\r\n        format.json { render json: @question.errors, status: :unprocessable_entity }\r\n      end\r\n    end\r\n  end\r\n\r\n  # DELETE /questions/1 or /questions/1.json\r\n  def destroy\r\n    @question.destroy!\r\n\r\n    respond_to do |format|\r\n      format.html { redirect_to questions_path, notice: \"Question was successfully destroyed.\", status: :see_other }\r\n      format.json { head :no_content }\r\n    end\r\n  end\r\n\r\n  private\r\n    # Use callbacks to share common setup or constraints between actions.\r\n    def set_question\r\n      @question = Question.find(params.expect(:id))\r\n    end\r\n\r\n    # Only allow a list of trusted parameters through.\r\n    def question_params\r\n      params.require(:question).permit(:content, :explanation, :multiple_answer,\r\n        choices_attributes: [ :id, :content, :is_correct, :_destroy ])\r\n    end\r\nend\r\n"
+        }
+    ]
+}

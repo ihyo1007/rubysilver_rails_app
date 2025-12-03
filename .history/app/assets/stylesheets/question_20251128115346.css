@@ -11,13 +11,6 @@ th, td {
 }
 
 /* 問題回答画面のスタイル */
-.question-show-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-}
 .question-area, .choices-area {
     max-width: 900px;
     margin: 0 auto;
@@ -56,11 +49,6 @@ th, td {
 }
 .button:hover {
     background-color: #45a049;
-}
-.previous-question-link, .next-question-link {
-    display: inline-block;
-    margin: 10px 15px 0 0;
-    padding: 8px 12px;
 }
 /* フォームのスタイル調整 */
 #choices {

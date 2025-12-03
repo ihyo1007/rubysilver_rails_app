@@ -1,0 +1,58 @@
+{
+    "sourceFile": "app/views/questions/result.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1764653229119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764653320291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +0,0 @@\n-<% if @is_correct %>\r\n-    <h2 style=\"color: green;\">正解</h2>\r\n-<% else %>\r\n-    <h2 style=\"color: red;\">不正解</h2>\r\n-<% end %>\r\n-\r\n-<h3>答え</h3>\r\n-<ul>\r\n-    <% @question.choices.where(is_correct: true).each do |choice| %>\r\n-        <li><%= choice.content %></li>\r\n-    <% end %>\r\n-</ul>\r\n-<h3>解説</h3>\r\n-<p><%= simple_format(@question.explanation) %></p>\r\n-\r\n-<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n-<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764653379740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+<% if @is_correct %>\r\n+    <h2 style=\"color: green;\">正解</h2>\r\n+<% else %>\r\n+    <h2 style=\"color: red;\">不正解</h2>\r\n+<% end %>\r\n+\r\n+<h3>答え</h3>\r\n+<ul>\r\n+    <% @question.choices.where(is_correct: true).each do |choice| %>\r\n+        <li><%= choice.content %></li>\r\n+    <% end %>\r\n+</ul>\r\n+<h3>解説</h3>\r\n+<p><%= simple_format(@question.explanation) %></p>\r\n+\r\n+<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n+<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\r\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764653415824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n-<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\r\n+<>\r\n <%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764653497453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n-<>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\r\n+<%= link_to '結果を見る', results_path, class: 'btn btn-info' %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764653556716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,5 @@\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n <%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\r\n-<%= link_to '結果を見る', results_path, class: 'btn btn-info' %>\n\\ No newline at end of file\n+<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764654205847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\r\n-<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\n\\ No newline at end of file\n+<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\r\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764654250023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,5 @@\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n <%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\r\n"
+                },
+                {
+                    "date": 1764655135080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,5 @@\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n-<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\r\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764655260747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n </ul>\r\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n-<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n+<%= link_to '問題一覧へ戻る', questions_path, class: 'next-question-link' %>\r\n <%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764655284203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n </ul>\r\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n-<%= link_to '問題一覧へ戻る', questions_path, class: 'next-question-link' %>\r\n-<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>\n\\ No newline at end of file\n+<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n+<%= link_to '次の問題へ進む', question_path(@next_question), class: 'next-question-link' if @next_question %>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1764653229119,
+            "name": "Commit-0",
+            "content": "<% if @is_correct %>\r\n    <h2 style=\"color: green;\">正解</h2>\r\n<% else %>\r\n    <h2 style=\"color: red;\">不正解</h2>\r\n<% end %>\r\n\r\n<h3>答え</h3>\r\n<ul>\r\n    <% @question.choices.where(is_correct: true).each do |choice| %>\r\n        <li><%= choice.content %></li>\r\n    <% end %>\r\n</ul>\r\n<h3>解説</h3>\r\n<p><%= simple_format(@question.explanation) %></p>\r\n\r\n<%= link_to '問題一覧へ戻る', questions_path, class: 'btn btn-primary' %>\r\n<%= link_to '前の問題へ戻る', question_path(@previous_question), class: 'btn btn-secondary' if @previous_question %>\r\n<%= link_to '次の問題へ進む', question_path(@next_question), class: 'btn btn-success' if @next_question %>"
+        }
+    ]
+}

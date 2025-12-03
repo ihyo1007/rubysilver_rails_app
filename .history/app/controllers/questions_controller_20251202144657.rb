@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
     @user_answer = UserAnswer.new  # form_with 用
     @next_question = Question.where("id > ?", @question.id).order(:id).first
     @previous_question = Question.where("id < ?", @question.id).order(id: :desc).first
+
   end
 
   def answer

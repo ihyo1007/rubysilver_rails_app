@@ -17,6 +17,7 @@ th, td {
     padding: 20px;
     background-color: #f5f5f5;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .question-area, .choices-area {
     max-width: 900px;
@@ -56,11 +57,6 @@ th, td {
 }
 .button:hover {
     background-color: #45a049;
-}
-.previous-question-link, .next-question-link {
-    display: inline-block;
-    margin: 10px 15px 0 0;
-    padding: 8px 12px;
 }
 /* フォームのスタイル調整 */
 #choices {

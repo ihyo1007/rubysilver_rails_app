@@ -30,18 +30,6 @@ th, td {
     border-radius: 6px;
     background: #f9f9f9;
 }
-.choice-box:hover {
-    background: #eef;
-}
-.choice-box input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.2);
-}
-.choice-box label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
 .button-area {
     margin-top: 20px;
 }
@@ -56,11 +44,6 @@ th, td {
 }
 .button:hover {
     background-color: #45a049;
-}
-.previous-question-link, .next-question-link {
-    display: inline-block;
-    margin: 10px 15px 0 0;
-    padding: 8px 12px;
 }
 /* フォームのスタイル調整 */
 #choices {
