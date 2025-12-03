@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/views/layouts/admin_login.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764741633335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764741880365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   <%= csrf_meta_tags %>\r\n   <%= csp_meta_tag %>\r\n \r\n   <%= stylesheet_link_tag \"application\", \"data-turbo-track\": \"reload\" %>\r\n+    <%= stylesheet_link_tag \"admin_login\", \"data-turbo-track\": \"reload\" %>\r\n   <%= javascript_include_tag \"application\", \"data-turbo-track\": \"reload\", defer: true %>\r\n </head>\r\n <body class=\"admin-login\">\r\n   <%= yield %>\r\n"
+                }
+            ],
+            "date": 1764741633335,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"ja\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>管理者ログイン</title>\r\n  <%= csrf_meta_tags %>\r\n  <%= csp_meta_tag %>\r\n\r\n  <%= stylesheet_link_tag \"application\", \"data-turbo-track\": \"reload\" %>\r\n  <%= javascript_include_tag \"application\", \"data-turbo-track\": \"reload\", defer: true %>\r\n</head>\r\n<body class=\"admin-login\">\r\n  <%= yield %>\r\n</body>\r\n</html>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+<h2>マイページ</h2>
+
+<<<<<<< HEAD
+<%= render partial: "result_table", locals: { 
+      title: "ランダム出題", 
+      total_answers: @random_total_answers, 
+      correct_answers: @random_correct_answers, 
+      accuracy: @random_accuracy 
+    } %>
+
+<%= render partial: "result_table", locals: { 
+      title: "問題一覧", 
+      total_answers: @list_total_answers, 
+      correct_answers: @list_correct_answers, 
+      accuracy: @list_accuracy 
+    } %>
+
+<%= link_to home_index_path do %>
+  <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+<% end %>

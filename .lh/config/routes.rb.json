@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1764299133459,
@@ -16,6 +16,18 @@
                 {
                     "date": 1764300064179,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n Rails.application.routes.draw do\r\n+  devise_for :admins\r\n   get \"quiz/random\"\r\n   get \"quiz/result\"\r\n   get \"users/mypage\"\r\n   get \"home/index\"\r\n@@ -13,8 +14,12 @@\n   get 'quiz/random', to: 'quiz#random' \r\n   post 'quiz/answer', to: 'quiz#answer' \r\n   get 'quiz/result', to: 'quiz#result'\r\n   get 'mypage', to: 'users#mypage'\r\n+  namespace :admin do\r\n+    root \"dashboard#index\"   # /admin にアクセス→管理者用Question一覧\r\n+    resources :questions\r\n+  end\r\n   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html\r\n \r\n   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.\r\n   # Can be used by load balancers and uptime monitors to verify that the app is live.\r\n"
+                },
+                {
+                    "date": 1764741427613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n Rails.application.routes.draw do\r\n-  devise_for :admins\r\n+  devise_for :admins, controllers: {\r\n+  sessions: 'admins/sessions'\r\n+}\r\n+\r\n   get \"quiz/random\"\r\n   get \"quiz/result\"\r\n   get \"users/mypage\"\r\n   get \"home/index\"\r\n"
+                },
+                {
+                    "date": 1764741441715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n Rails.application.routes.draw do\r\n   devise_for :admins, controllers: {\r\n   sessions: 'admins/sessions'\r\n-}\r\n-\r\n+  }\r\n   get \"quiz/random\"\r\n   get \"quiz/result\"\r\n   get \"users/mypage\"\r\n   get \"home/index\"\r\n"
+                },
+                {
+                    "date": 1764741446851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n Rails.application.routes.draw do\r\n   devise_for :admins, controllers: {\r\n-  sessions: 'admins/sessions'\r\n+    sessions: 'admins/sessions'\r\n   }\r\n   get \"quiz/random\"\r\n   get \"quiz/result\"\r\n   get \"users/mypage\"\r\n"
                 }
             ],
             "date": 1764299133459,

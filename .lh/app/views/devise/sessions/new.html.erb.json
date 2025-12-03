@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/views/devise/sessions/new.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764740228211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764740228211,
+            "name": "Commit-0",
+            "content": "<div class=\"login-page\">\r\n  <div class=\"login-card\">\r\n    <h2>ログイン</h2>\r\n\r\n    <%= devise_error_messages! %>\r\n\r\n    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>\r\n      <div class=\"form-group\">\r\n        <%= f.label :email %>\r\n        <%= f.email_field :email, autofocus: true, class: \"form-control\", placeholder: \"メールアドレス\" %>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <%= f.label :password %>\r\n        <%= f.password_field :password, autocomplete: \"current-password\", class: \"form-control\", placeholder: \"パスワード\" %>\r\n      </div>\r\n\r\n      <div class=\"form-options\">\r\n        <%= f.check_box :remember_me %>\r\n        <%= f.label :remember_me, \"ログイン状態を保持する\" %>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <%= f.submit \"ログイン\", class: \"btn-login\" %>\r\n      </div>\r\n    <% end %>\r\n\r\n    <div class=\"login-links\">\r\n      <%= link_to \"パスワードを忘れた方はこちら\", new_password_path(resource_name) %><br>\r\n      <%= link_to \"アカウントを作成する\", new_registration_path(resource_name) %>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/controllers/admins/sessions_controller.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764741095126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764741095126,
+            "name": "Commit-0",
+            "content": "# frozen_string_literal: true\n\nclass Admins::SessionsController < Devise::SessionsController\n  # before_action :configure_sign_in_params, only: [:create]\n\n  # GET /resource/sign_in\n  # def new\n  #   super\n  # end\n\n  # POST /resource/sign_in\n  # def create\n  #   super\n  # end\n\n  # DELETE /resource/sign_out\n  # def destroy\n  #   super\n  # end\n\n  # protected\n\n  # If you have extra params to permit, append them to the sanitizer.\n  # def configure_sign_in_params\n  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])\n  # end\n  layout \"admin_login\" # admin用レイアウト\nend\n"
+        }
+    ]
+}

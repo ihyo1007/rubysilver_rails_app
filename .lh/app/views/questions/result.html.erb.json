@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1764653229119,
@@ -60,6 +60,10 @@
                 {
                     "date": 1764725861567,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,5 @@\n <li>\r\n <%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n     次の問題 <i class=\"fi fi-ss-right\"></i>\r\n <% end %>\r\n-</li>\r\n->>>>>>> 7cba4157820867a655b3841cf3e16284f8e539b7\r\n+</li>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764742025654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,13 @@\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <li>\r\n+<%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n+    次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+<% end %>\r\n+</li>\r\n+<li>\r\n <%= link_to questions_path, class: 'btn btn-primary' do %>\r\n     問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n <% end %>\r\n </li>\r\n\\ No newline at end of file\n-<li>\r\n-<%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n-    次の問題 <i class=\"fi fi-ss-right\"></i>\r\n-<% end %>\r\n-</li>\n"
                 }
             ],
             "date": 1764653229119,

@@ -1,0 +1,42 @@
+{
+    "sourceFile": "app/assets/stylesheets/admin_login.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1764741800992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764742438158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     display: flex;\r\n     justify-content: center;\r\n     align-items: center;\r\n     min-height: 100vh;\r\n-    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);\r\n+    background: linear-gradient(135deg, #f1eded, #2c2c2c);\r\n     font-family: 'Helvetica Neue', Arial, sans-serif;\r\n     margin: 0;\r\n     padding: 0;\r\n   }\r\n"
+                },
+                {
+                    "date": 1764742528011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     display: flex;\r\n     justify-content: center;\r\n     align-items: center;\r\n     min-height: 100vh;\r\n-    background: linear-gradient(135deg, #f1eded, #2c2c2c);\r\n+    background: linear-gradient(135deg, #1a1a1a, #f1ebeb);\r\n     font-family: 'Helvetica Neue', Arial, sans-serif;\r\n     margin: 0;\r\n     padding: 0;\r\n   }\r\n"
+                },
+                {
+                    "date": 1764742543090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     display: flex;\r\n     justify-content: center;\r\n     align-items: center;\r\n     min-height: 100vh;\r\n-    background: linear-gradient(135deg, #1a1a1a, #f1ebeb);\r\n+    background: linear-gradient(135deg, #e7dede, #f1ebeb);\r\n     font-family: 'Helvetica Neue', Arial, sans-serif;\r\n     margin: 0;\r\n     padding: 0;\r\n   }\r\n"
+                },
+                {
+                    "date": 1764742576985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   }\r\n   \r\n   /* ログインカード */\r\n   .admin-login-card {\r\n-    background-color: #222;\r\n+    background-color: #745757;\r\n     padding: 50px 40px;\r\n     border-radius: 12px;\r\n     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1764742593861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   }\r\n   \r\n   /* ログインカード */\r\n   .admin-login-card {\r\n-    background-color: #745757;\r\n+    background-color: #222;\r\n     padding: 50px 40px;\r\n     border-radius: 12px;\r\n     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1764742606922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n     transition: transform 0.2s, box-shadow 0.2s;\r\n   }\r\n   \r\n   .admin-login-card:hover {\r\n-    transform: translateY(-5px);\r\n     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);\r\n   }\r\n   \r\n   /* タイトル */\r\n"
+                }
+            ],
+            "date": 1764741800992,
+            "name": "Commit-0",
+            "content": "/* ページ全体 */\r\nbody.admin-login {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-height: 100vh;\r\n    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);\r\n    font-family: 'Helvetica Neue', Arial, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n  \r\n  /* ログインカード */\r\n  .admin-login-card {\r\n    background-color: #222;\r\n    padding: 50px 40px;\r\n    border-radius: 12px;\r\n    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);\r\n    width: 100%;\r\n    max-width: 400px;\r\n    text-align: center;\r\n    color: #fff;\r\n    transition: transform 0.2s, box-shadow 0.2s;\r\n  }\r\n  \r\n  .admin-login-card:hover {\r\n    transform: translateY(-5px);\r\n    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);\r\n  }\r\n  \r\n  /* タイトル */\r\n  .admin-login-card h2 {\r\n    margin-bottom: 30px;\r\n    font-size: 28px;\r\n    color: #ff4d4d; /* 赤系アクセント */\r\n    font-weight: bold;\r\n    letter-spacing: 1px;\r\n  }\r\n  \r\n  /* フォームグループ */\r\n  .form-group {\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n  }\r\n  \r\n  .form-group label {\r\n    display: block;\r\n    margin-bottom: 6px;\r\n    font-weight: 600;\r\n    color: #ccc;\r\n  }\r\n  \r\n  .form-control {\r\n    width: 100%;\r\n    padding: 12px 14px;\r\n    border-radius: 6px;\r\n    border: 1px solid #555;\r\n    background-color: #333;\r\n    color: #fff;\r\n    font-size: 14px;\r\n  }\r\n  \r\n  .form-control::placeholder {\r\n    color: #888;\r\n  }\r\n  \r\n  /* チェックボックス */\r\n  .form-options {\r\n    font-size: 14px;\r\n    color: #ccc;\r\n    margin-bottom: 15px;\r\n  }\r\n  \r\n  .form-options input[type=\"checkbox\"] {\r\n    margin-right: 6px;\r\n  }\r\n  \r\n  /* ボタン */\r\n  .btn-admin-login {\r\n    width: 100%;\r\n    padding: 12px;\r\n    background-color: #ff4d4d;\r\n    color: #fff;\r\n    border: none;\r\n    border-radius: 6px;\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    transition: background 0.2s, transform 0.1s;\r\n  }\r\n  \r\n  .btn-admin-login:hover {\r\n    background-color: #e64545;\r\n  }\r\n  \r\n  .btn-admin-login:active {\r\n    transform: scale(0.97);\r\n  }\r\n  \r\n  /* リンク */\r\n  .login-links {\r\n    margin-top: 20px;\r\n    font-size: 14px;\r\n  }\r\n  \r\n  .login-links a {\r\n    color: #ff4d4d;\r\n    text-decoration: none;\r\n  }\r\n  \r\n  .login-links a:hover {\r\n    text-decoration: underline;\r\n  }\r\n  \r\n  /* レスポンシブ対応 */\r\n  @media screen and (max-width: 480px) {\r\n    .admin-login-card {\r\n      padding: 30px 20px;\r\n    }\r\n  }\r\n  "
+        }
+    ]
+}

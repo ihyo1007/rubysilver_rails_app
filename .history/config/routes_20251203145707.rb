@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admins, controllers: {
-    sessions: 'admins/sessions'
-  }
+  sessions: 'admins/sessions'
+}
+
   get "quiz/random"
   get "quiz/result"
   get "users/mypage"
