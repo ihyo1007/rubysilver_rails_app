@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1764653703195,
@@ -16,6 +16,46 @@
                 {
                     "date": 1764654466736,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n     @user_answer = UserAnswer.new  # form_with 用\r\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n-\r\n   end\r\n \r\n   def answer\r\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n"
+                },
+                {
+                    "date": 1764732710426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,13 @@\n       format.json { head :no_content }\r\n     end\r\n   end\r\n \r\n+  def result\r\n+    @question = Question.find(params[:question_id])\r\n+    @is_correct = params[:correct] == \"true\"\r\n+  end\r\n+\r\n   private\r\n     # Use callbacks to share common setup or constraints between actions.\r\n     def set_question\r\n       @question = Question.find(params.expect(:id))\r\n"
+                },
+                {
+                    "date": 1764733524572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,13 +78,8 @@\n       format.json { head :no_content }\r\n     end\r\n   end\r\n \r\n-  def result\r\n-    @question = Question.find(params[:question_id])\r\n-    @is_correct = params[:correct] == \"true\"\r\n-  end\r\n-\r\n   private\r\n     # Use callbacks to share common setup or constraints between actions.\r\n     def set_question\r\n       @question = Question.find(params.expect(:id))\r\n"
+                },
+                {
+                    "date": 1764733545985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,13 @@\n       format.json { head :no_content }\r\n     end\r\n   end\r\n \r\n+  def result\r\n+    @question = Question.find(params[:question_id])\r\n+    @is_correct = params[:correct] == \"true\"\r\n+  end\r\n+\r\n   private\r\n     # Use callbacks to share common setup or constraints between actions.\r\n     def set_question\r\n       @question = Question.find(params.expect(:id))\r\n"
+                },
+                {
+                    "date": 1764733556090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,13 +78,8 @@\n       format.json { head :no_content }\r\n     end\r\n   end\r\n \r\n-  def result\r\n-    @question = Question.find(params[:question_id])\r\n-    @is_correct = params[:correct] == \"true\"\r\n-  end\r\n-\r\n   private\r\n     # Use callbacks to share common setup or constraints between actions.\r\n     def set_question\r\n       @question = Question.find(params.expect(:id))\r\n"
+                },
+                {
+                    "date": 1764733581018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,15 @@\n     @is_correct = (selected_ids.sort == correct_ids.sort)\r\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n \r\n+        # ユーザーの回答を保存\r\n+    UserAnswer.create!(\r\n+      user_id: current_user.id,   # ログイン中のユーザーID\r\n+      question_id: @question.id,\r\n+      is_correct: @is_correct,\r\n+    )\r\n+\r\n     render :result\r\n   end\r\n   # GET /questions/new\r\n   def new\r\n"
+                },
+                {
+                    "date": 1764733587708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     @is_correct = (selected_ids.sort == correct_ids.sort)\r\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n \r\n-        # ユーザーの回答を保存\r\n+    # ユーザーの回答を保存\r\n     UserAnswer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct,\r\n"
+                },
+                {
+                    "date": 1764733896663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n \r\n     # ユーザーの回答を保存\r\n-    UserAnswer.create!(\r\n+    User2Answer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct,\r\n     )\r\n"
+                },
+                {
+                    "date": 1764733922759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     # ユーザーの回答を保存\r\n     User2Answer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n-      is_correct: @is_correct,\r\n+      is_correct: @is_correct\r\n     )\r\n \r\n     render :result\r\n   end\r\n"
+                },
+                {
+                    "date": 1764734111694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n \r\n     # ユーザーの回答を保存\r\n-    User2Answer.create!(\r\n+    UserAnswer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct\r\n     )\r\n"
+                },
+                {
+                    "date": 1764734365546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,10 @@\n     # ユーザーの回答を保存\r\n     UserAnswer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n-      is_correct: @is_correct\r\n+      is_correct: @is_correct,\r\n+      source: \"list\"\r\n     )\r\n \r\n     render :result\r\n   end\r\n"
                 }
             ],
             "date": 1764653703195,

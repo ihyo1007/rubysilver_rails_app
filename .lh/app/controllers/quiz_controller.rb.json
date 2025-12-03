@@ -1,0 +1,46 @@
+{
+    "sourceFile": "app/controllers/quiz_controller.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1764730845319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764731159583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,17 +6,8 @@\n  \r\n   # ランダム出題\r\n   def random\r\n     @question = Question.order(\"RANDOM()\").first\r\n-    @total_answers = UserAnswer.where(user_id: current_user.id).count\r\n-    @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n-  \r\n-    @accuracy =\r\n-      if @total_answers > 0\r\n-        ((@correct_answers.to_f / @total_answers) * 100).round(1)\r\n-      else\r\n-        0\r\n-      end\r\n   end\r\n \r\n    # 回答処理\r\n   def answer\r\n"
+                },
+                {
+                    "date": 1764733661786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     # ユーザーの回答を保存\r\n     UserAnswer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n-      is_correct: @is_correct,\r\n+      is_correct: @is_correct\r\n     )\r\n \r\n     # 結果画面へリダイレクト\r\n     render \"quiz/result\"\r\n"
+                },
+                {
+                    "date": 1764733719754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n     @is_correct = (selected_ids.sort == correct_ids.sort)\r\n \r\n     # ユーザーの回答を保存\r\n-    UserAnswer.create!(\r\n+    UserAnswer2.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct\r\n     )\r\n"
+                },
+                {
+                    "date": 1764733767010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n     @is_correct = (selected_ids.sort == correct_ids.sort)\r\n \r\n     # ユーザーの回答を保存\r\n-    UserAnswer2.create!(\r\n+    UserAnswe.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct\r\n     )\r\n"
+                },
+                {
+                    "date": 1764733789546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n     @is_correct = (selected_ids.sort == correct_ids.sort)\r\n \r\n     # ユーザーの回答を保存\r\n-    UserAnswe.create!(\r\n+    UserAnswers.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct\r\n     )\r\n"
+                },
+                {
+                    "date": 1764734381945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n     # ユーザーの回答を保存\r\n     UserAnswers.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n-      is_correct: @is_correct\r\n+      is_correct: @is_correct,\r\n+      source: \"random\"\r\n     )\r\n \r\n     # 結果画面へリダイレクト\r\n     render \"quiz/result\"\r\n"
+                },
+                {
+                    "date": 1764737615391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n     @is_correct = (selected_ids.sort == correct_ids.sort)\r\n \r\n     # ユーザーの回答を保存\r\n-    UserAnswers.create!(\r\n+    UserAnswer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct,\r\n       source: \"random\"\r\n"
+                }
+            ],
+            "date": 1764730845319,
+            "name": "Commit-0",
+            "content": "class QuizController < ApplicationController\r\n\r\n  # ホーム画面\r\n  def home\r\n  end\r\n \r\n  # ランダム出題\r\n  def random\r\n    @question = Question.order(\"RANDOM()\").first\r\n    @total_answers = UserAnswer.where(user_id: current_user.id).count\r\n    @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n  \r\n    @accuracy =\r\n      if @total_answers > 0\r\n        ((@correct_answers.to_f / @total_answers) * 100).round(1)\r\n      else\r\n        0\r\n      end\r\n  end\r\n\r\n   # 回答処理\r\n  def answer\r\n    @question = Question.find(params[:question_id])\r\n\r\n    selected_ids = params[:choice_ids]&.map(&:to_i) || []\r\n    correct_ids  = @question.choices.where(is_correct: true).pluck(:id)\r\n\r\n    @is_correct = (selected_ids.sort == correct_ids.sort)\r\n\r\n    # ユーザーの回答を保存\r\n    UserAnswer.create!(\r\n      user_id: current_user.id,   # ログイン中のユーザーID\r\n      question_id: @question.id,\r\n      is_correct: @is_correct,\r\n    )\r\n\r\n    # 結果画面へリダイレクト\r\n    render \"quiz/result\"\r\n  end\r\n  \r\n  \r\n\r\n  # 結果表示\r\n  def result\r\n    @question = Question.find(params[:question_id])\r\n    @is_correct = params[:correct] == \"true\"\r\n  end\r\n  \r\nend\r\n"
+        }
+    ]
+}

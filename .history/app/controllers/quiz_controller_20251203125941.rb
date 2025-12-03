@@ -19,7 +19,7 @@ class QuizController < ApplicationController
     @is_correct = (selected_ids.sort == correct_ids.sort)
 
     # ユーザーの回答を保存
-    UserAnswer.create!(
+    UserAnswers.create!(
       user_id: current_user.id,   # ログイン中のユーザーID
       question_id: @question.id,
       is_correct: @is_correct,

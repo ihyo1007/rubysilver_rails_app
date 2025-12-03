@@ -31,8 +31,7 @@ class QuestionsController < ApplicationController
     UserAnswer.create!(
       user_id: current_user.id,   # ログイン中のユーザーID
       question_id: @question.id,
-      is_correct: @is_correct,
-      source: "list"
+      is_correct: @is_correct
     )
 
     render :result

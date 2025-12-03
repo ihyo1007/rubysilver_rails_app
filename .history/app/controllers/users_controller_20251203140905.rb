@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def mypage
     @list_total_answers = UserAnswer.where(user_id: current_user.id, source: "list").count
-    @list_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true, source: "list").count
+    @list_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count
   
     @list_accuracy =
       if @list_total_answers > 0
@@ -9,9 +9,8 @@ class UsersController < ApplicationController
       else
         0
       end
-      
     @random_total_answers = UserAnswer.where(user_id: current_user.id, source: "random").count
-    @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true, source: "random").count
+    @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count
 
     @random_accuracy =
       if @random_total_answers > 0

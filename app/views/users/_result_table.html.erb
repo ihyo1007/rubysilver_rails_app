@@ -1,0 +1,31 @@
+<!-- _result_table.html.erb -->
+<p><%= title %></p>
+
+<table class="result-table">
+  <tr>
+    <td><i class="fi fi-rs-pencil"></i> 解いた問題数</td>
+    <td class="number"><%= total_answers %></td>
+  </tr>
+  <tr>
+    <td><i class="fi fi-rs-circle"></i> 正解した問題数</td>
+    <td class="number"><%= correct_answers %></td>
+  </tr>
+  <tr>
+    <td><i class="fi fi-rs-medal"></i> 正答率</td>
+    <td class="number"><%= accuracy %>%</td>
+  </tr>
+</table>
+
+<div class="accuracy-graph" style="--pct: <%= accuracy %>;">
+  <div class="graph-track">
+    <div class="graph-fill"></div>
+  </div>
+</div>
+
+<div class="accuracy-message">
+  <% if accuracy >= 75 %>
+    <i class="fi fi-rs-smile-beam"></i> その調子！
+  <% else %>
+    <i class="fi fi-rs-sad-tear"></i> もうひといき!
+  <% end %>
+</div>

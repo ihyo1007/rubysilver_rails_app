@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       end
       
     @random_total_answers = UserAnswer.where(user_id: current_user.id, source: "random").count
-    @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true, source: "random").count
+    @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count
 
     @random_accuracy =
       if @random_total_answers > 0

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1764551100017,
@@ -36,6 +36,14 @@
                 {
                     "date": 1764726313262,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,8 @@\n       <div class=\"button-area\">\r\n         <%= submit_tag \"回答する\", class: \"button\" %>\r\n       </div>\r\n     <% end %>\r\n-    <div class=\"button-area\">\r\n-      <%= submit_tag \"回答する\", class: \"button\" %>\r\n-    </div>\r\n-  <%= link_to home_index_path do %>\r\n-    <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-  <% end %>\r\n+    <%= link_to home_index_path do %>\r\n+      <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+    <% end %>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764731047829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n <div class=\"question-show-container\">\r\n   <h1>問題</h1>\r\n+  <div class=\"stats-area\">\r\n+    <p>総回答数: <%= @total_answers %></p>\r\n+    <p>正解数: <%= @correct_answers %></p>\r\n+    <p>正答率: <%= @accuracy %> %</p>\r\n+  </div>\r\n   \r\n   <div class=\"question-area\">\r\n     <p><%= simple_format(@question.content) %></p>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1764731201269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,7 @@\n <div class=\"question-show-container\">\r\n   <h1>問題</h1>\r\n-  <div class=\"stats-area\">\r\n-    <p>総回答数: <%= @total_answers %></p>\r\n-    <p>正解数: <%= @correct_answers %></p>\r\n-    <p>正答率: <%= @accuracy %> %</p>\r\n-  </div>\r\n-  \r\n+\r\n   <div class=\"question-area\">\r\n     <p><%= simple_format(@question.content) %></p>\r\n   </div>\r\n   \r\n"
                 }
             ],
             "date": 1764551100017,

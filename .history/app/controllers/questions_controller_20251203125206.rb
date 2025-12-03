@@ -28,11 +28,10 @@ class QuestionsController < ApplicationController
     @previous_question = Question.where("id < ?", @question.id).order(id: :desc).first
 
     # ユーザーの回答を保存
-    UserAnswer.create!(
+    User2Answer.create!(
       user_id: current_user.id,   # ログイン中のユーザーID
       question_id: @question.id,
-      is_correct: @is_correct,
-      source: "list"
+      is_correct: @is_correct
     )
 
     render :result

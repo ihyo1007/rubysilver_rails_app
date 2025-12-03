@@ -27,14 +27,6 @@ class QuestionsController < ApplicationController
     @next_question = Question.where("id > ?", @question.id).order(:id).first
     @previous_question = Question.where("id < ?", @question.id).order(id: :desc).first
 
-    # ユーザーの回答を保存
-    UserAnswer.create!(
-      user_id: current_user.id,   # ログイン中のユーザーID
-      question_id: @question.id,
-      is_correct: @is_correct,
-      source: "list"
-    )
-
     render :result
   end
   # GET /questions/new
@@ -85,6 +77,11 @@ class QuestionsController < ApplicationController
       format.html { redirect_to questions_path, notice: "Question was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
+  end
+
+  def result
+    @question = Question.find(params[:question_id])
+    @is_correct = params[:correct] == "true"
   end
 
   private

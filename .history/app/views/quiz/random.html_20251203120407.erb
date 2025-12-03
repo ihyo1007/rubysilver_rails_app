@@ -1,6 +1,11 @@
 <div class="question-show-container">
   <h1>問題</h1>
-
+  <div class="stats-area">
+    <p>総回答数: <%= @total_answers %></p>
+    <p>正解数: <%= @correct_answers %></p>
+    <p>正答率: <%= @accuracy %> %</p>
+  </div>
+  
   <div class="question-area">
     <p><%= simple_format(@question.content) %></p>
   </div>

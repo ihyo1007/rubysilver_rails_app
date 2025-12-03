@@ -7,6 +7,15 @@ class QuizController < ApplicationController
   # ランダム出題
   def random
     @question = Question.order("RANDOM()").first
+    @total_answers = UserAnswer.where(user_id: current_user.id).count
+    @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count
+  
+    @accuracy =
+      if @total_answers > 0
+        ((@correct_answers.to_f / @total_answers) * 100).round(1)
+      else
+        0
+      end
   end
 
    # 回答処理
@@ -23,7 +32,6 @@ class QuizController < ApplicationController
       user_id: current_user.id,   # ログイン中のユーザーID
       question_id: @question.id,
       is_correct: @is_correct,
-      source: "random"
     )
 
     # 結果画面へリダイレクト
