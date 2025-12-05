@@ -1,0 +1,22 @@
+{
+    "sourceFile": "db/schema.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764906374330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764906394013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,80 @@\n+# This file is auto-generated from the current state of the database. Instead\r\n+# of editing this file, please use the migrations feature of Active Record to\r\n+# incrementally modify your database, and then regenerate this schema definition.\r\n+#\r\n+# This file is the source Rails uses to define your schema when running `bin/rails\r\n+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to\r\n+# be faster and is potentially less error prone than running all of your\r\n+# migrations from scratch. Old migrations may fail to apply correctly if those\r\n+# migrations use external dependencies or application code.\r\n+#\r\n+# It's strongly recommended that you check this file into your version control system.\r\n+\r\n+ActiveRecord::Schema[8.0].define(version: 2025_12_05_033029) do\r\n+  create_table \"admins\", force: :cascade do |t|\r\n+    t.string \"email\", default: \"\", null: false\r\n+    t.string \"encrypted_password\", default: \"\", null: false\r\n+    t.string \"reset_password_token\"\r\n+    t.datetime \"reset_password_sent_at\"\r\n+    t.datetime \"remember_created_at\"\r\n+    t.datetime \"created_at\", null: false\r\n+    t.datetime \"updated_at\", null: false\r\n+    t.index [\"email\"], name: \"index_admins_on_email\", unique: true\r\n+    t.index [\"reset_password_token\"], name: \"index_admins_on_reset_password_token\", unique: true\r\n+  end\r\n+\r\n+  create_table \"choices\", force: :cascade do |t|\r\n+    t.string \"name\"\r\n+    t.integer \"question_id\", null: false\r\n+    t.boolean \"is_correct\"\r\n+    t.string \"content\"\r\n+    t.datetime \"created_at\", null: false\r\n+    t.datetime \"updated_at\", null: false\r\n+    t.index [\"question_id\"], name: \"index_choices_on_question_id\"\r\n+  end\r\n+\r\n+  create_table \"questions\", force: :cascade do |t|\r\n+    t.text \"content\", null: false\r\n+    t.integer \"question\"\r\n+    t.boolean \"is_correct\"\r\n+    t.datetime \"answered_at\"\r\n+    t.datetime \"created_at\", null: false\r\n+    t.datetime \"updated_at\", null: false\r\n+    t.boolean \"multiple_answer\"\r\n+    t.text \"explanation\"\r\n+    t.string \"category\"\r\n+  end\r\n+\r\n+  create_table \"user_answers\", force: :cascade do |t|\r\n+    t.integer \"user_id\"\r\n+    t.integer \"question_id\", null: false\r\n+    t.integer \"choice_id\"\r\n+    t.datetime \"answered\"\r\n+    t.boolean \"is_correct\"\r\n+    t.datetime \"created_at\", null: false\r\n+    t.datetime \"updated_at\", null: false\r\n+    t.datetime \"answered_at\"\r\n+    t.text \"choice_ids\"\r\n+    t.string \"source\"\r\n+    t.index [\"choice_id\"], name: \"index_user_answers_on_choice_id\"\r\n+    t.index [\"question_id\"], name: \"index_user_answers_on_question_id\"\r\n+    t.index [\"user_id\"], name: \"index_user_answers_on_user_id\"\r\n+  end\r\n+\r\n+  create_table \"users\", force: :cascade do |t|\r\n+    t.string \"email\", default: \"aaaa\", null: false\r\n+    t.string \"encrypted_password\", default: \"\", null: false\r\n+    t.string \"reset_password_token\"\r\n+    t.datetime \"reset_password_sent_at\"\r\n+    t.datetime \"remember_created_at\"\r\n+    t.datetime \"created_at\", null: false\r\n+    t.datetime \"updated_at\", null: false\r\n+    t.index [\"email\"], name: \"index_users_on_email\", unique: true\r\n+    t.index [\"reset_password_token\"], name: \"index_users_on_reset_password_token\", unique: true\r\n+  end\r\n+\r\n+  add_foreign_key \"choices\", \"questions\"\r\n+  add_foreign_key \"user_answers\", \"choices\"\r\n+  add_foreign_key \"user_answers\", \"questions\"\r\n+  add_foreign_key \"user_answers\", \"users\"\r\n+end\r\n"
+                }
+            ],
+            "date": 1764906374330,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

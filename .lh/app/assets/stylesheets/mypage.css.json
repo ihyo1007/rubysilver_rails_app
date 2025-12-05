@@ -1,0 +1,70 @@
+{
+    "sourceFile": "app/assets/stylesheets/mypage.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1764897212470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764899136959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,14 +74,14 @@\n   font-size: 16px;\r\n   margin-top: 10px;\r\n }\r\n \r\n-/* バナー */\r\n-.banner-wrapper {\r\n-  margin-top: 35px;\r\n-  text-align: center;\r\n-}\r\n-\r\n-.banner_yoko {\r\n-  width: 80%;\r\n-  max-width: 600px;\r\n-}\r\n+  /* バナー */\r\n+  .banner-area {\r\n+    margin-top: 30px;\r\n+    text-align: center;\r\n+  }\r\n+  \r\n+  .banner_yoko {\r\n+    width: 70%;\r\n+    max-width: 300px;\r\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764899143239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,14 +74,14 @@\n   font-size: 16px;\r\n   margin-top: 10px;\r\n }\r\n \r\n-  /* バナー */\r\n-  .banner-area {\r\n-    margin-top: 30px;\r\n-    text-align: center;\r\n-  }\r\n-  \r\n-  .banner_yoko {\r\n-    width: 70%;\r\n-    max-width: 300px;\r\n-  }\n\\ No newline at end of file\n+/* バナー */\r\n+.banner-area {\r\n+  margin-top: 30px;\r\n+  text-align: center;\r\n+}\r\n+\r\n+.banner_yoko {\r\n+  width: 70%;\r\n+  max-width: 300px;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764899158191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,13 +75,13 @@\n   margin-top: 10px;\r\n }\r\n \r\n /* バナー */\r\n-.banner-area {\r\n-  margin-top: 30px;\r\n+.banner-wrapper {\r\n+  margin-top: 35px;\r\n   text-align: center;\r\n }\r\n \r\n .banner_yoko {\r\n-  width: 70%;\r\n\\ No newline at end of file\n-  max-width: 300px;\r\n-}\n+  width: 80%;\r\n+  max-width: 600px;\r\n+}\r\n"
+                },
+                {
+                    "date": 1764899201289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,7 +81,7 @@\n   text-align: center;\r\n }\r\n \r\n .banner_yoko {\r\n-  width: 80%;\r\n-  max-width: 600px;\r\n+  width: 70%;\r\n+  max-width: 300px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764899213785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,7 +81,7 @@\n   text-align: center;\r\n }\r\n \r\n .banner_yoko {\r\n-  width: 70%;\r\n-  max-width: 300px;\r\n+  width: 80%;\r\n+  max-width: 600px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764899294908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,8 +80,4 @@\n   margin-top: 35px;\r\n   text-align: center;\r\n }\r\n \r\n-.banner_yoko {\r\n-  width: 80%;\r\n-  max-width: 600px;\r\n-}\r\n"
+                },
+                {
+                    "date": 1764899304103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,5 @@\n   margin-top: 10px;\r\n }\r\n \r\n /* バナー */\r\n-.banner-wrapper {\r\n-  margin-top: 35px;\r\n-  text-align: center;\r\n-}\r\n \r\n"
+                },
+                {
+                    "date": 1764899323443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,5 +75,13 @@\n   margin-top: 10px;\r\n }\r\n \r\n /* バナー */\r\n+.banner-wrapper {\r\n+  margin-top: 35px;\r\n+  text-align: center;\r\n+}\r\n \r\n+.banner-wrapper .banner_yoko {\r\n+  width: 70%;\r\n+  max-width: 300px;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764899333763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,8 +80,4 @@\n   margin-top: 35px;\r\n   text-align: center;\r\n }\r\n \r\n-.banner-wrapper .banner_yoko {\r\n-  width: 70%;\r\n-  max-width: 300px;\r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764899347091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,4 +80,8 @@\n   margin-top: 35px;\r\n   text-align: center;\r\n }\r\n \r\n+.banner-wrapper .banner_yoko {\r\n+  width: 70%;\r\n+  max-width: 3000px;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764899353584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,6 +82,6 @@\n }\r\n \r\n .banner-wrapper .banner_yoko {\r\n   width: 70%;\r\n-  max-width: 3000px;\r\n+  max-width: 300px;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764899361627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,6 +82,6 @@\n }\r\n \r\n .banner-wrapper .banner_yoko {\r\n   width: 70%;\r\n-  max-width: 300px;\r\n+  max-width: 3000px;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764899380028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,6 +82,6 @@\n }\r\n \r\n .banner-wrapper .banner_yoko {\r\n   width: 70%;\r\n-  max-width: 3000px;\r\n+  max-width: 300px;\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1764897212470,
+            "name": "Commit-0",
+            "content": "/* マイページタイトル */\r\n.mypage-title {\r\n  text-align: center;\r\n  margin-bottom: 30px;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n/* カード全体のレイアウト */\r\n.mypage-container {\r\n  display: flex;\r\n  gap: 20px;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n/* 結果カード */\r\n.result-card {\r\n  background: #fff;\r\n  padding: 20px 25px;\r\n  border-radius: 12px;\r\n  box-shadow: 0 4px 12px rgba(0,0,0,0.08);\r\n  width: 330px;\r\n}\r\n\r\n/* タイトル部分 */\r\n.result-card p {\r\n  font-size: 20px;\r\n  font-weight: 600;\r\n  margin-bottom: 16px;\r\n  text-align: center;\r\n}\r\n\r\n/* テーブル調整 */\r\n.result-table {\r\n  width: 100%;\r\n  border-collapse: collapse;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.result-table td {\r\n  padding: 8px 4px;\r\n  font-size: 16px;\r\n}\r\n\r\n.result-table .number {\r\n  text-align: right;\r\n  font-weight: bold;\r\n}\r\n\r\n/* グラフ部分 */\r\n.accuracy-graph {\r\n  margin: 15px 0;\r\n}\r\n\r\n.graph-track {\r\n  width: 100%;\r\n  height: 10px;\r\n  background: #eee;\r\n  border-radius: 5px;\r\n  overflow: hidden;\r\n}\r\n\r\n.graph-fill {\r\n  height: 100%;\r\n  width: calc(var(--pct) * 1%);\r\n  background: #4caf50;\r\n  transition: width 0.4s ease;\r\n}\r\n\r\n/* メッセージ */\r\n.accuracy-message {\r\n  text-align: center;\r\n  font-size: 16px;\r\n  margin-top: 10px;\r\n}\r\n\r\n/* バナー */\r\n.banner-wrapper {\r\n  margin-top: 35px;\r\n  text-align: center;\r\n}\r\n\r\n.banner_yoko {\r\n  width: 80%;\r\n  max-width: 600px;\r\n}\r\n"
+        }
+    ]
+}

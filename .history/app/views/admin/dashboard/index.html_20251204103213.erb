@@ -1,0 +1,44 @@
+<h1 class="admin-title">管理者専用トップページ</h1>
+
+<ul class="admin-menu">
+  <li><%= link_to "新規問題の作成", new_question_path %></li>
+  <li><%= link_to "問題の編集・削除", questions_path %></li>
+  <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+  <li><%= link_to "トップページに戻る", root_path %></li>
+</ul>
+<style>
+  .admin-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.admin-menu {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.admin-menu li {
+  margin: 15px 0;
+}
+
+.admin-menu a {
+  display: block;
+  padding: 12px 18px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: #4a90e2;
+  color: white;
+  transition: 0.2s;
+}
+
+.admin-menu a:hover {
+  background-color: #357ab7;
+}
+</style>

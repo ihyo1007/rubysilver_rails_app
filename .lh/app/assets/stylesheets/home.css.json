@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 43,
             "patches": [
                 {
                     "date": 1764726519064,
@@ -152,6 +152,34 @@
                 {
                     "date": 1764729087061,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n   font-size: 20px;\r\n-  margin: 10px;\r\n+  margin-right: 20px;\r\n }\r\n \r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n"
+                },
+                {
+                    "date": 1764743114359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .banner {\r\n   display: block;\r\n-  width: 60%;\r\n+  width: 40%;\r\n   max-width: 900px;\r\n   margin: 20px auto;\r\n   margin-bottom: 50px;\r\n }\r\n"
+                },
+                {
+                    "date": 1764743168639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n }\r\n \r\n .main-nav li a {\r\n   text-decoration: none;\r\n-  font-size: 18px;\r\n+  font-size: 1px;\r\n   color: #333;\r\n }\r\n \r\n .main-nav li a:hover {\r\n"
+                },
+                {
+                    "date": 1764743177063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n }\r\n \r\n .main-nav li a {\r\n   text-decoration: none;\r\n-  font-size: 1px;\r\n+  font-size: 18px;\r\n   color: #333;\r\n }\r\n \r\n .main-nav li a:hover {\r\n"
+                },
+                {
+                    "date": 1764743212460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n   border-radius: 6px;\r\n \r\n   text-decoration: none;\r\n   font-weight: bold;\r\n-  font-size: 14px;\r\n+  font-size: 4px;\r\n \r\n   box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n   transition: background 0.2s, transform 0.1s;\r\n }\r\n"
+                },
+                {
+                    "date": 1764743220583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n   border-radius: 6px;\r\n \r\n   text-decoration: none;\r\n   font-weight: bold;\r\n-  font-size: 4px;\r\n+  font-size: 14px;\r\n \r\n   box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n   transition: background 0.2s, transform 0.1s;\r\n }\r\n"
+                },
+                {
+                    "date": 1764743229311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n   border-radius: 6px;\r\n \r\n   text-decoration: none;\r\n   font-weight: bold;\r\n-  font-size: 14px;\r\n+  font-size: 4px;\r\n \r\n   box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n   transition: background 0.2s, transform 0.1s;\r\n   color: white;\r\n"
+                },
+                {
+                    "date": 1764743236365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n   border-radius: 6px;\r\n \r\n   text-decoration: none;\r\n   font-weight: bold;\r\n-  font-size: 4px;\r\n+  font-size: 14px;\r\n \r\n   box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n   transition: background 0.2s, transform 0.1s;\r\n   color: white;\r\n"
                 }
             ],
             "date": 1764726519064,

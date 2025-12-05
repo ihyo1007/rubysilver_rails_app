@@ -1,0 +1,87 @@
+/* マイページタイトル */
+.mypage-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* カード全体のレイアウト */
+.mypage-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 結果カード */
+.result-card {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 330px;
+}
+
+/* タイトル部分 */
+.result-card p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* テーブル調整 */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.result-table td {
+  padding: 8px 4px;
+  font-size: 16px;
+}
+
+.result-table .number {
+  text-align: right;
+  font-weight: bold;
+}
+
+/* グラフ部分 */
+.accuracy-graph {
+  margin: 15px 0;
+}
+
+.graph-track {
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.graph-fill {
+  height: 100%;
+  width: calc(var(--pct) * 1%);
+  background: #4caf50;
+  transition: width 0.4s ease;
+}
+
+/* メッセージ */
+.accuracy-message {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* バナー */
+.banner-wrapper {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.banner_yoko {
+  width: 70%;
+  max-width: 300px;
+}

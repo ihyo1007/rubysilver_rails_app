@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1764653703195,
@@ -56,6 +56,10 @@
                 {
                     "date": 1764734365546,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,10 @@\n     # ユーザーの回答を保存\r\n     UserAnswer.create!(\r\n       user_id: current_user.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n-      is_correct: @is_correct\r\n+      is_correct: @is_correct,\r\n+      source: \"list\"\r\n     )\r\n \r\n     render :result\r\n   end\r\n"
+                },
+                {
+                    "date": 1764905619126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n \r\n     # ユーザーの回答を保存\r\n     UserAnswer.create!(\r\n-      user_id: current_user.id,   # ログイン中のユーザーID\r\n+      user_id: current_user&.id,   # ログイン中のユーザーID\r\n       question_id: @question.id,\r\n       is_correct: @is_correct,\r\n       source: \"list\"\r\n     )\r\n"
                 }
             ],
             "date": 1764653703195,

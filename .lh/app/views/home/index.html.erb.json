@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1764726491155,
@@ -40,6 +40,30 @@
                 {
                     "date": 1764737930953,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       <% end %>\r\n     <% else %>\r\n       <%= link_to new_user_session_path, \r\n           class: \"nav-button login-button\" do %>\r\n-        <i class=\"fi fi-ss-user\"></i> ログイン\r\n+        <i class=\"fi fi-ss-user\"></i> ログイン・新規登録\r\n       <% end %>\r\n     <% end %>\r\n   </div>\r\n </header>\r\n"
+                },
+                {
+                    "date": 1764812902742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,11 @@\n           class: \"nav-button login-button\" do %>\r\n         <i class=\"fi fi-ss-user\"></i> ログイン・新規登録\r\n       <% end %>\r\n     <% end %>\r\n+    <div class=\"admin-login-link\">\r\n+      <%= link_to \"管理者ログイン\", new_admin_session_path, class: \"btn-admin-login\" %>\r\n+    </div>\r\n   </div>\r\n </header>\r\n \r\n <div class=\"header-container\">\r\n"
+                },
+                {
+                    "date": 1764813007673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,8 @@\n           class: \"nav-button login-button\" do %>\r\n         <i class=\"fi fi-ss-user\"></i> ログイン・新規登録\r\n       <% end %>\r\n     <% end %>\r\n-    <div class=\"admin-login-link\">\r\n-      <%= link_to \"管理者ログイン\", new_admin_session_path, class: \"btn-admin-login\" %>\r\n-    </div>\r\n   </div>\r\n </header>\r\n \r\n <div class=\"header-container\">\r\n@@ -46,8 +43,11 @@\n     </li>\r\n   </ul>\r\n </nav>\r\n \r\n+<footer>\r\n+  <%= link_to \"管理者ログイン\", new_admin_session_path, class: \"footer-admin-link\" %>\r\n+</footer>\r\n \r\n \r\n <main class=\"content\">\r\n   <%= yield %>\r\n"
+                },
+                {
+                    "date": 1764813038448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,4 @@\n   <%= link_to \"管理者ログイン\", new_admin_session_path, class: \"footer-admin-link\" %>\r\n </footer>\r\n \r\n \r\n-<main class=\"content\">\r\n-  <%= yield %>\r\n-</main>\r\n"
+                },
+                {
+                    "date": 1764813059260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,4 +48,7 @@\n   <%= link_to \"管理者ログイン\", new_admin_session_path, class: \"footer-admin-link\" %>\r\n </footer>\r\n \r\n \r\n+<main class=\"content\">\r\n+  <%= yield %>\r\n+</main>\r\n"
+                },
+                {
+                    "date": 1764813224729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </li>\r\n   </ul>\r\n </nav>\r\n \r\n-<footer>\r\n+<footer style=\"text-align: center; padding: 20px 0;\">\r\n   <%= link_to \"管理者ログイン\", new_admin_session_path, class: \"footer-admin-link\" %>\r\n </footer>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764813234546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </li>\r\n   </ul>\r\n </nav>\r\n \r\n-<footer style=\"text-align: center; padding: 20px 0;\">\r\n+<footer>\r\n   <%= link_to \"管理者ログイン\", new_admin_session_path, class: \"footer-admin-link\" %>\r\n </footer>\r\n \r\n \r\n"
                 }
             ],
             "date": 1764726491155,

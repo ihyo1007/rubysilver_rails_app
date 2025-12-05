@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1764551100017,
@@ -44,6 +44,42 @@
                 {
                     "date": 1764731201269,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,7 @@\n <div class=\"question-show-container\">\r\n   <h1>問題</h1>\r\n-  <div class=\"stats-area\">\r\n-    <p>総回答数: <%= @total_answers %></p>\r\n-    <p>正解数: <%= @correct_answers %></p>\r\n-    <p>正答率: <%= @accuracy %> %</p>\r\n-  </div>\r\n-  \r\n+\r\n   <div class=\"question-area\">\r\n     <p><%= simple_format(@question.content) %></p>\r\n   </div>\r\n   \r\n"
+                },
+                {
+                    "date": 1764813344575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,26 +1,35 @@\n <div class=\"question-show-container\">\r\n-  <h1>問題</h1>\r\n+  <h1 class=\"question-title\">問題</h1>\r\n \r\n-  <div class=\"question-area\">\r\n+  <div class=\"question-area card\">\r\n     <p><%= simple_format(@question.content) %></p>\r\n   </div>\r\n-  \r\n+\r\n   <div class=\"choices-area\">\r\n-    <%= form_with url: quiz_answer_path, data: { turbo: false } do %>\r\n+    <%= form_with url: quiz_answer_path, data: { turbo: false }, class: \"answer-form\" do %>\r\n+      \r\n+      <%= hidden_field_tag :question_id, @question.id %>\r\n+\r\n       <% @question.choices.each do |choice| %>\r\n-        <%= hidden_field_tag :question_id, @question.id %>\r\n         <div class=\"choice-box\">\r\n-          <label>\r\n-            <%= check_box_tag \"choice_ids[]\", choice.id %>\r\n-            <%= choice.content %>\r\n+          <label class=\"choice-label\">\r\n+            <%= check_box_tag \"choice_ids[]\", choice.id, false, class: \"choice-check\" %>\r\n+            <span class=\"choice-text\"><%= choice.content %></span>\r\n           </label>\r\n         </div>\r\n       <% end %>\r\n+\r\n       <div class=\"button-area\">\r\n-        <%= submit_tag \"回答する\", class: \"button\" %>\r\n+        <%= submit_tag \"回答する\", class: \"answer-button\" %>\r\n       </div>\r\n+\r\n     <% end %>\r\n-    <%= link_to home_index_path do %>\r\n-      <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-    <% end %>\r\n+\r\n+    <div class=\"banner-area\">\r\n+      <%= link_to home_index_path do %>\r\n+        <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+      <% end %>\r\n+    </div>\r\n+    \r\n+  </div>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764897384656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,12 @@\n         <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n       <% end %>\r\n     </div>\r\n     \r\n+    <div class=\"mypage-link-area\">\r\n+      <%= link_to mypage_path, class: \"mypage-link\" do %>\r\n+        <i class=\"fi fi-rr-user\"></i> マイページへ戻る\r\n+      <% end %>\r\n+    </div>\r\n+    \r\n   </div>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764897394534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     </div>\r\n     \r\n     <div class=\"mypage-link-area\">\r\n       <%= link_to mypage_path, class: \"mypage-link\" do %>\r\n-        <i class=\"fi fi-rr-user\"></i> マイページへ戻る\r\n+        <i class=\"fi fi-rr-user\"></i> マイページ\r\n       <% end %>\r\n     </div>\r\n     \r\n   </div>\r\n"
+                },
+                {
+                    "date": 1764897695343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,14 @@\n         <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n       <% end %>\r\n     </div>\r\n     \r\n+    <div class=\"question-list-link-area\">\r\n+      <%= link_to questions_path, class: \"question-list-link\" do %>\r\n+        <i class=\"fi fi-rr-list\"></i> 問題一覧へ戻る\r\n+      <% end %>\r\n+    </div>\r\n+\r\n     <div class=\"mypage-link-area\">\r\n       <%= link_to mypage_path, class: \"mypage-link\" do %>\r\n         <i class=\"fi fi-rr-user\"></i> マイページ\r\n       <% end %>\r\n"
+                },
+                {
+                    "date": 1764897922467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,24 +24,25 @@\n       </div>\r\n \r\n     <% end %>\r\n \r\n-    <div class=\"banner-area\">\r\n-      <%= link_to home_index_path do %>\r\n-        <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-      <% end %>\r\n+    <div class=\"link-list\">\r\n+      <div class=\"banner-area\">\r\n+        <%= link_to home_index_path do %>\r\n+          <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+        <% end %>\r\n+      </div>\r\n+      \r\n+      <div class=\"question-list-link-area\">\r\n+        <%= link_to questions_path, class: \"question-list-link\" do %>\r\n+          <i class=\"fi fi-rr-list\"></i> 問題一覧へ戻る\r\n+        <% end %>\r\n+      </div>\r\n+      <div class=\"mypage-link-area\">\r\n+        <%= link_to mypage_path, class: \"mypage-link\" do %>\r\n+          <i class=\"fi fi-rr-user\"></i> マイページ\r\n+        <% end %>\r\n+      </div>\r\n     </div>\r\n     \r\n-    <div class=\"question-list-link-area\">\r\n-      <%= link_to questions_path, class: \"question-list-link\" do %>\r\n-        <i class=\"fi fi-rr-list\"></i> 問題一覧へ戻る\r\n-      <% end %>\r\n-    </div>\r\n-\r\n-    <div class=\"mypage-link-area\">\r\n-      <%= link_to mypage_path, class: \"mypage-link\" do %>\r\n-        <i class=\"fi fi-rr-user\"></i> マイページ\r\n-      <% end %>\r\n-    </div>\r\n-    \r\n   </div>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764898124164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       </div>\r\n \r\n     <% end %>\r\n \r\n-    <div class=\"link-list\">\r\n+    <div class=\"link-areas\">\r\n       <div class=\"banner-area\">\r\n         <%= link_to home_index_path do %>\r\n           <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n         <% end %>\r\n"
+                },
+                {
+                    "date": 1764898187205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       </div>\r\n       \r\n       <div class=\"question-list-link-area\">\r\n         <%= link_to questions_path, class: \"question-list-link\" do %>\r\n-          <i class=\"fi fi-rr-list\"></i> 問題一覧へ戻る\r\n+          <i class=\"fi fi-rr-list\"></i> 問題一覧\r\n         <% end %>\r\n       </div>\r\n       <div class=\"mypage-link-area\">\r\n         <%= link_to mypage_path, class: \"mypage-link\" do %>\r\n"
+                },
+                {
+                    "date": 1764898557753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,18 +31,26 @@\n           <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n         <% end %>\r\n       </div>\r\n       \r\n-      <div class=\"question-list-link-area\">\r\n-        <%= link_to questions_path, class: \"question-list-link\" do %>\r\n-          <i class=\"fi fi-rr-list\"></i> 問題一覧\r\n-        <% end %>\r\n+      <nav class=\"icon-nav\">\r\n+  <ul>\r\n+    <li>\r\n+      <%= link_to questions_path do %>\r\n+        <i class=\"fi fi-rr-edit\"></i>\r\n+        <span>問題一覧</span>\r\n+      <% end %>\r\n+    </li>\r\n+\r\n+    <li>\r\n+      <%= link_to mypage_path do %>\r\n+        <i class=\"fi fi-rs-book-alt\"></i>\r\n+        <span>マイページ</span>\r\n+      <% end %>\r\n+    </li>\r\n+  </ul>\r\n+</nav>\r\n       </div>\r\n-      <div class=\"mypage-link-area\">\r\n-        <%= link_to mypage_path, class: \"mypage-link\" do %>\r\n-          <i class=\"fi fi-rr-user\"></i> マイページ\r\n-        <% end %>\r\n-      </div>\r\n     </div>\r\n     \r\n   </div>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764898640242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,24 +32,23 @@\n         <% end %>\r\n       </div>\r\n       \r\n       <nav class=\"icon-nav\">\r\n-  <ul>\r\n-    <li>\r\n-      <%= link_to questions_path do %>\r\n-        <i class=\"fi fi-rr-edit\"></i>\r\n-        <span>問題一覧</span>\r\n-      <% end %>\r\n-    </li>\r\n+        <ul>\r\n+          <li>\r\n+            <%= link_to questions_path do %>\r\n+              <i class=\"fi fi-rr-edit\"></i>\r\n+              <span>問題一覧</span>\r\n+            <% end %>\r\n+          </li>\r\n \r\n-    <li>\r\n-      <%= link_to mypage_path do %>\r\n-        <i class=\"fi fi-rs-book-alt\"></i>\r\n-        <span>マイページ</span>\r\n-      <% end %>\r\n-    </li>\r\n-  </ul>\r\n-</nav>\r\n+          <li>\r\n+            <%= link_to mypage_path do %>\r\n+              <i class=\"fi fi-rs-book-alt\"></i>\r\n+              <span>マイページ</span>\r\n+            <% end %>\r\n+          </li>\r\n+        </ul>\r\n       </div>\r\n     </div>\r\n     \r\n   </div>\r\n"
                 }
             ],
             "date": 1764551100017,

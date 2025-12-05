@@ -1,0 +1,25 @@
+<div class="question-show-container">
+  <h1>問題 <%= @question.id %></h1>
+  
+  <div class="question-area">
+    <p><%= simple_format(@question.content) %></p>
+  </div>
+  
+  <div class="choices-area">
+    <%= form_with url: answer_question_path(@question), data: { turbo: false} do %>
+      <% @question.choices.each do |choice| %>
+        <div class="choice-box">
+          <label>
+            <%= check_box_tag "choice_ids[]", choice.id %>
+            <%= choice.content %>
+          </label>
+        </div>
+      <% end %>
+      <div class="button-area">
+        <%= submit_tag "回答する", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "前の問題へ戻る", question_path(@previous_question), class: "previous-question-link" if @previous_question %>
+  <%= link_to "次の問題へ進む", question_path(@next_question), class: "next-question-link" if @next_question %>
+</div>

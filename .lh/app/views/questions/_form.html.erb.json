@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1764300381989,
@@ -16,6 +16,10 @@
                 {
                     "date": 1764300461645,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   </div>\r\n \r\n   <div class=\"field\" style=\"display: flex;\">\r\n     <%= f.label :category_id, \"カテゴリー\" %>\r\n-    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: \"カテゴリーを選択\" %>\r\n+    <%= f.text_field :category_id %>\r\n   </div>\r\n \r\n   <div id=\"choices\">\r\n     <%= f.fields_for :choices do |choice_fields| %>\r\n"
+                },
+                {
+                    "date": 1764811461629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,48 +1,51 @@\n-<%= form_with model: @question, local: true do |f| %>\r\n+<%= form_with model: @question, local: true, class: \"question-form\" do |f| %>\r\n   <% if @question.errors.any? %>\r\n-    <div id=\"error_explanation\">\r\n-      <h2><%= pluralize(@question.errors.count, \"error\") %> prohibited this question from being saved:</h2>\r\n-\r\n+    <div id=\"error_explanation\" class=\"error-box\">\r\n+      <h2><%= pluralize(@question.errors.count, \"エラー\") %> が発生しました</h2>\r\n       <ul>\r\n         <% @question.errors.full_messages.each do |message| %>\r\n           <li><%= message %></li>\r\n         <% end %>\r\n       </ul>\r\n     </div>\r\n   <% end %>\r\n \r\n-\r\n-  <div class=\"field\" style=\"display: flex;\">\r\n+  <div class=\"form-group\">\r\n     <%= f.label :content, \"問題文\" %>\r\n-    <%= f.text_area :content %>\r\n+    <%= f.text_area :content, class: \"textarea\" %>\r\n   </div>\r\n \r\n-  <div class=\"field\" style=\"display: flex;\">\r\n+  <div class=\"form-group\">\r\n     <%= f.label :category_id, \"カテゴリー\" %>\r\n-    <%= f.text_field :category_id %>\r\n+    <%= f.text_field :category_id, class: \"input\" %>\r\n   </div>\r\n \r\n   <div id=\"choices\">\r\n     <%= f.fields_for :choices do |choice_fields| %>\r\n-      <div class=\"choice-field\">\r\n-        <%= choice_fields.label :content, \"選択肢内容\" %>\r\n-        <%= choice_fields.text_field :content %>\r\n-        <%= choice_fields.label :is_correct, \"正解\" %>\r\n-        <%= choice_fields.check_box :is_correct %>\r\n-        <%= link_to \"削除\", \"#\", class: \"remove-choice\" %>\r\n+      <div class=\"choice-field card\">\r\n+        <div class=\"choice-row\">\r\n+          <%= choice_fields.label :content, \"選択肢\" %>\r\n+          <%= choice_fields.text_field :content, class: \"input\" %>\r\n+        </div>\r\n+\r\n+        <div class=\"choice-row\">\r\n+          <%= choice_fields.label :is_correct, \"正解\" %>\r\n+          <%= choice_fields.check_box :is_correct %>\r\n\\ No newline at end of file\n+        </div>\r\n+\r\n+        <%= link_to \"削除\", \"#\", class: \"remove-choice btn-red\" %>\r\n       </div>\r\n     <% end %>\r\n   </div>\r\n \r\n-  <%= link_to \"選択肢を追加\", \"#\", id: \"add-choice\" %>\r\n-  <br><br>\r\n+  <%= link_to \"＋ 選択肢を追加\", \"#\", id: \"add-choice\", class: \"btn-gray\" %>\r\n \r\n-  <div class=\"field\" style=\"display: flex;\">\r\n+  <div class=\"form-group\">\r\n     <%= f.label :explanation, \"解説\" %>\r\n-    <%= f.text_area :explanation %>\r\n+    <%= f.text_area :explanation, class: \"textarea\" %>\r\n   </div>\r\n \r\n   <div class=\"actions\">\r\n-    <%= f.submit %>\r\n+    <%= f.submit \"保存\", class: \"btn-blue\" %>\r\n   </div>\r\n-<% end %>\n+<% end %>\r\n"
                 }
             ],
             "date": 1764300381989,

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/views/questions/edit.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1764811611745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764811681884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <h1 class=\"page-title\">問題の編集</h1>\r\n \r\n <%= render 'form', question: @question %>\r\n \r\n-<%= link_to \"戻る\", admin_top_path, class: \"btn-gray\" %>\r\n+<%= link_to \"戻る\", admin_top_path, class: \"btn-gray\" %>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764811809943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <h1 class=\"page-title\">問題の編集</h1>\r\n \r\n <%= render 'form', question: @question %>\r\n \r\n-<%= link_to \"戻る\", admin_top_path, class: \"btn-gray\" %>\n\\ No newline at end of file\n+<%= link_to \"戻る\", new_admin_session_path, class: \"btn-gray\" %>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1764811611745,
+            "name": "Commit-0",
+            "content": "<h1 class=\"page-title\">問題の編集</h1>\r\n\r\n<%= render 'form', question: @question %>\r\n\r\n<%= link_to \"戻る\", admin_top_path, class: \"btn-gray\" %>\r\n"
+        }
+    ]
+}

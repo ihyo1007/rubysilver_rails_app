@@ -1,0 +1,70 @@
+.result-table {
+  width: 500px;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.result-table  td {
+  border: none;
+  padding: 6px 0;
+}
+
+.result-table .number {
+  text-align: left;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+/* グラフ外枠 */
+.accuracy-graph {
+  --scale: calc(var(--pct) / 100);
+  width: 100%;
+  max-width: 480px;
+  margin: 15px auto 20px;
+}
+
+/* 背景バー */
+.graph-track {
+  background: rgba(0,0,0,0.1);
+  height: 1.2rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* 伸びる部分 */
+.graph-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #4CAF50 0%, #2E7D32 100%);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: grow-bar 1200ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+/* 判定メッセージ */
+.accuracy-message {
+  text-align: center;     /* 中央寄せ */
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 8px;        /* グラフとメッセージの間にスペース */
+  color: #333;
+}
+
+/* 顔アイコンのサイズ調整（必要に応じて） */
+.accuracy-message i {
+  vertical-align: middle; 
+  font-size: 2rem;
+}
+
+@keyframes grow-bar {
+  to {
+    transform: scaleX(var(--scale));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-fill {
+    animation: none;
+    transform: scaleX(var(--scale));
+  }
+}

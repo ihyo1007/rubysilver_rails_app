@@ -1,0 +1,22 @@
+{
+    "sourceFile": "db/migrate/20251024023504_create_user_answers.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764905137721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764905234201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n class CreateUserAnswers < ActiveRecord::Migration[8.0]\r\n   def change\r\n     create_table :user_answers do |t|\r\n-      t.references :user, foreign_key: true\r\n+      t.references :user, null: false, foreign_key: true\r\n       t.references :question, null: false, foreign_key: true\r\n       t.references :choice, null: false, foreign_key: true\r\n       t.datetime :answered\r\n       t.boolean :is_correct\r\n"
+                }
+            ],
+            "date": 1764905137721,
+            "name": "Commit-0",
+            "content": "class CreateUserAnswers < ActiveRecord::Migration[8.0]\r\n  def change\r\n    create_table :user_answers do |t|\r\n      t.references :user, foreign_key: true\r\n      t.references :question, null: false, foreign_key: true\r\n      t.references :choice, null: false, foreign_key: true\r\n      t.datetime :answered\r\n      t.boolean :is_correct\r\n\r\n      t.timestamps\r\n    end\r\n  end\r\nend\r\n"
+        }
+    ]
+}

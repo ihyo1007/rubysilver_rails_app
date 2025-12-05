@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1764653229119,
@@ -64,6 +64,54 @@
                 {
                     "date": 1764742025654,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,13 @@\n <h3>解説</h3>\r\n <p><%= simple_format(@question.explanation) %></p>\r\n \r\n <li>\r\n+<%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n+    次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+<% end %>\r\n+</li>\r\n+<li>\r\n <%= link_to questions_path, class: 'btn btn-primary' do %>\r\n     問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n <% end %>\r\n </li>\r\n\\ No newline at end of file\n-<li>\r\n-<%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n-    次の問題 <i class=\"fi fi-ss-right\"></i>\r\n-<% end %>\r\n-</li>\n"
+                },
+                {
+                    "date": 1764900290129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,41 @@\n-<% if @is_correct %>\r\n-    <h2 style=\"color: green;\">正解</h2>\r\n-<% else %>\r\n-    <h2 style=\"color: red;\">不正解</h2>\r\n-<% end %>\r\n+<div class=\"result-container\">\r\n \r\n-<h3>答え</h3>\r\n-<ul>\r\n-    <% @question.choices.where(is_correct: true).each do |choice| %>\r\n-        <li><%= choice.content %></li>\r\n+  <h2 class=\"result-title\">結果</h2>\r\n+\r\n+  <% if @is_correct %>\r\n+    <div class=\"result-box correct\">\r\n+      <p>🎉 正解！</p>\r\n+    </div>\r\n+  <% else %>\r\n+    <div class=\"result-box incorrect\">\r\n+      <p>😢 不正解…</p>\r\n+    </div>\r\n+  <% end %>\r\n+\r\n+  <div class=\"card-section\">\r\n+    <h3>答え</h3>\r\n\\ No newline at end of file\n+    <ul class=\"answer-list\">\r\n+      <% @question.choices.where(is_correct: true).each do |c| %>\r\n+        <li><%= c.content %></li>\r\n+      <% end %>\r\n+    </ul>\r\n+  </div>\r\n+\r\n+  <div class=\"card-section\">\r\n+    <h3>解説</h3>\r\n+    <p><%= @question.explanation.presence || \"解説はありません\" %></p>\r\n+  </div>\r\n+\r\n+  <div class=\"button-area\">\r\n+    <%= link_to quiz_random_path, class: \"next-button\" do %>\r\n+      次の問題 <i class=\"fi fi-ss-right\"></i>\r\n     <% end %>\r\n-</ul>\r\n-<h3>解説</h3>\r\n-<p><%= simple_format(@question.explanation) %></p>\r\n+  </div>\r\n \r\n-<li>\r\n-<%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n-    次の問題 <i class=\"fi fi-ss-right\"></i>\r\n-<% end %>\r\n-</li>\r\n-<li>\r\n-<%= link_to questions_path, class: 'btn btn-primary' do %>\r\n-    問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n-<% end %>\r\n-</li>\n+  <div class=\"banner-area\">\r\n+    <%= link_to home_index_path do %>\r\n+      <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+    <% end %>\r\n+  </div>\r\n+\r\n+</div>\r\n"
+                },
+                {
+                    "date": 1764900403741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,6 +36,15 @@\n     <%= link_to home_index_path do %>\r\n       <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n     <% end %>\r\n   </div>\r\n+  <li>\r\n+    <%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n\\ No newline at end of file\n+        次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+    <% end %>\r\n \r\n-</div>\n+    <%= link_to questions_path, class: 'btn btn-primary' do %>\r\n+        問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n+    <% end %>\r\n+\r\n+\r\n+</div>\r\n"
+                },
+                {
+                    "date": 1764900409387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     <%= link_to home_index_path do %>\r\n       <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n     <% end %>\r\n   </div>\r\n-  <li>\r\n+\r\n     <%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n         次の問題 <i class=\"fi fi-ss-right\"></i>\r\n     <% end %>\r\n \r\n@@ -46,5 +46,5 @@\n         問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n     <% end %>\r\n \r\n \r\n-</div>\n\\ No newline at end of file\n+</div>\r\n"
+                },
+                {
+                    "date": 1764900600554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,13 @@\n   <div class=\"card-section\">\r\n     <h3>解説</h3>\r\n     <p><%= @question.explanation.presence || \"解説はありません\" %></p>\r\n   </div>\r\n+  <div class=\"button-area\">\r\n+    <%= link_to questions_path, class: 'btn btn-primary' do %>\r\n+        問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n+    <% end %>\r\n+  </div>\r\n \r\n   <div class=\"button-area\">\r\n     <%= link_to quiz_random_path, class: \"next-button\" do %>\r\n       次の問題 <i class=\"fi fi-ss-right\"></i>\r\n@@ -36,15 +41,5 @@\n     <%= link_to home_index_path do %>\r\n       <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n     <% end %>\r\n   </div>\r\n-\r\n-    <%= link_to question_path(@next_question), class: 'btn btn-success' do %>\r\n-        次の問題 <i class=\"fi fi-ss-right\"></i>\r\n-    <% end %>\r\n-\r\n-    <%= link_to questions_path, class: 'btn btn-primary' do %>\r\n-        問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n-    <% end %>\r\n-\r\n-\r\n </div>\r\n"
+                },
+                {
+                    "date": 1764900655175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     <% end %>\r\n   </div>\r\n \r\n   <div class=\"button-area\">\r\n-    <%= link_to quiz_random_path, class: \"next-button\" do %>\r\n+    <%= link_to question-path(@next_question), class: \"next-button\" do %>\r\n       次の問題 <i class=\"fi fi-ss-right\"></i>\r\n     <% end %>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1764900678160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     <% end %>\r\n   </div>\r\n \r\n   <div class=\"button-area\">\r\n-    <%= link_to question-path(@next_question), class: \"next-button\" do %>\r\n+    <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n       次の問題 <i class=\"fi fi-ss-right\"></i>\r\n     <% end %>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1764900734983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     <h3>解説</h3>\r\n     <p><%= @question.explanation.presence || \"解説はありません\" %></p>\r\n   </div>\r\n   <div class=\"button-area\">\r\n-    <%= link_to questions_path, class: 'btn btn-primary' do %>\r\n+    <%= link_to questions_path, class: 'next-button' do %>\r\n         問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n     <% end %>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1764901838123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,18 +24,20 @@\n   <div class=\"card-section\">\r\n     <h3>解説</h3>\r\n     <p><%= @question.explanation.presence || \"解説はありません\" %></p>\r\n   </div>\r\n-  <div class=\"button-area\">\r\n-    <%= link_to questions_path, class: 'next-button' do %>\r\n-        問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n-    <% end %>\r\n-  </div>\r\n \r\n-  <div class=\"button-area\">\r\n-    <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n-      次の問題 <i class=\"fi fi-ss-right\"></i>\r\n-    <% end %>\r\n+  <div class=\"footer-link\">\r\n+      <div class=\"button-area\">\r\n+        <%= link_to questions_path, class: 'next-button' do %>\r\n+            問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n+        <% end %>\r\n+      </div>\r\n+      <div class=\"button2-area\">\r\n+        <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n+          次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+        <% end %>\r\n+      </div>\r\n   </div>\r\n \r\n   <div class=\"banner-area\">\r\n     <%= link_to home_index_path do %>\r\n"
+                },
+                {
+                    "date": 1764902195018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,14 +28,14 @@\n \r\n   <div class=\"footer-link\">\r\n       <div class=\"button-area\">\r\n         <%= link_to questions_path, class: 'next-button' do %>\r\n-            問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n+            <p>問題一覧</p> <i class=\"fi fi-ss-left\"></i>\r\n         <% end %>\r\n       </div>\r\n       <div class=\"button2-area\">\r\n         <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n-          次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+          <p>次の問題</p> <i class=\"fi fi-ss-right\"></i>\r\n         <% end %>\r\n       </div>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1764902259789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,14 +28,14 @@\n \r\n   <div class=\"footer-link\">\r\n       <div class=\"button-area\">\r\n         <%= link_to questions_path, class: 'next-button' do %>\r\n-            <p>問題一覧</p> <i class=\"fi fi-ss-left\"></i>\r\n+            <p>問題一覧 <i class=\"fi fi-ss-left\"></i></p>\r\n         <% end %>\r\n       </div>\r\n       <div class=\"button2-area\">\r\n         <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n-          <p>次の問題</p> <i class=\"fi fi-ss-right\"></i>\r\n+          <p>次の問題 <i class=\"fi fi-ss-right\"></i></p>\r\n         <% end %>\r\n       </div>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1764902417592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,14 +28,14 @@\n \r\n   <div class=\"footer-link\">\r\n       <div class=\"button-area\">\r\n         <%= link_to questions_path, class: 'next-button' do %>\r\n-            <p>問題一覧 <i class=\"fi fi-ss-left\"></i></p>\r\n+            問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n         <% end %>\r\n       </div>\r\n       <div class=\"button2-area\">\r\n         <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n-          <p>次の問題 <i class=\"fi fi-ss-right\"></i></p>\r\n+          次の問題 <i class=\"fi fi-ss-right\"></i>\r\n         <% end %>\r\n       </div>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1764902448855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,14 +28,14 @@\n \r\n   <div class=\"footer-link\">\r\n       <div class=\"button-area\">\r\n         <%= link_to questions_path, class: 'next-button' do %>\r\n-            問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n+            <p>問題一覧 <i class=\"fi fi-ss-left\"></i></p>\r\n         <% end %>\r\n       </div>\r\n       <div class=\"button2-area\">\r\n         <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n-          次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+          <p>次の問題 <i class=\"fi fi-ss-right\"></i></p>\r\n         <% end %>\r\n       </div>\r\n   </div>\r\n \r\n"
                 }
             ],
             "date": 1764653229119,

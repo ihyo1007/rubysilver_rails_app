@@ -1,0 +1,48 @@
+<div class="question-show-container">
+  <h1 class="question-title">問題</h1>
+
+  <div class="question-area card">
+    <p><%= simple_format(@question.content) %></p>
+  </div>
+
+  <div class="choices-area">
+    <%= form_with url: quiz_answer_path, data: { turbo: false }, class: "answer-form" do %>
+      
+      <%= hidden_field_tag :question_id, @question.id %>
+
+      <% @question.choices.each do |choice| %>
+        <div class="choice-box">
+          <label class="choice-label">
+            <%= check_box_tag "choice_ids[]", choice.id, false, class: "choice-check" %>
+            <span class="choice-text"><%= choice.content %></span>
+          </label>
+        </div>
+      <% end %>
+
+      <div class="button-area">
+        <%= submit_tag "回答する", class: "answer-button" %>
+      </div>
+
+    <% end %>
+
+    <div class="link-list">
+      <div class="banner-area">
+        <%= link_to home_index_path do %>
+          <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+        <% end %>
+      </div>
+      
+      <div class="question-list-link-area">
+        <%= link_to questions_path, class: "question-list-link" do %>
+          <i class="fi fi-rr-list"></i> 問題一覧へ戻る
+        <% end %>
+      </div>
+      <div class="mypage-link-area">
+        <%= link_to mypage_path, class: "mypage-link" do %>
+          <i class="fi fi-rr-user"></i> マイページ
+        <% end %>
+      </div>
+    </div>
+    
+  </div>
+</div>

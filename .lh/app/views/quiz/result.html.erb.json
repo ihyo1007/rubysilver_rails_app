@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/views/quiz/result.html.erb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764813614680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764903723031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     <p><%= @question.explanation.presence || \"解説はありません\" %></p>\r\n   </div>\r\n \r\n   <div class=\"button-area\">\r\n-    <%= link_to quiz_random_path, class: \"next-button\" do %>\r\n+    <%= link_to quiz_random_path, class: \"next-button-quiz\" do %>\r\n       次の問題 <i class=\"fi fi-ss-right\"></i>\r\n     <% end %>\r\n   </div>\r\n \r\n"
+                }
+            ],
+            "date": 1764813614680,
+            "name": "Commit-0",
+            "content": "<div class=\"result-container\">\r\n\r\n  <h2 class=\"result-title\">結果</h2>\r\n\r\n  <% if @is_correct %>\r\n    <div class=\"result-box correct\">\r\n      <p>🎉 正解！</p>\r\n    </div>\r\n  <% else %>\r\n    <div class=\"result-box incorrect\">\r\n      <p>😢 不正解…</p>\r\n    </div>\r\n  <% end %>\r\n\r\n  <div class=\"card-section\">\r\n    <h3>答え</h3>\r\n    <ul class=\"answer-list\">\r\n      <% @question.choices.where(is_correct: true).each do |c| %>\r\n        <li><%= c.content %></li>\r\n      <% end %>\r\n    </ul>\r\n  </div>\r\n\r\n  <div class=\"card-section\">\r\n    <h3>解説</h3>\r\n    <p><%= @question.explanation.presence || \"解説はありません\" %></p>\r\n  </div>\r\n\r\n  <div class=\"button-area\">\r\n    <%= link_to quiz_random_path, class: \"next-button\" do %>\r\n      次の問題 <i class=\"fi fi-ss-right\"></i>\r\n    <% end %>\r\n  </div>\r\n\r\n  <div class=\"banner-area\">\r\n    <%= link_to home_index_path do %>\r\n      <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n    <% end %>\r\n  </div>\r\n\r\n</div>\r\n"
+        }
+    ]
+}

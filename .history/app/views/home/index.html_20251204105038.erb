@@ -1,0 +1,51 @@
+<header class="top-header">
+  <div class="logout-btn">
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, 
+          class: "nav-button logout-button", 
+          data: { turbo_method: :delete } do %>
+        <i class="fi fi-ss-user-logout"></i> ログアウト
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, 
+          class: "nav-button login-button" do %>
+        <i class="fi fi-ss-user"></i> ログイン・新規登録
+      <% end %>
+    <% end %>
+  </div>
+</header>
+
+<div class="header-container">
+  <%= image_tag "rubysilver_banner.png", alt: "RubySilver Banner", class: "banner" %>
+</div>
+
+<nav class="icon-nav">
+  <ul>
+    <li>
+      <%= link_to quiz_random_path do %>
+        <i class="fi fi-rr-edit"></i>
+        <span>ランダム出題</span>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to questions_path do %>
+        <i class="fi fi-rr-edit"></i>
+        <span>問題一覧</span>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to mypage_path do %>
+        <i class="fi fi-rs-book-alt"></i>
+        <span>マイページ</span>
+      <% end %>
+    </li>
+  </ul>
+</nav>
+
+<footer>
+  <%= link_to "管理者ログイン", new_admin_session_path, class: "footer-admin-link" %>
+</footer>
+
+

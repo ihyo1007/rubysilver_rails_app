@@ -1,0 +1,33 @@
+<%= link_to home_index_path do %>
+  <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+<% end %>
+
+<h1 class="page-title">問題一覧</h1>
+
+<%= form_with url: questions_path, method: :get, local: true, class: "search-form" do |f| %>
+  <div class="search-group">
+    <%= f.label :category, "カテゴリ検索" %>
+    <%= f.select :category,
+                 options_for_select(@categories, selected: params[:category]),
+                 include_blank: "すべて",
+                 class: "category-select" %>
+    <%= f.submit "検索", class: "search-btn" %>
+  </div>
+<% end %>
+
+<table class="questions-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>問題文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |q| %>
+      <tr class="question-row" onclick="location.href='<%= question_path(q) %>'">
+        <td><span class="id-badge"><%= q.id %></span></td>
+        <td><%= truncate(q.content, length: 50, omission: "…") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

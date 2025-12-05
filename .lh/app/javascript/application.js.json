@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/javascript/application.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764902722602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764903129842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,3 @@\n // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails\r\n import \"@hotwired/turbo-rails\"\r\n import \"controllers\"\r\n-document.addEventListener(\"turbo:load\", () => {\r\n-    document.querySelectorAll(\".question-row\").forEach(row => {\r\n-      row.addEventListener(\"click\", () => {\r\n-        window.location = row.dataset.href;\r\n-      });\r\n-    });\r\n-  });\r\n-  \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1764902722602,
+            "name": "Commit-0",
+            "content": "// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails\r\nimport \"@hotwired/turbo-rails\"\r\nimport \"controllers\"\r\ndocument.addEventListener(\"turbo:load\", () => {\r\n    document.querySelectorAll(\".question-row\").forEach(row => {\r\n      row.addEventListener(\"click\", () => {\r\n        window.location = row.dataset.href;\r\n      });\r\n    });\r\n  });\r\n  "
+        }
+    ]
+}

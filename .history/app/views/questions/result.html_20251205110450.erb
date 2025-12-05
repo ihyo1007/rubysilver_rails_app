@@ -1,0 +1,41 @@
+<div class="result-container">
+
+  <h2 class="result-title">結果</h2>
+
+  <% if @is_correct %>
+    <div class="result-box correct">
+      <p>🎉 正解！</p>
+    </div>
+  <% else %>
+    <div class="result-box incorrect">
+      <p>😢 不正解…</p>
+    </div>
+  <% end %>
+
+  <div class="card-section">
+    <h3>答え</h3>
+    <ul class="answer-list">
+      <% @question.choices.where(is_correct: true).each do |c| %>
+        <li><%= c.content %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="card-section">
+    <h3>解説</h3>
+    <p><%= @question.explanation.presence || "解説はありません" %></p>
+  </div>
+
+  <div class="button-area">
+    <%= link_to quiz_random_path, class: "next-button" do %>
+      次の問題 <i class="fi fi-ss-right"></i>
+    <% end %>
+  </div>
+
+  <div class="banner-area">
+    <%= link_to home_index_path do %>
+      <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+    <% end %>
+  </div>
+
+</div>

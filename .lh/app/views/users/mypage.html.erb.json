@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1764734626892,
@@ -56,6 +56,10 @@
                 {
                     "date": 1764739962315,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <h2>マイページ</h2>\r\n \r\n-<<<<<<< HEAD\r\n <%= render partial: \"result_table\", locals: { \r\n       title: \"ランダム出題\", \r\n       total_answers: @random_total_answers, \r\n       correct_answers: @random_correct_answers, \r\n"
+                },
+                {
+                    "date": 1764897190174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,29 @@\n-<h2>マイページ</h2>\r\n+<h2 class=\"mypage-title\">マイページ</h2>\r\n \r\n-<%= render partial: \"result_table\", locals: { \r\n-      title: \"ランダム出題\", \r\n-      total_answers: @random_total_answers, \r\n-      correct_answers: @random_correct_answers, \r\n-      accuracy: @random_accuracy \r\n-    } %>\r\n+<div class=\"mypage-container\">\r\n \r\n-<%= render partial: \"result_table\", locals: { \r\n-      title: \"問題一覧\", \r\n-      total_answers: @list_total_answers, \r\n-      correct_answers: @list_correct_answers, \r\n-      accuracy: @list_accuracy \r\n-    } %>\r\n+  <div class=\"result-card\">\r\n+    <%= render partial: \"result_table\", locals: { \r\n+          title: \"ランダム出題\", \r\n+          total_answers: @random_total_answers, \r\n+          correct_answers: @random_correct_answers, \r\n+          accuracy: @random_accuracy \r\n+        } %>\r\n+  </div>\r\n \r\n-<%= link_to home_index_path do %>\r\n-  <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-<% end %>\r\n+  <div class=\"result-card\">\r\n+    <%= render partial: \"result_table\", locals: { \r\n+          title: \"問題一覧\", \r\n+          total_answers: @list_total_answers, \r\n+          correct_answers: @list_correct_answers, \r\n+          accuracy: @list_accuracy \r\n+        } %>\r\n+  </div>\r\n+\r\n+</div>\r\n+\r\n+<div class=\"banner-wrapper\">\r\n+  <%= link_to home_index_path do %>\r\n+    <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+  <% end %>\r\n+</div>\r\n"
                 }
             ],
             "date": 1764734626892,

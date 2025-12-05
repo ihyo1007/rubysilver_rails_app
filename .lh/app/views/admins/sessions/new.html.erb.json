@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1764740764032,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764896372255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,29 +5,29 @@\n \n       <%= devise_error_messages! %>\n \n       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>\n-        <div class=\"form-group\">\n+        <div class=\"form-group2\">\n           <%= f.label :email %>\n-          <%= f.email_field :email, autofocus: true, class: \"form-control\", placeholder: \"メールアドレス\" %>\n+          <%= f.email_field :email, autofocus: true, class: \"form-control2\", placeholder: \"メールアドレス\" %>\n         </div>\n \n-        <div class=\"form-group\">\n+        <div class=\"form-group2\">\n           <%= f.label :password %>\n-          <%= f.password_field :password, autocomplete: \"current-password\", class: \"form-control\", placeholder: \"パスワード\" %>\n+          <%= f.password_field :password, autocomplete: \"current-password\", class: \"form-control2\", placeholder: \"パスワード\" %>\n         </div>\n \n-        <div class=\"form-options\">\n+        <div class=\"form-options2\">\n           <%= f.check_box :remember_me %>\n           <%= f.label :remember_me, \"ログイン状態を保持する\" %>\n         </div>\n \n-        <div class=\"form-group\">\n+        <div class=\"form-group2\">\n           <%= f.submit \"ログイン\", class: \"btn-admin-login\" %>\n         </div>\n       <% end %>\n \n-      <div class=\"login-links\">\n+      <div class=\"login-links2\">\n         <%= link_to \"パスワードを忘れた方はこちら\", new_password_path(resource_name) %>\n       </div>\n     </div>\n   </div>\n"
                 }
             ],
             "date": 1764740764032,

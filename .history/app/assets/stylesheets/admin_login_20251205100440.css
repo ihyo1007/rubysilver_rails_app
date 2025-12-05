@@ -1,0 +1,120 @@
+/* ページ全体 */
+body.admin-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e7dede, #f1ebeb);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ログインカード */
+  .admin-login-card {
+    background-color: #4a4baf;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .admin-login-card:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* タイトル */
+  .admin-login-card h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #ff4d4d; /* 赤系アクセント */
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  /* フォームグループ */
+  .form-group2 {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group2 label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #ccc;
+  }
+  
+  .form-control2 {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .form-control2::placeholder {
+    color: #888;
+  }
+  
+  /* チェックボックス */
+  .form-options2 {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+  }
+  
+  .form-options2 input[type="checkbox"] {
+    margin-right: 6px;
+  }
+  
+  /* ボタン */
+  .btn-admin-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+  
+  .btn-admin-login:hover {
+    background-color: #e64545;
+  }
+  
+  .btn-admin-login:active {
+    transform: scale(0.97);
+  }
+  
+  /* リンク */
+  .login-links2 {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .login-links2 a {
+    color: #ff4d4d;
+    text-decoration: none;
+  }
+  
+  .login-links2 a:hover {
+    text-decoration: underline;
+  }
+  
+  /* レスポンシブ対応 */
+  @media screen and (max-width: 480px) {
+    .admin-login-card {
+      padding: 30px 20px;
+    }
+  }
+  

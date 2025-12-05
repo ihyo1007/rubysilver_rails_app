@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1764740262457,
@@ -56,6 +56,14 @@
                 {
                     "date": 1764742744563,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   \r\n   /* タイトル */\r\n   .login-card h2 {\r\n     margin-bottom: 30px;\r\n-\r\n+    color: #333;\r\n   }\r\n   \r\n   /* フォーム */\r\n   .form-group {\r\n"
+                },
+                {
+                    "date": 1764895942748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n   \r\n   /* タイトル */\r\n   .login-card h2 {\r\n     margin-bottom: 30px;\r\n-    color: #333;\r\n   }\r\n   \r\n   /* フォーム */\r\n   .form-group {\r\n"
+                },
+                {
+                    "date": 1764895964836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n   \r\n   /* タイトル */\r\n   .login-card h2 {\r\n     margin-bottom: 30px;\r\n+    color: #333;\r\n   }\r\n   \r\n   /* フォーム */\r\n   .form-group {\r\n"
                 }
             ],
             "date": 1764740262457,
