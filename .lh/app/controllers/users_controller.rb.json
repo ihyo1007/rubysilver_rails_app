@@ -3,51 +3,11 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 0,
             "patches": [
                 {
                     "date": 1764727616849,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
-                },
-                {
-                    "date": 1764734006196,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,17 @@\n         ((@correct_answers.to_f / @total_answers) * 100).round(1)\r\n       else\r\n         0\r\n       end\r\n+    @total_answers2 = User2Answer.where(user_id: current_user.id).count\r\n+    @correct_answers2 = User2Answer.where(user_id: current_user.id, is_correct: true).count\r\n+  \r\n+    @accuracy2 =\r\n+      if @total_answers2 > 0\r\n+        ((@correct_answers2.to_f / @total_answers2) * 100).round(1)\r\n+      else\r\n+        0\r\n+      end\r\n+    \r\n   end\r\n   \r\n end\r\n"
-                },
-                {
-                    "date": 1764734030170,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n class UsersController < ApplicationController\r\n-  before_action :authenticate_user!\r\n   def mypage\r\n     @total_answers = UserAnswer.where(user_id: current_user.id).count\r\n     @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n   \r\n@@ -9,17 +8,7 @@\n         ((@correct_answers.to_f / @total_answers) * 100).round(1)\r\n       else\r\n         0\r\n       end\r\n-    @total_answers2 = User2Answer.where(user_id: current_user.id).count\r\n-    @correct_answers2 = User2Answer.where(user_id: current_user.id, is_correct: true).count\r\n-  \r\n-    @accuracy2 =\r\n-      if @total_answers2 > 0\r\n-        ((@correct_answers2.to_f / @total_answers2) * 100).round(1)\r\n-      else\r\n-        0\r\n-      end\r\n-    \r\n   end\r\n   \r\n end\r\n"
-                },
-                {
-                    "date": 1764734476788,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n class UsersController < ApplicationController\r\n   def mypage\r\n-    @total_answers = UserAnswer.where(user_id: current_user.id).count\r\n+    @total_answers = UserAnswer.where(user_id: current_user.id, source: \"list\").count\r\n     @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n   \r\n     @accuracy =\r\n       if @total_answers > 0\r\n"
-                },
-                {
-                    "date": 1764734592621,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n class UsersController < ApplicationController\r\n   def mypage\r\n-    @total_answers = UserAnswer.where(user_id: current_user.id, source: \"list\").count\r\n-    @correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n+    @list_total_answers = UserAnswer.where(user_id: current_user.id, source: \"list\").count\r\n+    @list_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n   \r\n-    @accuracy =\r\n-      if @total_answers > 0\r\n-        ((@correct_answers.to_f / @total_answers) * 100).round(1)\r\n+    @list_accuracy =\r\n+      if @list_total_answers > 0\r\n+        ((@list_correct_answers.to_f / @list_total_answers) * 100).round(1)\r\n       else\r\n         0\r\n       end\r\n   end\r\n"
-                },
-                {
-                    "date": 1764737343220,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,16 @@\n         ((@list_correct_answers.to_f / @list_total_answers) * 100).round(1)\r\n       else\r\n         0\r\n       end\r\n+      @random_total_answers = UserAnswer.where(user_id: current_user.id, source: \"random\").count\r\n+      @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n+\r\n+      @random_accuracy =\r\n+        if @random_total_answers > 0\r\n+          ((@random_correct_answers.to_f / @random_total_answers) * 100).round(1)\r\n+        else\r\n+          0\r\n+        end \r\n   end\r\n   \r\n end\r\n"
-                },
-                {
-                    "date": 1764738545041,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,16 @@\n         ((@list_correct_answers.to_f / @list_total_answers) * 100).round(1)\r\n       else\r\n         0\r\n       end\r\n-      @random_total_answers = UserAnswer.where(user_id: current_user.id, source: \"random\").count\r\n-      @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n+    @random_total_answers = UserAnswer.where(user_id: current_user.id, source: \"random\").count\r\n+    @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n \r\n-      @random_accuracy =\r\n-        if @random_total_answers > 0\r\n-          ((@random_correct_answers.to_f / @random_total_answers) * 100).round(1)\r\n-        else\r\n-          0\r\n-        end \r\n+    @random_accuracy =\r\n+      if @random_total_answers > 0\r\n+        ((@random_correct_answers.to_f / @random_total_answers) * 100).round(1)\r\n+      else\r\n+        0\r\n+      end \r\n   end\r\n   \r\n end\r\n"
-                },
-                {
-                    "date": 1764738559043,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n         ((@list_correct_answers.to_f / @list_total_answers) * 100).round(1)\r\n       else\r\n         0\r\n       end\r\n+      \r\n     @random_total_answers = UserAnswer.where(user_id: current_user.id, source: \"random\").count\r\n     @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n \r\n     @random_accuracy =\r\n"
-                },
-                {
-                    "date": 1764739108453,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n class UsersController < ApplicationController\r\n   def mypage\r\n     @list_total_answers = UserAnswer.where(user_id: current_user.id, source: \"list\").count\r\n-    @list_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n+    @list_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true, source: \"list\").count\r\n   \r\n     @list_accuracy =\r\n       if @list_total_answers > 0\r\n         ((@list_correct_answers.to_f / @list_total_answers) * 100).round(1)\r\n"
-                },
-                {
-                    "date": 1764739171377,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         0\r\n       end\r\n       \r\n     @random_total_answers = UserAnswer.where(user_id: current_user.id, source: \"random\").count\r\n-    @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true).count\r\n+    @random_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true, source: \"random\").count\r\n \r\n     @random_accuracy =\r\n       if @random_total_answers > 0\r\n         ((@random_correct_answers.to_f / @random_total_answers) * 100).round(1)\r\n"
-                },
-                {
-                    "date": 1764903967600,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n class UsersController < ApplicationController\r\n+  before_action :authenticate_user!\r\n+  \r\n   def mypage\r\n     @list_total_answers = UserAnswer.where(user_id: current_user.id, source: \"list\").count\r\n     @list_correct_answers = UserAnswer.where(user_id: current_user.id, is_correct: true, source: \"list\").count\r\n   \r\n"
                 }
             ],
             "date": 1764727616849,

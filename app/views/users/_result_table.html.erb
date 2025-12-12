@@ -23,8 +23,14 @@
 
 <div class="accuracy-message">
   <% if accuracy >= 75 %>
-    <i class="fi fi-rs-smile-beam"></i> その調子！
+  <ul>
+  <li><i class="fi fi-rs-smile-beam"></i> その調子！</li>
+  <li><%= image_tag "party-horn.gif", alt: "お祝い", style: "width: 30%" %></li>
+  </ul>
   <% else %>
-    <i class="fi fi-rs-sad-tear"></i> もうひといき!
+    <ul>
+    <li><i class="fi fi-rs-sad-tear"></i> もうひといき!</li>
+    <li><%= image_tag "study.gif", alt: "勉強", style: "width: 65%" %></li>
+    </ul>
   <% end %>
 </div>
