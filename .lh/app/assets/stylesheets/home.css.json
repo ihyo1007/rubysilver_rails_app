@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 43,
+            "activePatchIndex": 50,
             "patches": [
                 {
                     "date": 1764726519064,
@@ -180,6 +180,34 @@
                 {
                     "date": 1764743236365,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n   border-radius: 6px;\r\n \r\n   text-decoration: none;\r\n   font-weight: bold;\r\n-  font-size: 4px;\r\n+  font-size: 14px;\r\n \r\n   box-shadow: 0 2px 6px rgba(0,0,0,0.15);\r\n   transition: background 0.2s, transform 0.1s;\r\n   color: white;\r\n"
+                },
+                {
+                    "date": 1765172946602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,4 +156,7 @@\n   width: 100%;\r\n   position: relative;\r\n   height: 60px;\r\n }\r\n+.formatted-text {\r\n+  white-space: pre-wrap;\r\n+}\r\n"
+                },
+                {
+                    "date": 1765172956939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,7 +156,4 @@\n   width: 100%;\r\n   position: relative;\r\n   height: 60px;\r\n }\r\n-.formatted-text {\r\n-  white-space: pre-wrap;\r\n-}\r\n"
+                },
+                {
+                    "date": 1765501018574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n   flex-direction: column; /* アイコン → 文字 */\r\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n-  font-size: 20px;\r\n+  font-size: 16px;\r\n   margin-right: 20px;\r\n }\r\n \r\n .icon-nav li a i {\r\n"
+                },
+                {
+                    "date": 1765501034002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n   flex-direction: column; /* アイコン → 文字 */\r\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n-  font-size: 16px;\r\n+  font-size: 2px;\r\n   margin-right: 20px;\r\n }\r\n \r\n .icon-nav li a i {\r\n"
+                },
+                {
+                    "date": 1765501041371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n   flex-direction: column; /* アイコン → 文字 */\r\n   align-items: center;\r\n   text-decoration: none;\r\n   color: #333;\r\n-  font-size: 2px;\r\n+  font-size: 16px;\r\n   margin-right: 20px;\r\n }\r\n \r\n .icon-nav li a i {\r\n"
+                },
+                {
+                    "date": 1765501047769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,18 +60,10 @@\n   justify-content: center;\r\n   gap: 30px;\r\n }\r\n \r\n-.icon-nav li a {\r\n-  display: flex;\r\n-  flex-direction: column; /* アイコン → 文字 */\r\n-  align-items: center;\r\n-  text-decoration: none;\r\n-  color: #333;\r\n-  font-size: 16px;\r\n-  margin-right: 20px;\r\n-}\r\n \r\n+\r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n   margin-bottom: 5px;\r\n   color: #444;\r\n"
+                },
+                {
+                    "date": 1765501057458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,18 @@\n   justify-content: center;\r\n   gap: 30px;\r\n }\r\n \r\n+.icon-nav li a {\r\n+  display: flex;\r\n+  flex-direction: column; /* アイコン → 文字 */\r\n+  align-items: center;\r\n+  text-decoration: none;\r\n+  color: #333;\r\n+  font-size: 20px;\r\n+  margin-right: 20px;\r\n+}\r\n \r\n-\r\n .icon-nav li a i {\r\n   font-size: 40px;\r\n   margin-bottom: 5px;\r\n   color: #444;\r\n"
                 }
             ],
             "date": 1764726519064,

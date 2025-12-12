@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1764299058095,
@@ -16,6 +16,14 @@
                 {
                     "date": 1764728082512,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n     end\r\n   end \r\n \r\n   def after_sign_out_path_for(resource_or_scope)\r\n-    new_user_session_path\r\n+    home_index_path   # ← 遷移させたいパスを指定\r\n   end\r\n \r\n end\r\n"
+                },
+                {
+                    "date": 1765503520288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,13 @@\n   def after_sign_out_path_for(resource_or_scope)\r\n     home_index_path   # ← 遷移させたいパスを指定\r\n   end\r\n \r\n+  private\r\n+\r\n+  def store_referrer\r\n+    if request.referrer.present? && request.referrer != request.url\r\n+      session[:previous_url] = request.referrer\r\n+    end\r\n+  end\r\n+\r\n end\r\n"
+                },
+                {
+                    "date": 1765503552212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n class ApplicationController < ActionController::Base\r\n   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.\r\n+  before_action :store_referrer\r\n+  \r\n   allow_browser versions: :modern\r\n   def after_sign_in_path_for(resource)\r\n     if resource.is_a?(Admin)\r\n       admin_root_path        # 管理者用TOPへ\r\n"
                 }
             ],
             "date": 1764299058095,

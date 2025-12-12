@@ -1,0 +1,54 @@
+<%= link_to home_index_path do %>
+  <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
+<% end %>
+
+<h1 class="questions-title">問題一覧</h1>
+
+<div class="question-search">
+  <%= form_with url: questions_path, method: :get, local: true do |f| %>
+    <%= f.label :category, "カテゴリ検索", class: "search-label" %>
+
+    <%= f.select :category,
+                 options_for_select(@categories, selected: params[:category]),
+                 include_blank: "すべて",
+                 class: "search-select" %>
+
+    <%= f.submit "検索", class: "search-button" %>
+  <% end %>
+</div>
+
+<table class="question-table">
+  <thead>
+    <tr>
+      <th><i class="fi fi-rr-edit"></i></th>
+      <th>問題文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |q| %>
+      <tr class="question-row" onclick="window.location='<%= question_path(q) %>'">
+        <td><%= q.id %></td>
+        <td><%= truncate(q.content, length: 50, omission: "…") %></td>
+        <td>
+          <% if current_user&.admin? %>
+            <%= link_to '編集', edit_question_path(q), class: 'edit-link', onclick: "event.stopPropagation();" %>
+          <% end %>
+        </td>
+        <td>
+          <% 
+            previous_url = session[:previous_url]
+            require 'uri'
+            is_from_admin = false
+            if previous_url.present?
+              referrer_path = URI.parse(previous_url).path
+              is_from_admin = (referrer_path == '/admin' || referrer_path.start_with?('/admin/'))
+            end
+          %>
+          <% if is_from_admin %>
+            <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

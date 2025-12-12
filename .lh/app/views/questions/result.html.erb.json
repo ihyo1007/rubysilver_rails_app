@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1764653229119,
@@ -112,6 +112,46 @@
                 {
                     "date": 1764902448855,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,14 +28,14 @@\n \r\n   <div class=\"footer-link\">\r\n       <div class=\"button-area\">\r\n         <%= link_to questions_path, class: 'next-button' do %>\r\n-            問題一覧 <i class=\"fi fi-ss-left\"></i>\r\n+            <p>問題一覧 <i class=\"fi fi-ss-left\"></i></p>\r\n         <% end %>\r\n       </div>\r\n       <div class=\"button2-area\">\r\n         <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n-          次の問題 <i class=\"fi fi-ss-right\"></i>\r\n+          <p>次の問題 <i class=\"fi fi-ss-right\"></i></p>\r\n         <% end %>\r\n       </div>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1765165102875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,13 @@\n     </div>\r\n   <% end %>\r\n \r\n   <div class=\"card-section\">\r\n+    <h3>問題</h3>\r\n+    <p><%= @question.content %></p>\r\n+  </div>\r\n+\r\n+  <div class=\"card-section\">\r\n     <h3>答え</h3>\r\n     <ul class=\"answer-list\">\r\n       <% @question.choices.where(is_correct: true).each do |c| %>\r\n         <li><%= c.content %></li>\r\n"
+                },
+                {
+                    "date": 1765165836275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,8 @@\n     </div>\r\n   <% end %>\r\n \r\n   <div class=\"card-section\">\r\n-    <h3>問題</h3>\r\n-    <p><%= @question.content %></p>\r\n-  </div>\r\n-\r\n-  <div class=\"card-section\">\r\n     <h3>答え</h3>\r\n     <ul class=\"answer-list\">\r\n       <% @question.choices.where(is_correct: true).each do |c| %>\r\n         <li><%= c.content %></li>\r\n"
+                },
+                {
+                    "date": 1765168649313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,10 +38,30 @@\n         <% end %>\r\n       </div>\r\n   </div>\r\n \r\n-  <div class=\"banner-area\">\r\n-    <%= link_to home_index_path do %>\r\n-      <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n-    <% end %>\r\n-  </div>\r\n+      <div class=\"link-areas\">\r\n+      <div class=\"banner-area\">\r\n+        <%= link_to home_index_path do %>\r\n+          <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+        <% end %>\r\n+      </div>\r\n+      \r\n+      <nav class=\"icon-nav\">\r\n+        <ul>\r\n+          <li>\r\n+            <%= link_to questions_path do %>\r\n+              <i class=\"fi fi-rr-edit\"></i>\r\n+              <span>問題一覧</span>\r\n+            <% end %>\r\n+          </li>\r\n+\r\n+          <li>\r\n+            <%= link_to mypage_path do %>\r\n+              <i class=\"fi fi-rs-book-alt\"></i>\r\n+              <span>マイページ</span>\r\n+            <% end %>\r\n+          </li>\r\n+        </ul>\r\n+      </nav>\r\n+    </div>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1765501362736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,15 +48,8 @@\n       \r\n       <nav class=\"icon-nav\">\r\n         <ul>\r\n           <li>\r\n-            <%= link_to questions_path do %>\r\n-              <i class=\"fi fi-rr-edit\"></i>\r\n-              <span>問題一覧</span>\r\n-            <% end %>\r\n-          </li>\r\n-\r\n-          <li>\r\n             <%= link_to mypage_path do %>\r\n               <i class=\"fi fi-rs-book-alt\"></i>\r\n               <span>マイページ</span>\r\n             <% end %>\r\n"
+                },
+                {
+                    "date": 1765501664580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,10 @@\n   </div>\r\n \r\n   <div class=\"footer-link\">\r\n       <div class=\"button-area\">\r\n-        <%= link_to questions_path, class: 'next-button' do %>\r\n-            <p>問題一覧 <i class=\"fi fi-ss-left\"></i></p>\r\n+        <%= link_to question_path(@question), class: \"back-button\" do %>\r\n+            <p>問題に戻る <i class=\"fi fi-ss-left\"></i></p>\r\n         <% end %>\r\n       </div>\r\n       <div class=\"button2-area\">\r\n         <%= link_to question_path(@next_question), class: \"next-button\" do %>\r\n"
+                },
+                {
+                    "date": 1765501711559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   </div>\r\n \r\n   <div class=\"footer-link\">\r\n       <div class=\"button-area\">\r\n-        <%= link_to question_path(@question), class: \"back-button\" do %>\r\n+        <%= link_to question_path(@question), class: \"next-button\" do %>\r\n             <p>問題に戻る <i class=\"fi fi-ss-left\"></i></p>\r\n         <% end %>\r\n       </div>\r\n       <div class=\"button2-area\">\r\n"
+                },
+                {
+                    "date": 1765501792797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,8 +48,14 @@\n       \r\n       <nav class=\"icon-nav\">\r\n         <ul>\r\n           <li>\r\n+            <%= link_to questions_path do %>\r\n+              <i class=\"fi fi-rr-edit\"></i>\r\n+              <span>問題一覧</span>\r\n+            <% end %>\r\n+          </li>\r\n+          <li>\r\n             <%= link_to mypage_path do %>\r\n               <i class=\"fi fi-rs-book-alt\"></i>\r\n               <span>マイページ</span>\r\n             <% end %>\r\n"
+                },
+                {
+                    "date": 1765506560562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,21 @@\n <div class=\"result-container\">\r\n \r\n   <h2 class=\"result-title\">結果</h2>\r\n \r\n-  <% if @is_correct %>\r\n-    <div class=\"result-box correct\">\r\n-      <p>🎉 正解！</p>\r\n-    </div>\r\n-  <% else %>\r\n-    <div class=\"result-box incorrect\">\r\n-      <p>😢 不正解…</p>\r\n-    </div>\r\n-  <% end %>\r\n+<% if @is_correct %>\r\n+  <div class=\"result-box correct\">\r\n+    <div class=\"mark circle\"></div>\r\n+    <p>🎉 正解！</p>\r\n+  </div>\r\n+<% else %>\r\n+  <div class=\"result-box incorrect\">\r\n+    <div class=\"mark cross\"></div>\r\n+    <p>😢 不正解…</p>\r\n+  </div>\r\n+<% end %>\r\n \r\n+\r\n   <div class=\"card-section\">\r\n     <h3>答え</h3>\r\n     <ul class=\"answer-list\">\r\n       <% @question.choices.where(is_correct: true).each do |c| %>\r\n"
+                },
+                {
+                    "date": 1765506683960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,14 @@\n \r\n <% if @is_correct %>\r\n   <div class=\"result-box correct\">\r\n     <div class=\"mark circle\"></div>\r\n-    <p>🎉 正解！</p>\r\n+    <p>正解！</p>\r\n   </div>\r\n <% else %>\r\n   <div class=\"result-box incorrect\">\r\n     <div class=\"mark cross\"></div>\r\n-    <p>😢 不正解…</p>\r\n+    <p>不正解/p>\r\n   </div>\r\n <% end %>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1765506690369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,14 @@\n \r\n <% if @is_correct %>\r\n   <div class=\"result-box correct\">\r\n     <div class=\"mark circle\"></div>\r\n-    <p>正解！</p>\r\n+    <p>正解</p>\r\n   </div>\r\n <% else %>\r\n   <div class=\"result-box incorrect\">\r\n     <div class=\"mark cross\"></div>\r\n-    <p>不正解/p>\r\n+    <p>不正解</p>\r\n   </div>\r\n <% end %>\r\n \r\n \r\n"
                 }
             ],
             "date": 1764653229119,

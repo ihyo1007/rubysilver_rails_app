@@ -1,0 +1,302 @@
+{
+    "sourceFile": "a.rb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 71,
+            "patches": [
+                {
+                    "date": 1765156320982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765156381189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,6 @@\n   attr_writer :a\r\n end\r\n \r\n foo = Foo.new\r\n-foo.a = \"REx\"\n\\ No newline at end of file\n+foo.a = \"REx\"\r\n+puts foo \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765156395744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n end\r\n \r\n foo = Foo.new\r\n foo.a = \"REx\"\r\n-puts foo \n\\ No newline at end of file\n+puts foo.a\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765156425024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n class Foo\r\n-  attr_writer :a\r\n+  attr_accessor :a\r\n end\r\n \r\n foo = Foo.new\r\n foo.a = \"REx\"\r\n"
+                },
+                {
+                    "date": 1765156451544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n class Foo\r\n-  attr_accessor :a\r\n+  attr_writer :a\r\n end\r\n \r\n foo = Foo.new\r\n foo.a = \"REx\"\r\n"
+                },
+                {
+                    "date": 1765157167187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,1 @@\n-class Foo\r\n-  attr_writer :a\r\n-end\r\n-\r\n-foo = Foo.new\r\n-foo.a = \"REx\"\r\n-puts foo.a\n\\ No newline at end of file\n+puts 10\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157179285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 10\n\\ No newline at end of file\n+puts 10.oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157186547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 10.oct\n\\ No newline at end of file\n+puts 10.octale\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157192006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 10.octale\n\\ No newline at end of file\n+puts 10.octalectalal\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157208195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 10.octalectalal\n\\ No newline at end of file\n+puts '10'.oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157221988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-puts '10'.oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157267266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+puts \"110\".to_i(2)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157552492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"110\".to_i(2)\n\\ No newline at end of file\n+puts '80'.oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157577681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts '80'.oct\n\\ No newline at end of file\n+puts '080'.oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157598305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts '080'.oct\n\\ No newline at end of file\n+puts \"0x90\".hex\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157713774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"0x90\".hex\n\\ No newline at end of file\n+puts \"0x90\".oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157724346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"0x90\".oct\n\\ No newline at end of file\n+puts \"090\".oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157731735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"090\".oct\n\\ No newline at end of file\n+puts \"032323423432423490\".oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765157738369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"032323423432423490\".oct\n\\ No newline at end of file\n+puts \"32323423432423490\".oct\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158544519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"32323423432423490\".oct\n\\ No newline at end of file\n+puts 7.to_s(3)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158576782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_s(3)\n\\ No newline at end of file\n+puts 7.to_i(3)\\\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158588723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_i(3)\\\n\\ No newline at end of file\n+puts 7.to_i(3)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158601182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_i(3)\n\\ No newline at end of file\n+puts 7.to_s\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158614582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_s\n\\ No newline at end of file\n+puts 7.to_s(2)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158626784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_s(2)\n\\ No newline at end of file\n+puts 7.to_s + 2\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158633944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_s + 2\n\\ No newline at end of file\n+puts 7.to_s + \" apples\"\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158641982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_s + \" apples\"\n\\ No newline at end of file\n+puts 7.to_s(3)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765158648669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.to_s(3)\n\\ No newline at end of file\n+puts 7.binary\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159705632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts 7.binary\n\\ No newline at end of file\n+puts   \"a\".to_i(36),\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159713816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"a\".to_i(36),\n\\ No newline at end of file\n+puts   \"a\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159734561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"a\".to_i(36)\n\\ No newline at end of file\n+puts   \"aa\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159744914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"aa\".to_i(36)\n\\ No newline at end of file\n+puts   \"b\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159756913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"b\".to_i(36)\n\\ No newline at end of file\n+puts   \"f\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159764306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"f\".to_i(36)\n\\ No newline at end of file\n+puts   \"g\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159773122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"g\".to_i(36)\n\\ No newline at end of file\n+puts   \"\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159787328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"\".to_i(36)\n\\ No newline at end of file\n+puts   \"z\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765159799690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts   \"z\".to_i(36)\n\\ No newline at end of file\n+puts   \"az\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765160100131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,12 @@\n-puts   \"az\".to_i(36)\n\\ No newline at end of file\n+module M\r\n+  def class_m\r\n+    \"class_m\"\r\n+  end\r\n+end\r\n+\r\n+class C\r\n+  include M\r\n+end\r\n+\r\n+p C.methods.include? :class_m\r\n+選択肢\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765160105418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,5 @@\n class C\r\n   include M\r\n end\r\n \r\n-p C.methods.include? :class_m\r\n-選択肢\n\\ No newline at end of file\n+p C.methods.include? :class_m\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765161642318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,3 @@\n-module M\r\n-  def class_m\r\n-    \"class_m\"\r\n-  end\r\n-end\r\n-\r\n-class C\r\n-  include M\r\n-end\r\n-\r\n-p C.methods.include? :class_m\n\\ No newline at end of file\n+str = \"Liberty Fish   \\r\\n\"\r\n+str.strip!\r\n+p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765161655967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n str = \"Liberty Fish   \\r\\n\"\r\n-str.strip!\r\n+str.chop!\r\n p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765161673596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-str = \"Liberty Fish   \\r\\n\"\r\n+str = \"Liberty Fish   \"\r\n str.chop!\r\n p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765161695801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-str = \"Liberty Fish   \"\r\n+str = \"Liberty Fish\"\r\n str.chop!\r\n p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765161714952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-str = \"Liberty Fish\"\r\n+str = \"Liberty Fish \"\r\n str.chop!\r\n p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765161746414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-str = \"Liberty Fish \"\r\n+str = \"Liberty Fish \\r\\n\"\r\n str.chop!\r\n p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765162532626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,2 @@\n-str = \"Liberty Fish \\r\\n\"\r\n-str.chop!\r\n-p str\n\\ No newline at end of file\n+hoge = *\"a\"\r\n+puts hoge.class\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765162547835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n hoge = *\"a\"\r\n-puts hoge.class\n\\ No newline at end of file\n+puts hoge\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163108732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n-hoge = *\"a\"\r\n-puts hoge\n\\ No newline at end of file\n+X = 1\r\n+X = 2\r\n+puts X\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163129411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n X = 1\r\n-X = 2\r\n+\r\n puts X\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163139579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n X = 1\r\n-\r\n+X.to_s\r\n puts X\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163163439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n X = 1\r\n-X.to_s\r\n+X = X.succ\r\n puts X\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163775873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,1 @@\n-X = 1\r\n-X = X.succ\r\n-puts X\n\\ No newline at end of file\n+\"0b10\".to_i(0) # => 2\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163783850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-\"0b10\".to_i(0) # => 2\n\\ No newline at end of file\n+puts \"0b10\".to_i(0) # => 2\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163792707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"0b10\".to_i(0) # => 2\n\\ No newline at end of file\n+puts \"0d10\".to_i(0) # => 2\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163865338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"0d10\".to_i(0) # => 2\n\\ No newline at end of file\n+puts \"a\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163929132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"a\".to_i(36)\n\\ No newline at end of file\n+puts \"10\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765163960814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-puts \"10\".to_i(36)\n\\ No newline at end of file\n+puts \"19\".to_i(36)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765164176349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-puts \"19\".to_i(36)\n\\ No newline at end of file\n+str = \"1;2:3;4\"\r\n+p str.split(\";|:\")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765164196632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n-str = \"1;2:3;4\"\r\n-p str.split(\";|:\")\n\\ No newline at end of file\n+str = \"Liberty Fish   \\r\\n\"\r\n+str.strip!\r\n+p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765164222350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-str = \"Liberty Fish   \\r\\n\"\r\n+str = \" Liberty Fish\\r\\n\"\r\n str.strip!\r\n p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765164233915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-str = \" Liberty Fish\\r\\n\"\r\n+str = \" Liberty Fish   \\r\\n\"\r\n str.strip!\r\n p str\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765165372349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,2 @@\n-str = \" Liberty Fish   \\r\\n\"\r\n-str.strip!\r\n-p str\n\\ No newline at end of file\n+hash = Hash.new(0)\r\n+puts hash\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765165394064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n-hash = Hash.new(0)\r\n+hash = Hash.new(1)\r\n puts hash\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765165438287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n-hash = Hash.new(1)\r\n-puts hash\n\\ No newline at end of file\n+array = Array.new(5) { |i| i * 2 }\r\n+puts array.inspect\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765165511909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n array = Array.new(5) { |i| i * 2 }\r\n-puts array.inspect\n\\ No newline at end of file\n+puts array\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765169715916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,1 @@\n-array = Array.new(5) { |i| i * 2 }\r\n-puts array\n\\ No newline at end of file\n+puts 1.chr\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765169924842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-puts 1.chr\n\\ No newline at end of file\n+s = \"foo\"\r\n+s[3] = \"b\"\r\n+puts s\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765169944982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n s = \"foo\"\r\n-s[3] = \"b\"\r\n+s[4] = \"b\"\r\n puts s\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765170850202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,2 @@\n-s = \"foo\"\r\n-s[4] = \"b\"\r\n-puts s\n\\ No newline at end of file\n+p String.instance_methods.grep(/strip/)\r\n+\r\n"
+                },
+                {
+                    "date": 1765171605913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,1 @@\n-p String.instance_methods.grep(/strip/)\r\n-\r\n+p String.instance_methods\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765171650949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-p String.instance_methods\n\\ No newline at end of file\n+p String.instance_methods.grep(/st/)\r\n"
+                },
+                {
+                    "date": 1765171692687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-p String.instance_methods.grep(/st/)\r\n+p Array.instance_methods\r\n"
+                }
+            ],
+            "date": 1765156320982,
+            "name": "Commit-0",
+            "content": "class Foo\r\n  attr_writer :a\r\nend\r\n\r\nfoo = Foo.new\r\nfoo.a = \"REx\""
+        }
+    ]
+}

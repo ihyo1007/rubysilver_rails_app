@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1764653703195,
@@ -16,6 +16,10 @@
                 {
                     "date": 1764654466736,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n     @user_answer = UserAnswer.new  # form_with 用\r\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n-\r\n   end\r\n \r\n   def answer\r\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n"
+                },
+                {
+                    "date": 1765502993933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n       @questions = @questions.where(\"title ILIKE ? OR description ILIKE ?\", \"%#{params[:q]}%\", \"%#{params[:q]}%\")\r\n     end\r\n     @questions = @questions.by_category(params[:category]) if params[:category].present?\r\n     @categories = Question.all_categories  # 重複なしのカテゴリ一覧を取得\r\n+    @from_admin = params[:from_admin] == \"true\" # 管理者画面からの遷移かどうかを判定\r\n   end\r\n \r\n   def show\r\n     @question = Question.includes(:choices).find(params[:id])  # choicesを先読み\r\n@@ -26,8 +27,16 @@\n     @is_correct = (selected_ids.sort == correct_ids.sort)\r\n     @next_question = Question.where(\"id > ?\", @question.id).order(:id).first\r\n     @previous_question = Question.where(\"id < ?\", @question.id).order(id: :desc).first\r\n \r\n+    # ユーザーの回答を保存\r\n+    UserAnswer.create!(\r\n+      user_id: current_user&.id,   # ログイン中のユーザーID\r\n+      question_id: @question.id,\r\n+      is_correct: @is_correct,\r\n+      source: \"list\"\r\n+    )\r\n+\r\n     render :result\r\n   end\r\n   # GET /questions/new\r\n   def new\r\n"
                 }
             ],
             "date": 1764653703195,

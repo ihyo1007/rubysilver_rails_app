@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1764729339740,
@@ -72,6 +72,58 @@
                 {
                     "date": 1764907146993,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,40 @@\n-<p>ログイン中: <%= current_user&.email %></p>\r\n-<p>管理者フラグ: <%= current_user&.admin? %></p>\r\n+<%= link_to home_index_path do %>\r\n+  <%= image_tag \"rubysilver_banner_yoko.png\", alt: \"RubySilver Banner\", class: \"banner_yoko\" %>\r\n+<% end %>\r\n+\r\n+<h1 class=\"questions-title\">問題一覧</h1>\r\n+\r\n+<div class=\"question-search\">\r\n+  <%= form_with url: questions_path, method: :get, local: true do |f| %>\r\n+    <%= f.label :category, \"カテゴリ検索\", class: \"search-label\" %>\r\n+\r\n+    <%= f.select :category,\r\n+                 options_for_select(@categories, selected: params[:category]),\r\n+                 include_blank: \"すべて\",\r\n+                 class: \"search-select\" %>\r\n+\r\n+    <%= f.submit \"検索\", class: \"search-button\" %>\r\n+  <% end %>\r\n+</div>\r\n+\r\n+<table class=\"question-table\">\r\n+  <thead>\r\n+    <tr>\r\n+      <th><i class=\"fi fi-rr-edit\"></i></th>\r\n+      <th>問題文</th>\r\n+    </tr>\r\n+  </thead>\r\n+  <tbody>\r\n+    <% @questions.each do |q| %>\r\n+      <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n+        <td><%= q.id %></td>\r\n+        <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n+        <td>\r\n+          <% if current_user&.admin? %>\r\n+            <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n+          <% end %>\r\n+        </td>\r\n+      </tr>\r\n+    <% end %>\r\n+  </tbody>\r\n+</table>\r\n"
+                },
+                {
+                    "date": 1765502774045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   <tbody>\r\n     <% @questions.each do |q| %>\r\n       <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n         <td><%= q.id %></td>\r\n-        <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n+        <td><%= truncate(q.content, length: 150, omission: \"…\") %></td>\r\n         <td>\r\n           <% if current_user&.admin? %>\r\n             <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n           <% end %>\r\n"
+                },
+                {
+                    "date": 1765502798397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   <tbody>\r\n     <% @questions.each do |q| %>\r\n       <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n         <td><%= q.id %></td>\r\n-        <td><%= truncate(q.content, length: 150, omission: \"…\") %></td>\r\n+        <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n         <td>\r\n           <% if current_user&.admin? %>\r\n             <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n           <% end %>\r\n"
+                },
+                {
+                    "date": 1765503116436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,22 +19,25 @@\n \r\n <table class=\"question-table\">\r\n   <thead>\r\n     <tr>\r\n+      <% if @from_admin %>\r\n+        <th>編集</th>\r\n+      <% end %>\r\n       <th><i class=\"fi fi-rr-edit\"></i></th>\r\n       <th>問題文</th>\r\n     </tr>\r\n   </thead>\r\n   <tbody>\r\n     <% @questions.each do |q| %>\r\n       <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n+        <% if @from_admin %>\r\n+          <td>\r\n+            <%= link_to \"編集\", edit_question_path(q), class: \"edit-button\" %>\r\n+          </td>\r\n+        <% end %>\r\n         <td><%= q.id %></td>\r\n         <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n-        <td>\r\n-          <% if current_user&.admin? %>\r\n-            <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n-          <% end %>\r\n-        </td>\r\n       </tr>\r\n     <% end %>\r\n   </tbody>\r\n </table>\r\n"
+                },
+                {
+                    "date": 1765503693615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,25 +19,27 @@\n \r\n <table class=\"question-table\">\r\n   <thead>\r\n     <tr>\r\n-      <% if @from_admin %>\r\n-        <th>編集</th>\r\n-      <% end %>\r\n       <th><i class=\"fi fi-rr-edit\"></i></th>\r\n       <th>問題文</th>\r\n     </tr>\r\n   </thead>\r\n   <tbody>\r\n     <% @questions.each do |q| %>\r\n       <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n-        <% if @from_admin %>\r\n-          <td>\r\n-            <%= link_to \"編集\", edit_question_path(q), class: \"edit-button\" %>\r\n-          </td>\r\n-        <% end %>\r\n         <td><%= q.id %></td>\r\n         <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n+        <td>\r\n+          <% if current_user&.admin? %>\r\n+            <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n+          <% end %>\r\n+        </td>\r\n+        <td>\r\n+          <% if current_user&.admin? %>\r\n+            <%= link_to '削除', question_path(q), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'delete-link' %>\r\n+          <% end %>\r\n+        </td>\r\n       </tr>\r\n     <% end %>\r\n   </tbody>\r\n </table>\r\n"
+                },
+                {
+                    "date": 1765504016082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,11 +34,17 @@\n             <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n           <% end %>\r\n         </td>\r\n         <td>\r\n-          <% if current_user&.admin? %>\r\n-            <%= link_to '削除', question_path(q), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'delete-link' %>\r\n-          <% end %>\r\n+          <% \r\n+            previous_url = session[:previous_url]\r\n+            require 'uri'\r\n+            is_from_admin = false\r\n+            if previous_url.present?\r\n+              referrer_path = URI.parse(previous_url).path\r\n+              is_from_admin = (referrer_path == '/admin' || referrer_path.start_with?('/admin/'))\r\n+            end\r\n+          %>\r\n         </td>\r\n       </tr>\r\n     <% end %>\r\n   </tbody>\r\n"
+                },
+                {
+                    "date": 1765504057444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,11 @@\n               referrer_path = URI.parse(previous_url).path\r\n               is_from_admin = (referrer_path == '/admin' || referrer_path.start_with?('/admin/'))\r\n             end\r\n           %>\r\n+          <% if is_from_admin %>\r\n+            <%= link_to '削除', question_path(q), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'delete-link' %>\r\n+          <% end %>\r\n         </td>\r\n       </tr>\r\n     <% end %>\r\n   </tbody>\r\n"
+                },
+                {
+                    "date": 1765504132436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n               is_from_admin = (referrer_path == '/admin' || referrer_path.start_with?('/admin/'))\r\n             end\r\n           %>\r\n           <% if is_from_admin %>\r\n-            <%= link_to '削除', question_path(q), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'delete-link' %>\r\n+            <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n           <% end %>\r\n         </td>\r\n       </tr>\r\n     <% end %>\r\n"
+                },
+                {
+                    "date": 1765505151159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     </tr>\r\n   </thead>\r\n   <tbody>\r\n     <% @questions.each do |q| %>\r\n-      <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n+      <tr class=\"question-row\" onclick=\"window.location=' %>'\">\r\n         <td><%= q.id %></td>\r\n         <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n         <td>\r\n           <% if current_user&.admin? %>\r\n"
+                },
+                {
+                    "date": 1765505199354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     </tr>\r\n   </thead>\r\n   <tbody>\r\n     <% @questions.each do |q| %>\r\n-      <tr class=\"question-row\" onclick=\"window.location=' %>'\">\r\n+      <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n         <td><%= q.id %></td>\r\n         <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n         <td>\r\n           <% if current_user&.admin? %>\r\n"
+                },
+                {
+                    "date": 1765505515940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         <td><%= q.id %></td>\r\n         <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n         <td>\r\n           <% if current_user&.admin? %>\r\n-            <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n+            <%= link_to '編集', edit_question_path(q), class: 'edit-link', onclick: \"event.stopPropagation();\" %>\r\n           <% end %>\r\n         </td>\r\n         <td>\r\n           <% \r\n"
+                },
+                {
+                    "date": 1765505561700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         <td><%= q.id %></td>\r\n         <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n         <td>\r\n           <% if current_user&.admin? %>\r\n-            <%= link_to '編集', edit_question_path(q), class: 'edit-link', onclick: \"event.stopPropagation();\" %>\r\n+            <%= link_to '編集', edit_question_path(q), class: 'edit-link', onclick: 'event.stopPropagation();' %>\r\n           <% end %>\r\n         </td>\r\n         <td>\r\n           <% \r\n"
+                },
+                {
+                    "date": 1765506250372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,13 +29,8 @@\n       <tr class=\"question-row\" onclick=\"window.location='<%= question_path(q) %>'\">\r\n         <td><%= q.id %></td>\r\n         <td><%= truncate(q.content, length: 50, omission: \"…\") %></td>\r\n         <td>\r\n-          <% if current_user&.admin? %>\r\n-            <%= link_to '編集', edit_question_path(q), class: 'edit-link', onclick: 'event.stopPropagation();' %>\r\n-          <% end %>\r\n-        </td>\r\n-        <td>\r\n           <% \r\n             previous_url = session[:previous_url]\r\n             require 'uri'\r\n             is_from_admin = false\r\n"
+                },
+                {
+                    "date": 1765506270877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n               is_from_admin = (referrer_path == '/admin' || referrer_path.start_with?('/admin/'))\r\n             end\r\n           %>\r\n           <% if is_from_admin %>\r\n-            <%= link_to '編集', edit_question_path(q), class: 'edit-link' %>\r\n+            <%= link_to '編集', edit_question_path(q), class: 'edit-link', onclick: 'event.stopPropagation();' %>\r\n           <% end %>\r\n         </td>\r\n       </tr>\r\n     <% end %>\r\n"
                 }
             ],
             "date": 1764729339740,

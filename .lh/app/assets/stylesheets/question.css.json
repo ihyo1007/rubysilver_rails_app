@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 110,
+            "activePatchIndex": 122,
             "patches": [
                 {
                     "date": 1764550841470,
@@ -448,6 +448,54 @@
                 {
                     "date": 1764903643128,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -237,9 +237,9 @@\n   .next-button:hover p {\r\n     background: #357ab7;\r\n   }\r\n   \r\n-  .next-button {\r\n+  .next-button-quiz {\r\n     display: inline-block;\r\n     width: 100%;\r\n     text-align: center;\r\n     background: #4a90e2;\r\n@@ -251,9 +251,9 @@\n     text-decoration: none;\r\n     transition: 0.2s;\r\n   }\r\n   \r\n-  .next-button:hover {\r\n+  .next-button-quiz:hover {\r\n     background: #357ab7;\r\n   }\r\n   \r\n   \r\n"
+                },
+                {
+                    "date": 1765173345077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -448,5 +448,12 @@\n }\r\n \r\n .link-areas .icon-nav li a span {\r\n   font-size: 16px;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+.question-area pre {\r\n+    background: #f4f4f4;\r\n+    padding: 15px;\r\n+    border-radius: 8px;\r\n+    overflow-x: auto;\r\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765173360369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -451,9 +451,9 @@\n   font-size: 16px;\r\n }\r\n \r\n .question-area pre {\r\n-    background: #f4f4f4;\r\n+    background: #291919;\r\n     padding: 15px;\r\n     border-radius: 8px;\r\n     overflow-x: auto;\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765173370063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -451,9 +451,9 @@\n   font-size: 16px;\r\n }\r\n \r\n .question-area pre {\r\n-    background: #291919;\r\n+    background: #f4f4f4;\r\n     padding: 15px;\r\n     border-radius: 8px;\r\n     overflow-x: auto;\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765173389815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -455,5 +455,6 @@\n     background: #f4f4f4;\r\n     padding: 15px;\r\n     border-radius: 8px;\r\n     overflow-x: auto;\r\n+    font-size: 16px;\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765173459027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -448,13 +448,5 @@\n }\r\n \r\n .link-areas .icon-nav li a span {\r\n   font-size: 16px;\r\n-}\r\n-\r\n-.question-area pre {\r\n-    background: #f4f4f4;\r\n-    padding: 15px;\r\n-    border-radius: 8px;\r\n-    overflow-x: auto;\r\n-    font-size: 16px;\r\n-  }\n\\ No newline at end of file\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765504246665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -448,5 +448,13 @@\n }\r\n \r\n .link-areas .icon-nav li a span {\r\n   font-size: 16px;\r\n+}\r\n+\r\n+.edit-link {\r\n+  display: inline-block;\r\n+  margin-top: 15px;\r\n+  text-decoration: none;\r\n+  color: #007bff;\r\n+  font-weight: bold;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765504313819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -450,11 +450,8 @@\n .link-areas .icon-nav li a span {\r\n   font-size: 16px;\r\n }\r\n \r\n-.edit-link {\r\n-  display: inline-block;\r\n+.edit-question-path {\r\n   margin-top: 15px;\r\n-  text-decoration: none;\r\n-  color: #007bff;\r\n-  font-weight: bold;\r\n+  text-align: center;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765504352928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -451,7 +451,7 @@\n   font-size: 16px;\r\n }\r\n \r\n .edit-question-path {\r\n-  margin-top: 15px;\r\n+  margin-top: 150px;\r\n   text-align: center;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765504387704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -450,8 +450,5 @@\n .link-areas .icon-nav li a span {\r\n   font-size: 16px;\r\n }\r\n \r\n-.edit-question-path {\r\n-  margin-top: 150px;\r\n-  text-align: center;\r\n-}\n\\ No newline at end of file\n+.edit-qu\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765504411296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -450,5 +450,11 @@\n .link-areas .icon-nav li a span {\r\n   font-size: 16px;\r\n }\r\n \r\n-.edit-qu\n\\ No newline at end of file\n+.edit-link {\r\n+  display: inline-block;\r\n+  margin-top: 15px;\r\n+  text-decoration: none;\r\n+  color: #007bff;\r\n+  font-weight: bold;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765506506140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -456,5 +456,64 @@\n   margin-top: 15px;\r\n   text-decoration: none;\r\n   color: #007bff;\r\n   font-weight: bold;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+/* 共通 */\r\n+.mark {\r\n+  width: 80px;\r\n+  height: 80px;\r\n+  margin: 0 auto 10px;\r\n+  position: relative;\r\n+}\r\n+\r\n+/* 〇（正解）アニメーション */\r\n+.circle {\r\n+  border-radius: 50%;\r\n+  border: 5px solid #4CAF50;\r\n+  animation: draw-circle 0.8s ease-out forwards;\r\n+  transform: scale(0);\r\n+}\r\n+@keyframes draw-circle {\r\n+  0% { transform: scale(0); opacity: 0; }\r\n+  50% { transform: scale(1.1); opacity: 1; }\r\n+  100% { transform: scale(1); }\r\n+}\r\n+\r\n+/* ×（不正解）アニメーション */\r\n+.cross::before,\r\n+.cross::after {\r\n+  content: \"\";\r\n+  position: absolute;\r\n+  top: 50%;\r\n+  left: 50%;\r\n+  width: 80px;\r\n+  height: 5px;\r\n+  background: #E53935;\r\n+  transform-origin: center;\r\n+  opacity: 0;\r\n+}\r\n+\r\n+.cross::before {\r\n+  transform: translate(-50%, -50%) rotate(45deg) scaleX(0);\r\n+  animation: draw-cross-line1 0.4s ease-out forwards;\r\n+}\r\n+\r\n+.cross::after {\r\n+  transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);\r\n+  animation: draw-cross-line2 0.4s ease-out forwards 0.2s;\r\n+}\r\n+\r\n+@keyframes draw-cross-line1 {\r\n+  to {\r\n+    opacity: 1;\r\n+    transform: translate(-50%, -50%) rotate(45deg) scaleX(1);\r\n+  }\r\n+}\r\n+\r\n+@keyframes draw-cross-line2 {\r\n+  to {\r\n+    opacity: 1;\r\n+    transform: translate(-50%, -50%) rotate(-45deg) scaleX(1);\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1765506805661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -458,62 +458,37 @@\n   color: #007bff;\r\n   font-weight: bold;\r\n }\r\n \r\n-/* 共通 */\r\n .mark {\r\n   width: 80px;\r\n   height: 80px;\r\n   margin: 0 auto 10px;\r\n   position: relative;\r\n }\r\n \r\n-/* 〇（正解）アニメーション */\r\n+/* ○（正解） */\r\n .circle {\r\n   border-radius: 50%;\r\n-  border: 5px solid #4CAF50;\r\n-  animation: draw-circle 0.8s ease-out forwards;\r\n-  transform: scale(0);\r\n+  border: 8px solid #4CAF50; /* 緑のマル */\r\n }\r\n-@keyframes draw-circle {\r\n-  0% { transform: scale(0); opacity: 0; }\r\n-  50% { transform: scale(1.1); opacity: 1; }\r\n-  100% { transform: scale(1); }\r\n-}\r\n \r\n-/* ×（不正解）アニメーション */\r\n+/* ×（不正解） */\r\n .cross::before,\r\n .cross::after {\r\n   content: \"\";\r\n   position: absolute;\r\n   top: 50%;\r\n   left: 50%;\r\n   width: 80px;\r\n-  height: 5px;\r\n-  background: #E53935;\r\n+  height: 8px;\r\n+  background: #E53935; /* 赤いバツ */\r\n   transform-origin: center;\r\n-  opacity: 0;\r\n }\r\n \r\n .cross::before {\r\n-  transform: translate(-50%, -50%) rotate(45deg) scaleX(0);\r\n-  animation: draw-cross-line1 0.4s ease-out forwards;\r\n+  transform: translate(-50%, -50%) rotate(45deg);\r\n }\r\n \r\n .cross::after {\r\n-  transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);\r\n-  animation: draw-cross-line2 0.4s ease-out forwards 0.2s;\r\n+  transform: translate(-50%, -50%) rotate(-45deg);\r\n }\r\n-\r\n-@keyframes draw-cross-line1 {\r\n-  to {\r\n-    opacity: 1;\r\n-    transform: translate(-50%, -50%) rotate(45deg) scaleX(1);\r\n-  }\r\n-}\r\n-\r\n-@keyframes draw-cross-line2 {\r\n-  to {\r\n-    opacity: 1;\r\n-    transform: translate(-50%, -50%) rotate(-45deg) scaleX(1);\r\n-  }\r\n-}\r\n"
                 }
             ],
             "date": 1764550841470,
