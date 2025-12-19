@@ -2,6 +2,12 @@
   <%= image_tag "rubysilver_banner_yoko.png", alt: "RubySilver Banner", class: "banner_yoko" %>
 <% end %>
 
+<div class="header-link">
+      <div class="button-area">
+        <%= link_to "戻る", home_index_path, class: "btn-gray" %>
+      </div>
+  </div>
+
 <h1 class="questions-title">問題一覧</h1>
 
 <div class="question-search">
@@ -9,9 +15,9 @@
     <%= f.label :category, "カテゴリ検索", class: "search-label" %>
 
     <%= f.select :category,
-                 options_for_select(@categories, selected: params[:category]),
-                 include_blank: "すべて",
-                 class: "search-select" %>
+                  options_for_select(@categories, selected: params[:category]),
+                  include_blank: "すべて",
+                  class: "search-select" %>
 
     <%= f.submit "検索", class: "search-button" %>
   <% end %>
